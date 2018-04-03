@@ -11,7 +11,9 @@ Here are some tags that can be used in the code as comments and it will be autom
 @alias
 @param
 @returns
-
+@error
+@code
+@refer
 
 
 
