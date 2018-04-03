@@ -8,6 +8,9 @@ Here are some tags that can be used in the code as comments and it will be autom
 @package
 @desc
 @function
+@alias
+@param
+@returns
 
 
 
