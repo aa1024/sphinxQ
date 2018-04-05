@@ -6,8 +6,10 @@ A proof of concept around the commenting the q code with some predifined tags wh
 Here are some tags that can be used in the code as comments and it will be automatically parsed and included in the documents.
 
 @package
+Logical group name 
 
 @desc
+Explanation of the function , package, paramaters etc. it will be used as paragraph when the documents are generated.
 
 @function
 
