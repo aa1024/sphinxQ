@@ -1,58 +1,20 @@
-**bold** and *italics*
-
-
-* A thing.
-* Another thing.
-
-or
-
-1. Item 1.
-2. Item 2.
-3. Item 3.
-
-or
-
-- Some.
-- Thing.
-- Different.
-
-H1 -- Top of Page Header
-************************
-There should only be one of these per page and this will also -- when
-converting to pdf -- be used for the chapters.
-
-H2 -- Page Sections
+Table Details
 ===================
+Following are the RTS schemas and tables containing the important columns along with their description.
 
-H3 -- Subsection
-----------------
 
-H4 -- Subsubsection
-+++++++++++++++++++
+trade
++++++
 
-COMPLEX TABLE:
+Table containing the trade details : 
 
-+------------+------------+-----------+
-| Header 1   | Header 2   | Header 3  |
-+============+============+===========+
-| body row 1 | column 2   | column 3  |
-+------------+------------+-----------+
-| body row 2 | Cells may span columns.|
-+------------+------------+-----------+
-| body row 3 | Cells may  | - Cells   |
-+------------+ span rows. | - contain |
-| body row 4 |            | - blocks. |
-+------------+------------+-----------+
-
-SIMPLE TABLE:
-
-=====  =====  ======
-   Inputs     Output
-------------  ------
-  A      B    A or B
-=====  =====  ======
-False  False  False
-True   False  True
-False  True   True
-True   True   True
-=====  =====  ======
+=========  ===========  ======
+columns	   Description  Type
+=========  ===========  ======
+date  	   trade date   date
+time   	   trade time   time
+sym        instrument   sym
+price      trade price  float
+size  	   trade size   float
+direction  buy/sell     symbol
+=========  ===========  ======
