@@ -10,8 +10,9 @@ Welcome to docQ's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   intro
-   tutorial
+   
+   table
+
 
 
 Indices and tables
