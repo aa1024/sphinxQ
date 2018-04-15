@@ -1,20 +1,31 @@
 Table Details
-===================
-Following are the RTS schemas and tables containing the important columns along with their description.
-
-
+=============
 trade
 +++++
+Stores the Trade details
 
-Table containing the trade details : 
+===========  ======  ===============
+Column Name  Type    Desc           
+===========  ======  ===============
+date         date    Trade Date     
+time         time    Trade Time     
+sym          symbol  Instrument Id  
+price        float   Trade Price    
+size         float   Trade Size     
+side         symbol  Trade Direction
+===========  ======  ===============
+tob
++++
+Stores the Top of Book prices and sizes
 
-=========  ===========  ======
-columns	   Description  Type
-=========  ===========  ======
-date  	   trade date   date
-time   	   trade time   time
-sym        instrument   sym
-price      trade price  float
-size  	   trade size   float
-direction  buy/sell     symbol
-=========  ===========  ======
+===========  ======  =============
+Column Name  Type    Desc         
+===========  ======  =============
+date         date    Trade Date   
+time         time    Trade Time   
+sym          symbol  Instrument Id
+bid          float   Bid Price    
+bid_size     float   Bid Size     
+ask          float   Ask Price    
+ask_size     float   Ask Size     
+===========  ======  =============
