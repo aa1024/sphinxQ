@@ -2,7 +2,7 @@ f:read0 hsym `$getenv[`QREPO],"\\..\\docQ\\table.q";
 
 f1:f where f like "*/*";
 
-f2:1_/:(f1?\:"/")_'f1
+f2:1_/:(f1?\:"/")_'f1;
 
 tokens:`table`desc`header`row;
 f2:f2 where any f2 like/:"*@",/:(string tokens ),'"*";
