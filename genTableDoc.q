@@ -4,18 +4,18 @@ f1:f where f like "*/*";
 
 f2:1_/:(f1?\:"/")_'f1
 
-tokens:`table`desc`header`row
-f2:f2 where any f2 like/:"*@",/:(string tokens ),'"*"
+tokens:`table`desc`header`row;
+f2:f2 where any f2 like/:"*@",/:(string tokens ),'"*";
 
-f3:{a:`$" "vs/:x;:a[;0]!trim " "sv/:string 1_/:a}each (string (`$"@"vs/:f2)except\:`)
+f3:{a:`$" "vs/:x;:a[;0]!trim " "sv/:string 1_/:a}each (string (`$"@"vs/:f2)except\:`);
 
-f4:(where count each (key each f3)inter\:`table)cut f3
+f4:(where count each (key each f3)inter\:`table)cut f3;
 
 //should be schmea rather than table
 
 
-sh:{ tn:x@`table;(tn;count[tn]#"+") }
-th:{ tn:x@`header;enlist "|" vs tn }
+sh:{ tn:x@`table;(tn;count[tn]#"+") };
+th:{ tn:x@`header;enlist "|" vs tn };
 tc:{ tn:x@`row;"|" vs tn };
 tb:{xb:.str.sfrb `$x; (c;xb[0];c),(1_xb),enlist c:count[xb 0]#"="};
 
