@@ -16,8 +16,8 @@ f4:(where count each (key each f3)inter\:`table)cut f3
 
 sh:{ tn:x@`table;(tn;count[tn]#"+") }
 th:{ tn:x@`header;enlist "|" vs tn }
-tc:{ tn:x@`row;"|" vs tn }
-tb:{xb:.str.sfrb `$x; (c;xb[0];c),(1_xb),enlist c:count[xb 0]#"="}
+tc:{ tn:x@`row;"|" vs tn };
+tb:{xb:.str.sfrb `$x; (c;xb[0];c),(1_xb),enlist c:count[xb 0]#"="};
 
 td:{[f0]
     d1:sh f0[0];
@@ -26,11 +26,11 @@ td:{[f0]
     c:tc each   1_f0;
     d3:"  " sv/:flip tb each flip h,c;
     d1,d2,d3,"" 
- }
+ };
 
-dn:raze td each f4
+dn:raze td each f4;
 
-d0:{xs:string x;(xs;count[xs]#"=")}`$"Table Details"
+d0:{xs:string x;(xs;count[xs]#"=")}`$"Table Details";
 
 hsym[ `$getenv[`QREPO],"\\..\\docQ\\source\\table.rst"]  0: d0,dn
 
