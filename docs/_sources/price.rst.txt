@@ -1,5 +1,5 @@
-Table Details
-=============
+price Table Details
+===================
 trade
 +++++
 Stores the Trade details
@@ -14,6 +14,7 @@ price        float   Trade Price
 size         float   Trade Size     
 side         symbol  Trade Direction
 ===========  ======  ===============
+
 tob
 +++
 Stores the Top of Book prices and sizes
@@ -29,3 +30,4 @@ bid_size     float   Bid Size
 ask          float   Ask Price    
 ask_size     float   Ask Size     
 ===========  ======  =============
+
