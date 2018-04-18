@@ -16,9 +16,11 @@ Name of the function
 
 @alias
 
-@param
+### @param
+Input Parameter to the function
 
-@returns
+### @returns
+Output returned by the function
 
 @error
 
@@ -26,16 +28,5 @@ Name of the function
 
 @refer
 
-### @tag
+### @tags
 It can be used to define the keywords that can be found by browsing.  
-
-### @table
-To create a table in the generated documents
-
-### @header
-Table header; the columns can be defined using pipe (e.g. Col1|Col2|Col3) 
-
-### @row 
-Table row; cells are "|" (pipe) separated.
-
-
