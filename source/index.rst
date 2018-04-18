@@ -11,8 +11,8 @@ Welcome to docQ's documentation!
    :caption: Contents:
    
    
-   table
-
+   trade
+   price
 
 
 Indices and tables
