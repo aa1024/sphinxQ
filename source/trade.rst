@@ -1,5 +1,5 @@
-Table Details
-=============
+trade Table Details
+===================
 trade
 +++++
 Stores the Trade details
@@ -14,3 +14,4 @@ price        float   Trade Price
 size         float   Trade Size     
 side         symbol  Trade Direction
 ===========  ======  ===============
+
