@@ -31,8 +31,8 @@ Output returned by the function
 ### @tags
 It can be used to define the keywords that can be found by browsing.  
 
-### @table
-To create a table in the generated documents
+### @schema
+To specify a schema defination ; should be used with @heaader and @ row
 
 ### @header
 Table header; the columns can be defined using pipe (e.g. `Col1|Col2|Col3`) 
