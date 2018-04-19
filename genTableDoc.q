@@ -34,8 +34,11 @@ parseFile:{[f;n]
  };
 
 
-parseFile[f:`$getenv[`QREPO],"\\..\\docQ\\schemas\\price.q" ; n:`price]
+parseFile[f:`$getenv[`QREPO],"\\..\\docQ\\schemas\\price.q" ;`price]
 parseFile[`$getenv[`QREPO],"\\..\\docQ\\schemas\\trade.q" ; `trade]
+
+//code to handle the index.rst
+
 
 
 
