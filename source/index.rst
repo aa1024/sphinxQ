@@ -13,6 +13,7 @@ Welcome to docQ's documentation!
    
    trade
    price
+   str
 
 
 Indices and tables
