@@ -1,7 +1,6 @@
-/  
-@desc String helper functions
-@functions fc,sfl,zfl,tu,tl,tstr,cc,ucc,us (snakecase, startcase, traincase )
-\
+/@package str 
+/@desc String helper functions - fc,sfl,zfl,tu,tl,tstr,cc,ucc,us (snakecase, startcase, traincase )
+
 
 \d .str
 
@@ -16,7 +15,7 @@ sc:{ ssr[x;" ";"_"] }
 tc:{ ssr[x;" ";"-"] }
 
 /@function us @desc Camel case to lower case underscore separated 
-/   @param string in camel case form
+/   @param x @desc string in camel case form
 /@returns underscore separated text
 us:{lower sc[x]}
 
