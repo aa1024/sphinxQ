@@ -1,4 +1,4 @@
-trade:([]           /@table trade @desc  Stores the Trade details @header Column Name|Type|Desc
+trade:([]           /@schema trade @desc  Stores the Trade details @header Column Name|Type|Desc
  date:`date$();     /@row date|date|Trade Date
  time:`time$();     /@row time|time|Trade Time
  sym:`g#`$();       /@row sym|symbol|Instrument Id
