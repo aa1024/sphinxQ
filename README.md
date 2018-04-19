@@ -35,7 +35,8 @@ It can be used to define the keywords that can be found by browsing.
 To specify a schema defination ; should be used with @heaader and @ row
 
 ### @header
-Table header; the columns can be defined using pipe (e.g. `Col1|Col2|Col3`) 
+Table header; the columns can be defined using pipe (e.g. `Col1|Col2|Col3`).
+It can be used with or without schema tag.
 
 ### @row 
 Table row; cells are "|" (pipe) separated.
