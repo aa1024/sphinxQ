@@ -15,7 +15,7 @@ td:{[f0]    /f0:first f4
     d1,d2,d3,enlist "" 
  };
 
-//fc:read0 hsym `$getenv[`QREPO],"\\..\\docQ\\code\\str.q";
+//fc:read0 hsym `$getenv[`QDOCS],"\\code\\str.q";
 parseFile:{[f;n]
     fc:read0 hsym f;
     f1:fc where fc like "*/*";

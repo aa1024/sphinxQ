@@ -1,9 +1,9 @@
 import `str;
 
 
-/type key hsym `$getenv[`QREPO],"\\..\\docQ\\schemas\\"
-/f:read0 hsym `$getenv[`QREPO],"\\..\\docQ\\schemas\\trade.q";
-/f:read0 hsym `$getenv[`QREPO],"\\..\\docQ\\schemas\\price.q";
+/type key hsym `$getenv[`QDOCS],"\\schemas\\"
+/f:read0 hsym `$getenv[`QDOCS],"\\schemas\\trade.q";
+/f:read0 hsym `$getenv[`QDOCS],"\\schemas\\schemas\\price.q";
 
 tokens:`schema`desc`header`row;
 
@@ -20,7 +20,7 @@ td:{[f0]
     d1,d2,d3,enlist "" 
  };
 
-//fc:read0 hsym `$getenv[`QREPO],"\\..\\docQ\\schemas\\price.q";
+//fc:read0 hsym `$getenv[`QDOCS],"\\schemas\\price.q";
 parseFile:{[f;n]
     fc:read0 hsym f;
     f1:fc where fc like "*/*";
@@ -30,12 +30,12 @@ parseFile:{[f;n]
     f4:(where count each (key each f3)inter\:`schema)cut f3;
     dn:raze td each f4;
     d0:{xs:string x;(xs;count[xs]#"=")}`$string[n]," Table Details";
-    hsym[ `$getenv[`QREPO],"\\..\\docQ\\source\\",string[n],".rst"]  0: d0,dn
+    hsym[ `$getenv[`QDOCS],"\\source\\",string[n],".rst"]  0: d0,dn
  };
 
 
-parseFile[f:`$getenv[`QREPO],"\\..\\docQ\\schemas\\price.q" ;`price]
-parseFile[`$getenv[`QREPO],"\\..\\docQ\\schemas\\trade.q" ; `trade]
+parseFile[f:`$getenv[`QDOCS],"\\schemas\\price.q" ;`price]
+parseFile[`$getenv[`QDOCS],"\\\\schemas\\trade.q" ; `trade]
 
 //code to handle the index.rst
 
