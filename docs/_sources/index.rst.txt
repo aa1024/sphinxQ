@@ -14,6 +14,7 @@ Welcome to docQ's documentation!
    trade
    price
    str
+   docQ
 
 
 Indices and tables
