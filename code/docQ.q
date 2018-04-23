@@ -17,6 +17,7 @@ lb:{("::";""),"  ",/:x}
 dtb:{eval parse x}
 /dtb ("{x*y}[3;2]")
 
-st:{r:.Q.S[10 512;0;0!x];h:.[count[r 0]#"=";enlist -1_where -1=deltas" "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }
+/simple table @TODO need to revisit this function
+st:{r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r]h:.[count[r 0]#"=";enlist where 1=deltas 1_" "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }
 /\l sp.q
-/st[p]
+/st[p] 
