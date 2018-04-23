@@ -1,13 +1,26 @@
 \d .docq
 
+/text styles
+ts:{y,x,y}
+/italics
+i:{ts[x;"*"]}
+/bold
+b:{ts[x;"**"]}
+/fixed-space or mono-space
+fs:{ts[x;"``"]}
+
 /paragraph
-p:{.Q.s x}
-/p[123]
+p:{x}
+/p[([] 1 2 2 3)]
 /p .Q.s t
 
 /bullet list
 bl:{"- ",/:x}
 /bl string`trade`price
+
+/number list
+nl:{"#. ",/:x}
+/nl string`trade`price
 
 /literal block
 lb:{("::";""),"  ",/:x}
@@ -29,3 +42,5 @@ st:{ul[x;"-"]}
 /ul["SubTitle";"-"]
 /t["Title"]
 /st["SubTitle"]
+
+img:{".. image:: ",x}
