@@ -45,8 +45,8 @@
 </ol>
 <table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="83%" />
+<col width="3%" />
+<col width="97%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">func</th>
@@ -72,8 +72,38 @@
 <tr class="row-odd"><td>bl</td>
 <td>{“- “,/:x}</td>
 </tr>
-<tr class="row-even"><td>lb</td>
+<tr class="row-even"><td>nl</td>
+<td>{“#. “,/:x}</td>
+</tr>
+<tr class="row-odd"><td>lb</td>
 <td>{(“::”;”“),”  “,/:x}</td>
+</tr>
+<tr class="row-even"><td>dtb</td>
+<td>{eval parse x}</td>
+</tr>
+<tr class="row-odd"><td>tab</td>
+<td>{r:.Q.S[value[“\C”];0;0!x];if[“..”~last r;r:-1_r];h:.[count[r 0]#”=”;enlist where 1_1=deltas ” “&lt;&gt;r 0;:;” “];(h;r[0];h),(2_r),enlist h }</td>
+</tr>
+<tr class="row-even"><td>ul</td>
+<td>{(x;count[x]#y)}</td>
+</tr>
+<tr class="row-odd"><td>t</td>
+<td>{ul[x;”=”]}</td>
+</tr>
+<tr class="row-even"><td>st</td>
+<td>{ul[x;”-“]}</td>
+</tr>
+<tr class="row-odd"><td>img</td>
+<td>{“.. image:: “,x}</td>
+</tr>
+<tr class="row-even"><td>w</td>
+<td>{img[“images/warning.gif”]}</td>
+</tr>
+<tr class="row-odd"><td>wrn</td>
+<td>{img[“images/warning.gif”]}</td>
+</tr>
+<tr class="row-even"><td>tip</td>
+<td>{img[“images/tip.gif”]}</td>
 </tr>
 </tbody>
 </table>
