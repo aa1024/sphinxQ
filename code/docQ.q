@@ -31,9 +31,10 @@ dtb:{eval parse x}
 /dtb ("{x*y}[3;2]")
 
 /simple table @TODO need to revisit this function
-tab:{r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r]h:.[count[r 0]#"=";enlist where 1=deltas 1_" "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }
+tab:{r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r];h:.[count[r 0]#"=";enlist where 1_1=deltas " "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }
 /\l sp.q
 /tab[p] 
+
 
 ul:{(x;count[x]#y)}
 t:{ul[x;"="]}
@@ -44,5 +45,5 @@ st:{ul[x;"-"]}
 /st["SubTitle"]
 
 img:{".. image:: ",x}
-w:{img["images/warning.gif"]}
-t:{img["images/tip.gif"]}
+wrn:{img["images/warning.gif"]}
+tip:{img["images/tip.gif"]}
