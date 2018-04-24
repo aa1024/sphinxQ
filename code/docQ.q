@@ -44,3 +44,5 @@ st:{ul[x;"-"]}
 /st["SubTitle"]
 
 img:{".. image:: ",x}
+w:{img["images/warning.gif"]}
+t:{img["images/tip.gif"]}
