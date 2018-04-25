@@ -74,6 +74,10 @@ csvt:{( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","s
 /csvt p
 /strif each (`str;12.;1b)
 
+/label
+lbl:{".. _",sv["-";string x],"-label:"}
+/lbl[`trade`schema]
+
 
 
 
