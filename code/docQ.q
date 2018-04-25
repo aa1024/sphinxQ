@@ -17,12 +17,13 @@ p:{x}
 /p[([] 1 2 2 3)]
 /p .Q.s t
 
+l:{y,/:x}
 /bullet list
-bl:{"- ",/:x}
+bl:{l[x;"* "]}
 /bl string`trade`price
 
 /number list
-nl:{"#. ",/:x}
+nl:{l[x;"#. "]}
 /nl string`trade`price
 
 /literal block
