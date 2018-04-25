@@ -2,10 +2,13 @@
 
 /text styles
 ts:{y,x,y}
+
 /italics
 i:{ts[x;"*"]}
+
 /bold
 b:{ts[x;"**"]}
+
 /fixed-space or mono-space
 fs:{ts[x;"``"]}
 
@@ -35,14 +38,30 @@ tab:{r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r];h:.[count[r 0]#"=";enlist
 /\l sp.q
 /tab[p] 
 
-
+/underline the text with input charecter
 ul:{(x;count[x]#y)}
+/Title
 t:{ul[x;"="]}
+/Section Title
 st:{ul[x;"-"]}
+/Subsection Title
+sst:{ul[x;"~"]}
 
 /ul["SubTitle";"-"]
 /t["Title"]
 /st["SubTitle"]
+
+
+/overline-underline the text with input charecter
+olul:{(t;x;t:count[x]#y)}
+/Document Title
+dt:{olul[x;"="]}
+/Document Subtitle
+dst:{olul[x;"-"]}
+
+/olul["Overline-Underline";"-"]
+/dt["Document Title"]
+/dst["Document Subtitle"]
 
 img:{".. image:: ",x}
 wrn:{img["images/warning.gif"]}
