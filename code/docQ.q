@@ -67,3 +67,15 @@ dst:{olul[x;"-"]}
 img:{".. image:: ",x}
 wrn:{img["images/warning.gif"]}
 tip:{img["images/tip.gif"]}
+
+strif:{$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];"'";"''"];"\"";"'\""],s:"\""]}
+csvt:{( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","sv string cols x;""),{"   ","," sv strif each value x} each x:0!x}
+/\l sp.q
+/csvt p
+/strif each (`str;12.;1b)
+
+
+
+
+
+
