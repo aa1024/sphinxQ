@@ -22,5 +22,9 @@ t61:t0,.docq.nl[("Item 1";"Item 2")];
 t7:t0,.docq.t["Tables"];
 t71:t0,.docq.st["Simple Table"];
 t72:t0,.docq.tab ([] func:key[1_.docq];def:1_value[.docq]);
+t73:t0,.docq.st["csv Table"];
+t74:t0,.docq.csvt ([] func:key[1_.docq];def:1_value[.docq]);
 
-hsym[ `$getenv[`QDOCS],"\\source\\docQ.rst"]  0:  t1,t2,t3,t31,t4,t5,t51,t52,t53,t54,t6,t61,t7,t71,t72
+
+hsym[ `$getenv[`QDOCS],"\\source\\docQ.rst"]  0:  t1,t2,t3,t31,t4,t5,t51,t52,t53,t54,t6,t61,t7,t71,t72,t73,t74
+
