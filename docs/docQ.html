@@ -143,6 +143,93 @@
 <tr class="row-even"><td>l</td>
 <td>{y,/:x}</td>
 </tr>
+<tr class="row-odd"><td>csvt</td>
+<td>{( “.. csv-table:: “;”   :escape: ‘”;”   :widths: auto”;”   :header: “,”,”sv string cols x;”“),{”   “,”,” sv strif each value x} each x:0!x}</td>
+</tr>
+<tr class="row-even"><td>strif</td>
+<td>{$[10h=t:type x; x;t&lt;0;string x;s, ssr[ssr[.Q.s1[x];”’”;”’‘”];”“”;”’”“],s:”“”]}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="csv-table">
+<h4>csv Table<a class="headerlink" href="#csv-table" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="colwidths-auto docutils">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">func</th>
+<th class="head">def</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ts</td>
+<td>{y,x,y}</td>
+</tr>
+<tr class="row-odd"><td>i</td>
+<td>{ts[x;”*”]}</td>
+</tr>
+<tr class="row-even"><td>b</td>
+<td>{ts[x;”**”]}</td>
+</tr>
+<tr class="row-odd"><td>fs</td>
+<td>{ts[x;”``”]}</td>
+</tr>
+<tr class="row-even"><td>p</td>
+<td>{x}</td>
+</tr>
+<tr class="row-odd"><td>bl</td>
+<td>{l[x;”* “]}</td>
+</tr>
+<tr class="row-even"><td>nl</td>
+<td>{l[x;”#. “]}</td>
+</tr>
+<tr class="row-odd"><td>lb</td>
+<td>{(“::”;”“),”  “,/:x}</td>
+</tr>
+<tr class="row-even"><td>dtb</td>
+<td>{eval parse x}</td>
+</tr>
+<tr class="row-odd"><td>tab</td>
+<td>{r:.Q.S[value[“\C”];0;0!x];if[“..”~last r;r:-1_r];h:.[count[r 0]#”=”;enlist where 1_1=deltas ” “&lt;&gt;r 0;:;” “];(h;r[0];h),(2_r),enlist h }</td>
+</tr>
+<tr class="row-even"><td>ul</td>
+<td>{(x;count[x]#y)}</td>
+</tr>
+<tr class="row-odd"><td>t</td>
+<td>{ul[x;”=”]}</td>
+</tr>
+<tr class="row-even"><td>st</td>
+<td>{ul[x;”-“]}</td>
+</tr>
+<tr class="row-odd"><td>img</td>
+<td>{“.. image:: “,x}</td>
+</tr>
+<tr class="row-even"><td>wrn</td>
+<td>{img[“images/warning.gif”]}</td>
+</tr>
+<tr class="row-odd"><td>tip</td>
+<td>{img[“images/tip.gif”]}</td>
+</tr>
+<tr class="row-even"><td>sst</td>
+<td>{ul[x;”~”]}</td>
+</tr>
+<tr class="row-odd"><td>olul</td>
+<td>{(t;x;t:count[x]#y)}</td>
+</tr>
+<tr class="row-even"><td>dt</td>
+<td>{olul[x;”=”]}</td>
+</tr>
+<tr class="row-odd"><td>dst</td>
+<td>{olul[x;”-“]}</td>
+</tr>
+<tr class="row-even"><td>l</td>
+<td>{y,/:x}</td>
+</tr>
+<tr class="row-odd"><td>csvt</td>
+<td>{( “.. csv-table:: “;”   :escape: ‘”;”   :widths: auto”;”   :header: “,”,”sv string cols x;”“),{”   “,”,” sv strif each value x} each x:0!x}</td>
+</tr>
+<tr class="row-even"><td>strif</td>
+<td>{$[10h=t:type x; x;t&lt;0;string x;s, ssr[ssr[.Q.s1[x];”’”;”’‘”];”“”;”’”“],s:”“”]}</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -172,6 +259,7 @@
 <li><a class="reference internal" href="#enumerated-list">Enumerated List</a></li>
 <li><a class="reference internal" href="#tables">Tables</a><ul>
 <li><a class="reference internal" href="#simple-table">Simple Table</a></li>
+<li><a class="reference internal" href="#csv-table">csv Table</a></li>
 </ul>
 </li>
 </ul>
