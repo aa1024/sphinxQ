@@ -78,6 +78,11 @@ csvt:{( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","s
 lbl:{".. _",sv["-";string x],"-label:"}
 /lbl[`trade`schema]
 
+/reference
+ref:{" :","ref",":`",sv["-";string x],"-label`"}
+/ref[`trade`schema]
+
+
 
 
 
