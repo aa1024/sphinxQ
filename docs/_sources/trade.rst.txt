@@ -1,5 +1,7 @@
 trade Table Details
 ===================
+.. _trade-schema-label:
+
 trade
 +++++
 Stores the Trade details

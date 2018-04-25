@@ -1,3 +1,5 @@
+.. _docq-sample-label:
+
 ==============
 Document Title
 ==============
@@ -9,6 +11,11 @@ Test Styles
 ===========
 
 A sample with paragraph, *italics*, **bold** and ``mono-space`` text style examples.
+
+Cross-referencing
+=================
+
+Link to :ref:`trade-schema-label`
 
 Lists
 =====
@@ -66,6 +73,8 @@ dst   {olul[x;"-"]}
 l     {y,/:x}                                                                                                                                     
 csvt  {( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","sv string cols x;""),{"   ","," sv strif each value x} each x:0!x}
 strif {$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];"'";"''"];"\"";"'\""],s:"\""]}                                                          
+lbl   {".. _",sv["-";string x],"-label:"}                                                                                                         
+ref   {" :","ref",":`",sv["-";string x],"-label`"}                                                                                                
 ===== ============================================================================================================================================
 
 csv Table
@@ -99,3 +108,5 @@ csv Table
    l,"{y,/:x}"
    csvt,"{( '".. csv-table:: '";'"   :escape: '''";'"   :widths: auto'";'"   :header: '",'",'"sv string cols x;'"'"),{'"   '",'",'" sv strif each value x} each x:0!x}"
    strif,"{$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];'"'''";'"'''''"];'"\'"'";'"''\'"'"],s:'"\'"'"]}"
+   lbl,"{'".. _'",sv['"-'";string x],'"-label:'"}"
+   ref,"{'" :'",'"ref'",'":`'",sv['"-'";string x],'"-label`'"}"

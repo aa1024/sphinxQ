@@ -31,12 +31,16 @@
           <div class="body" role="main">
             
   <div class="section" id="document-title">
-<h1>Document Title<a class="headerlink" href="#document-title" title="Permalink to this headline">¶</a></h1>
+<span id="docq-sample-label"></span><h1>Document Title<a class="headerlink" href="#document-title" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="document-subtitle">
 <h2>Document Subtitle<a class="headerlink" href="#document-subtitle" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="test-styles">
 <h3>Test Styles<a class="headerlink" href="#test-styles" title="Permalink to this headline">¶</a></h3>
 <p>A sample with paragraph, <em>italics</em>, <strong>bold</strong> and <code class="docutils literal notranslate"><span class="pre">mono-space</span></code> text style examples.</p>
+</div>
+<div class="section" id="cross-referencing">
+<h3>Cross-referencing<a class="headerlink" href="#cross-referencing" title="Permalink to this headline">¶</a></h3>
+<p>Link to <a class="reference internal" href="trade.html#trade-schema-label"><span class="std std-ref">trade</span></a></p>
 </div>
 <div class="section" id="lists">
 <h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
@@ -149,6 +153,12 @@
 <tr class="row-even"><td>strif</td>
 <td>{$[10h=t:type x; x;t&lt;0;string x;s, ssr[ssr[.Q.s1[x];”’”;”’‘”];”“”;”’”“],s:”“”]}</td>
 </tr>
+<tr class="row-odd"><td>lbl</td>
+<td>{“.. _”,sv[“-“;string x],”-label:”}</td>
+</tr>
+<tr class="row-even"><td>ref</td>
+<td>{” :”,”ref”,”:<cite>”,sv[“-“;string x],”-label</cite>”}</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -230,6 +240,12 @@
 <tr class="row-even"><td>strif</td>
 <td>{$[10h=t:type x; x;t&lt;0;string x;s, ssr[ssr[.Q.s1[x];”’”;”’‘”];”“”;”’”“],s:”“”]}</td>
 </tr>
+<tr class="row-odd"><td>lbl</td>
+<td>{“.. _”,sv[“-“;string x],”-label:”}</td>
+</tr>
+<tr class="row-even"><td>ref</td>
+<td>{” :”,”ref”,”:<cite>”,sv[“-“;string x],”-label</cite>”}</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -248,6 +264,7 @@
 <li><a class="reference internal" href="#">Document Title</a><ul>
 <li><a class="reference internal" href="#document-subtitle">Document Subtitle</a><ul>
 <li><a class="reference internal" href="#test-styles">Test Styles</a></li>
+<li><a class="reference internal" href="#cross-referencing">Cross-referencing</a></li>
 <li><a class="reference internal" href="#lists">Lists</a><ul>
 <li><a class="reference internal" href="#bullet-list">Bullet List</a><ul>
 <li><a class="reference internal" href="#bullet-list-with">Bullet List with *</a></li>
