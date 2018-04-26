@@ -8,6 +8,7 @@ t2:.docq.dst["Document Subtitle"];
 
 t3:t0,.docq.t["Test Styles"];
 t31:t0,enlist .docq.p["A sample with paragraph, "],.docq.i["italics"],", ",.docq.b["bold"]," and ",.docq.fs["mono-space"]," text style examples.";
+t32:t0,enlist .docq.p["Subscript H"],.docq.sub["2"],"O and Superscript E=mc",.docq.sup["2"]," examples.";
 
 t4:t0,.docq.t["Cross-referencing"];
 t41:t0,enlist "Link to",.docq.ref[`trade`schema];
@@ -28,5 +29,5 @@ t72:t0,.docq.tab ([] func:key[1_.docq];def:1_value[.docq]);
 t73:t0,.docq.st["csv Table"];
 t74:t0,.docq.csvt ([] func:key[1_.docq];def:1_value[.docq]);
 
-hsym[ `$getenv[`QDOCS],"\\source\\docQ.rst"]  0:  t01,t1,t2,t3,t31,t4,t41,t50,t5,t51,t52,t53,t54,t6,t61,t7,t71,t72,t73,t74
+hsym[ `$getenv[`QDOCS],"\\source\\docQ.rst"]  0:  t01,t1,t2,t3,t31,t32,t4,t41,t50,t5,t51,t52,t53,t54,t6,t61,t7,t71,t72,t73,t74
 
