@@ -17,6 +17,12 @@ p:{x}
 /p[([] 1 2 2 3)]
 /p .Q.s t
 
+
+sub:{"\\ :sub:`",x,"`\\"}
+/"H",sub["2"],"O"
+sup:{"\\ :sup:`",x,"`\\ "}
+/"E = mc",sup["2"]
+
 l:{y,/:x}
 /bullet list
 bl:{l[x;"* "]}
@@ -88,12 +94,9 @@ fn:{[fnl;fc] "    :",sv[" ";string (),fnl],": ",fc}
 /fn[fnl:`returns;"Price"]
 
 
-/sub
-/sup
 /include
 
-/H\ :sub:`2`\ O
-/E = mc\ :sup:`2`
+
 
 /.. include:: inclusion.txt
 / .. code-block:: language
