@@ -7,10 +7,25 @@ Document Title
 Document Subtitle
 -----------------
 
+.. include:: resources/inclusion.txt
+
 Test Styles
 ===========
 
 A sample with paragraph, *italics*, **bold** and ``mono-space`` text style examples.
+
+Subscript H\ :sub:`2`\O and Superscript E=mc\ :sup:`2`\  examples.
+
+Code Block
+==========
+
+.. code-block:: R
+    :emphasize-lines: 2-3
+    :caption: sample.q
+
+    sampleFunctParamDict:{[paramDict]
+      show avg[2 3 4];
+      count til 5;    }
 
 Cross-referencing
 =================
@@ -47,35 +62,40 @@ Tables
 Simple Table
 ------------
 
-===== ============================================================================================================================================
-func  def                                                                                                                                         
-===== ============================================================================================================================================
-ts    {y,x,y}                                                                                                                                     
-i     {ts[x;"*"]}                                                                                                                                 
-b     {ts[x;"**"]}                                                                                                                                
-fs    {ts[x;"``"]}                                                                                                                                
-p     {x}                                                                                                                                         
-bl    {l[x;"* "]}                                                                                                                                 
-nl    {l[x;"#. "]}                                                                                                                                
-lb    {("::";""),"  ",/:x}                                                                                                                        
-dtb   {eval parse x}                                                                                                                              
-tab   {r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r];h:.[count[r 0]#"=";enlist where 1_1=deltas " "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }   
-ul    {(x;count[x]#y)}                                                                                                                            
-t     {ul[x;"="]}                                                                                                                                 
-st    {ul[x;"-"]}                                                                                                                                 
-img   {".. image:: ",x}                                                                                                                           
-wrn   {img["images/warning.gif"]}                                                                                                                 
-tip   {img["images/tip.gif"]}                                                                                                                     
-sst   {ul[x;"~"]}                                                                                                                                 
-olul  {(t;x;t:count[x]#y)}                                                                                                                        
-dt    {olul[x;"="]}                                                                                                                               
-dst   {olul[x;"-"]}                                                                                                                               
-l     {y,/:x}                                                                                                                                     
-csvt  {( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","sv string cols x;""),{"   ","," sv strif each value x} each x:0!x}
-strif {$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];"'";"''"];"\"";"'\""],s:"\""]}                                                          
-lbl   {".. _",sv["-";string x],"-label:"}                                                                                                         
-ref   {" :","ref",":`",sv["-";string x],"-label`"}                                                                                                
-===== ============================================================================================================================================
+===== ==================================================================================================================================================================================================
+func  def                                                                                                                                                                                               
+===== ==================================================================================================================================================================================================
+ts    {y,x,y}                                                                                                                                                                                           
+i     {ts[x;"*"]}                                                                                                                                                                                       
+b     {ts[x;"**"]}                                                                                                                                                                                      
+fs    {ts[x;"``"]}                                                                                                                                                                                      
+p     {x}                                                                                                                                                                                               
+sub   {"\\ :sub:`",x,"`\\"}                                                                                                                                                                             
+sup   {"\\ :sup:`",x,"`\\ "}                                                                                                                                                                            
+l     {y,/:x}                                                                                                                                                                                           
+bl    {l[x;"* "]}                                                                                                                                                                                       
+nl    {l[x;"#. "]}                                                                                                                                                                                      
+lb    {("::";""),"  ",/:x}                                                                                                                                                                              
+dtb   {eval parse x}                                                                                                                                                                                    
+tab   {r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r];h:.[count[r 0]#"=";enlist where 1_1=deltas " "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }                                                         
+ul    {(x;count[x]#y)}                                                                                                                                                                                  
+t     {ul[x;"="]}                                                                                                                                                                                       
+st    {ul[x;"-"]}                                                                                                                                                                                       
+sst   {ul[x;"~"]}                                                                                                                                                                                       
+olul  {(t;x;t:count[x]#y)}                                                                                                                                                                              
+dt    {olul[x;"="]}                                                                                                                                                                                     
+dst   {olul[x;"-"]}                                                                                                                                                                                     
+img   {".. image:: ",x}                                                                                                                                                                                 
+wrn   {img["images/warning.gif"]}                                                                                                                                                                       
+tip   {img["images/tip.gif"]}                                                                                                                                                                           
+strif {$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];"'";"''"];"\"";"'\""],s:"\""]}                                                                                                                
+csvt  {( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","sv string cols x;""),{"   ","," sv strif each value x} each x:0!x}                                                      
+lbl   {".. _",sv["-";string x],"-label:"}                                                                                                                                                               
+ref   {" :","ref",":`",sv["-";string x],"-label`"}                                                                                                                                                      
+fn    {[fnl;fc] "    :",sv[" ";string (),fnl],": ",fc}                                                                                                                                                  
+inc   {".. include:: ",x}                                                                                                                                                                               
+code  {[l;e;fn;c]   r:".. ","code","-block",":: ",string l;r,:"\n";   if[ not e~"" ;r,:("    :emphasize-lines: ",e);r,:"\n"];   if[not null fn;r,:"    :caption: ",string[fn];r,:"\n"];   r,("\n",c)   }
+===== ==================================================================================================================================================================================================
 
 csv Table
 ---------
@@ -90,6 +110,9 @@ csv Table
    b,"{ts[x;'"**'"]}"
    fs,"{ts[x;'"``'"]}"
    p,"{x}"
+   sub,"{'"\\ :sub:`'",x,'"`\\'"}"
+   sup,"{'"\\ :sup:`'",x,'"`\\ '"}"
+   l,"{y,/:x}"
    bl,"{l[x;'"* '"]}"
    nl,"{l[x;'"#. '"]}"
    lb,"{('"::'";'"'"),'"  '",/:x}"
@@ -98,15 +121,17 @@ csv Table
    ul,"{(x;count[x]#y)}"
    t,"{ul[x;'"='"]}"
    st,"{ul[x;'"-'"]}"
-   img,"{'".. image:: '",x}"
-   wrn,"{img['"images/warning.gif'"]}"
-   tip,"{img['"images/tip.gif'"]}"
    sst,"{ul[x;'"~'"]}"
    olul,"{(t;x;t:count[x]#y)}"
    dt,"{olul[x;'"='"]}"
    dst,"{olul[x;'"-'"]}"
-   l,"{y,/:x}"
-   csvt,"{( '".. csv-table:: '";'"   :escape: '''";'"   :widths: auto'";'"   :header: '",'",'"sv string cols x;'"'"),{'"   '",'",'" sv strif each value x} each x:0!x}"
+   img,"{'".. image:: '",x}"
+   wrn,"{img['"images/warning.gif'"]}"
+   tip,"{img['"images/tip.gif'"]}"
    strif,"{$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];'"'''";'"'''''"];'"\'"'";'"''\'"'"],s:'"\'"'"]}"
+   csvt,"{( '".. csv-table:: '";'"   :escape: '''";'"   :widths: auto'";'"   :header: '",'",'"sv string cols x;'"'"),{'"   '",'",'" sv strif each value x} each x:0!x}"
    lbl,"{'".. _'",sv['"-'";string x],'"-label:'"}"
    ref,"{'" :'",'"ref'",'":`'",sv['"-'";string x],'"-label`'"}"
+   fn,"{[fnl;fc] '"    :'",sv['" '";string (),fnl],'": '",fc}"
+   inc,"{'".. include:: '",x}"
+   code,"{[l;e;fn;c]   r:'".. '",'"code'",'"-block'",'":: '",string l;r,:'"\n'";   if[ not e~'"'" ;r,:('"    :emphasize-lines: '",e);r,:'"\n'"];   if[not null fn;r,:'"    :caption: '",string[fn];r,:'"\n'"];   r,('"\n'",c)   }"

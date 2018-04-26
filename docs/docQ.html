@@ -34,9 +34,22 @@
 <span id="docq-sample-label"></span><h1>Document Title<a class="headerlink" href="#document-title" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="document-subtitle">
 <h2>Document Subtitle<a class="headerlink" href="#document-subtitle" title="Permalink to this headline">¶</a></h2>
+<p>A proof of concept around the commenting the q code with some predifined tags which would generate html/wiki style documents.</p>
 <div class="section" id="test-styles">
 <h3>Test Styles<a class="headerlink" href="#test-styles" title="Permalink to this headline">¶</a></h3>
 <p>A sample with paragraph, <em>italics</em>, <strong>bold</strong> and <code class="docutils literal notranslate"><span class="pre">mono-space</span></code> text style examples.</p>
+<p>Subscript H<sub>2</sub>O and Superscript E=mc<sup>2</sup> examples.</p>
+</div>
+<div class="section" id="code-block">
+<h3>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h3>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">sample.q</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>sampleFunctParamDict<span class="o">:</span><span class="p">{[</span>paramDict<span class="p">]</span>
+<span class="hll">  show avg<span class="p">[</span><span class="m">2</span> <span class="m">3</span> <span class="m">4</span><span class="p">];</span>
+</span><span class="hll">  count til <span class="m">5</span><span class="p">;</span>    <span class="p">}</span>
+</span></pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="cross-referencing">
 <h3>Cross-referencing<a class="headerlink" href="#cross-referencing" title="Permalink to this headline">¶</a></h3>
@@ -99,38 +112,38 @@
 <tr class="row-even"><td>p</td>
 <td>{x}</td>
 </tr>
-<tr class="row-odd"><td>bl</td>
+<tr class="row-odd"><td>sub</td>
+<td>{“\ <sub>“,x,”</sub>&quot;}</td>
+</tr>
+<tr class="row-even"><td>sup</td>
+<td>{“\ <sup>“,x,”</sup>\ “}</td>
+</tr>
+<tr class="row-odd"><td>l</td>
+<td>{y,/:x}</td>
+</tr>
+<tr class="row-even"><td>bl</td>
 <td>{l[x;”* “]}</td>
 </tr>
-<tr class="row-even"><td>nl</td>
+<tr class="row-odd"><td>nl</td>
 <td>{l[x;”#. “]}</td>
 </tr>
-<tr class="row-odd"><td>lb</td>
+<tr class="row-even"><td>lb</td>
 <td>{(“::”;”“),”  “,/:x}</td>
 </tr>
-<tr class="row-even"><td>dtb</td>
+<tr class="row-odd"><td>dtb</td>
 <td>{eval parse x}</td>
 </tr>
-<tr class="row-odd"><td>tab</td>
+<tr class="row-even"><td>tab</td>
 <td>{r:.Q.S[value[“\C”];0;0!x];if[“..”~last r;r:-1_r];h:.[count[r 0]#”=”;enlist where 1_1=deltas ” “&lt;&gt;r 0;:;” “];(h;r[0];h),(2_r),enlist h }</td>
 </tr>
-<tr class="row-even"><td>ul</td>
+<tr class="row-odd"><td>ul</td>
 <td>{(x;count[x]#y)}</td>
 </tr>
-<tr class="row-odd"><td>t</td>
+<tr class="row-even"><td>t</td>
 <td>{ul[x;”=”]}</td>
 </tr>
-<tr class="row-even"><td>st</td>
+<tr class="row-odd"><td>st</td>
 <td>{ul[x;”-“]}</td>
-</tr>
-<tr class="row-odd"><td>img</td>
-<td>{“.. image:: “,x}</td>
-</tr>
-<tr class="row-even"><td>wrn</td>
-<td>{img[“images/warning.gif”]}</td>
-</tr>
-<tr class="row-odd"><td>tip</td>
-<td>{img[“images/tip.gif”]}</td>
 </tr>
 <tr class="row-even"><td>sst</td>
 <td>{ul[x;”~”]}</td>
@@ -144,20 +157,35 @@
 <tr class="row-odd"><td>dst</td>
 <td>{olul[x;”-“]}</td>
 </tr>
-<tr class="row-even"><td>l</td>
-<td>{y,/:x}</td>
+<tr class="row-even"><td>img</td>
+<td>{“.. image:: “,x}</td>
 </tr>
-<tr class="row-odd"><td>csvt</td>
-<td>{( “.. csv-table:: “;”   :escape: ‘”;”   :widths: auto”;”   :header: “,”,”sv string cols x;”“),{”   “,”,” sv strif each value x} each x:0!x}</td>
+<tr class="row-odd"><td>wrn</td>
+<td>{img[“images/warning.gif”]}</td>
 </tr>
-<tr class="row-even"><td>strif</td>
+<tr class="row-even"><td>tip</td>
+<td>{img[“images/tip.gif”]}</td>
+</tr>
+<tr class="row-odd"><td>strif</td>
 <td>{$[10h=t:type x; x;t&lt;0;string x;s, ssr[ssr[.Q.s1[x];”’”;”’‘”];”“”;”’”“],s:”“”]}</td>
+</tr>
+<tr class="row-even"><td>csvt</td>
+<td>{( “.. csv-table:: “;”   :escape: ‘”;”   :widths: auto”;”   :header: “,”,”sv string cols x;”“),{”   “,”,” sv strif each value x} each x:0!x}</td>
 </tr>
 <tr class="row-odd"><td>lbl</td>
 <td>{“.. _”,sv[“-“;string x],”-label:”}</td>
 </tr>
 <tr class="row-even"><td>ref</td>
 <td>{” :”,”ref”,”:<cite>”,sv[“-“;string x],”-label</cite>”}</td>
+</tr>
+<tr class="row-odd"><td>fn</td>
+<td>{[fnl;fc] ”    :”,sv[” “;string (),fnl],”: “,fc}</td>
+</tr>
+<tr class="row-even"><td>inc</td>
+<td>{“.. include:: “,x}</td>
+</tr>
+<tr class="row-odd"><td>code</td>
+<td>{[l;e;fn;c]   r:”.. “,”code”,”-block”,”:: “,string l;r,:”n”;   if[ not e~”” ;r,:(”    :emphasize-lines: “,e);r,:”n”];   if[not null fn;r,:”    :caption: “,string[fn];r,:”n”];   r,(“n”,c)   }</td>
 </tr>
 </tbody>
 </table>
@@ -186,38 +214,38 @@
 <tr class="row-even"><td>p</td>
 <td>{x}</td>
 </tr>
-<tr class="row-odd"><td>bl</td>
+<tr class="row-odd"><td>sub</td>
+<td>{“\ <sub>“,x,”</sub>&quot;}</td>
+</tr>
+<tr class="row-even"><td>sup</td>
+<td>{“\ <sup>“,x,”</sup>\ “}</td>
+</tr>
+<tr class="row-odd"><td>l</td>
+<td>{y,/:x}</td>
+</tr>
+<tr class="row-even"><td>bl</td>
 <td>{l[x;”* “]}</td>
 </tr>
-<tr class="row-even"><td>nl</td>
+<tr class="row-odd"><td>nl</td>
 <td>{l[x;”#. “]}</td>
 </tr>
-<tr class="row-odd"><td>lb</td>
+<tr class="row-even"><td>lb</td>
 <td>{(“::”;”“),”  “,/:x}</td>
 </tr>
-<tr class="row-even"><td>dtb</td>
+<tr class="row-odd"><td>dtb</td>
 <td>{eval parse x}</td>
 </tr>
-<tr class="row-odd"><td>tab</td>
+<tr class="row-even"><td>tab</td>
 <td>{r:.Q.S[value[“\C”];0;0!x];if[“..”~last r;r:-1_r];h:.[count[r 0]#”=”;enlist where 1_1=deltas ” “&lt;&gt;r 0;:;” “];(h;r[0];h),(2_r),enlist h }</td>
 </tr>
-<tr class="row-even"><td>ul</td>
+<tr class="row-odd"><td>ul</td>
 <td>{(x;count[x]#y)}</td>
 </tr>
-<tr class="row-odd"><td>t</td>
+<tr class="row-even"><td>t</td>
 <td>{ul[x;”=”]}</td>
 </tr>
-<tr class="row-even"><td>st</td>
+<tr class="row-odd"><td>st</td>
 <td>{ul[x;”-“]}</td>
-</tr>
-<tr class="row-odd"><td>img</td>
-<td>{“.. image:: “,x}</td>
-</tr>
-<tr class="row-even"><td>wrn</td>
-<td>{img[“images/warning.gif”]}</td>
-</tr>
-<tr class="row-odd"><td>tip</td>
-<td>{img[“images/tip.gif”]}</td>
 </tr>
 <tr class="row-even"><td>sst</td>
 <td>{ul[x;”~”]}</td>
@@ -231,20 +259,35 @@
 <tr class="row-odd"><td>dst</td>
 <td>{olul[x;”-“]}</td>
 </tr>
-<tr class="row-even"><td>l</td>
-<td>{y,/:x}</td>
+<tr class="row-even"><td>img</td>
+<td>{“.. image:: “,x}</td>
 </tr>
-<tr class="row-odd"><td>csvt</td>
-<td>{( “.. csv-table:: “;”   :escape: ‘”;”   :widths: auto”;”   :header: “,”,”sv string cols x;”“),{”   “,”,” sv strif each value x} each x:0!x}</td>
+<tr class="row-odd"><td>wrn</td>
+<td>{img[“images/warning.gif”]}</td>
 </tr>
-<tr class="row-even"><td>strif</td>
+<tr class="row-even"><td>tip</td>
+<td>{img[“images/tip.gif”]}</td>
+</tr>
+<tr class="row-odd"><td>strif</td>
 <td>{$[10h=t:type x; x;t&lt;0;string x;s, ssr[ssr[.Q.s1[x];”’”;”’‘”];”“”;”’”“],s:”“”]}</td>
+</tr>
+<tr class="row-even"><td>csvt</td>
+<td>{( “.. csv-table:: “;”   :escape: ‘”;”   :widths: auto”;”   :header: “,”,”sv string cols x;”“),{”   “,”,” sv strif each value x} each x:0!x}</td>
 </tr>
 <tr class="row-odd"><td>lbl</td>
 <td>{“.. _”,sv[“-“;string x],”-label:”}</td>
 </tr>
 <tr class="row-even"><td>ref</td>
 <td>{” :”,”ref”,”:<cite>”,sv[“-“;string x],”-label</cite>”}</td>
+</tr>
+<tr class="row-odd"><td>fn</td>
+<td>{[fnl;fc] ”    :”,sv[” “;string (),fnl],”: “,fc}</td>
+</tr>
+<tr class="row-even"><td>inc</td>
+<td>{“.. include:: “,x}</td>
+</tr>
+<tr class="row-odd"><td>code</td>
+<td>{[l;e;fn;c]   r:”.. “,”code”,”-block”,”:: “,string l;r,:”n”;   if[ not e~”” ;r,:(”    :emphasize-lines: “,e);r,:”n”];   if[not null fn;r,:”    :caption: “,string[fn];r,:”n”];   r,(“n”,c)   }</td>
 </tr>
 </tbody>
 </table>
@@ -264,6 +307,7 @@
 <li><a class="reference internal" href="#">Document Title</a><ul>
 <li><a class="reference internal" href="#document-subtitle">Document Subtitle</a><ul>
 <li><a class="reference internal" href="#test-styles">Test Styles</a></li>
+<li><a class="reference internal" href="#code-block">Code Block</a></li>
 <li><a class="reference internal" href="#cross-referencing">Cross-referencing</a></li>
 <li><a class="reference internal" href="#lists">Lists</a><ul>
 <li><a class="reference internal" href="#bullet-list">Bullet List</a><ul>
