@@ -17,12 +17,14 @@ p:{x}
 /p[([] 1 2 2 3)]
 /p .Q.s t
 
-
+/subscript
 sub:{"\\ :sub:`",x,"`\\"}
 /"H",sub["2"],"O"
+/superscript
 sup:{"\\ :sup:`",x,"`\\ "}
 /"E = mc",sup["2"]
 
+/list
 l:{y,/:x}
 /bullet list
 bl:{l[x;"* "]}
@@ -95,13 +97,14 @@ fn:{[fnl;fc] "    :",sv[" ";string (),fnl],": ",fc}
 
 
 /include
-
+inc:{".. include:: ",x}
+/inc["resources/inclusion.txt"]
 
 
 /.. include:: inclusion.txt
-/ .. code-block:: language
+/.. code-block:: language
 /Substitutions
-
+/ .. image:: 
 
 
 
