@@ -82,8 +82,22 @@ lbl:{".. _",sv["-";string x],"-label:"}
 ref:{" :","ref",":`",sv["-";string x],"-label`"}
 /ref[`trade`schema]
 
+/field list
+fn:{[fnl;fc] "    :",sv[" ";string (),fnl],": ",fc}
+/fn[fnl:`param`sym;"Instrument Id"]
+/fn[fnl:`returns;"Price"]
 
 
+/sub
+/sup
+/include
+
+/H\ :sub:`2`\ O
+/E = mc\ :sup:`2`
+
+/.. include:: inclusion.txt
+/ .. code-block:: language
+/Substitutions
 
 
 
