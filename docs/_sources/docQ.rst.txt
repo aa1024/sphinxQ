@@ -9,6 +9,44 @@ Document Subtitle
 
 .. include:: resources/inclusion.txt
 
+
+.. |info| image:: resources/images/info.png
+             :alt: Info!
+
+
+.. warning::
+
+   Some warning!     
+
+.. attention::
+
+   Some attention!  
+
+.. error::
+
+   Some error!  
+
+.. tip::
+
+   Some tip!  
+
+.. caution::
+
+   Some caution!  
+
+.. danger::
+
+   Some danger!  
+
+.. hint::
+
+   Some hint!  
+
+
+.. important:: There must be a space between the link text and the opening \< for the URL.
+
+        
+
 Test Styles
 ===========
 
