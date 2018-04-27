@@ -12,7 +12,8 @@ t3:t0,.docq.t["Test Styles"];
 t31:t0,enlist .docq.p["A sample with paragraph, "],.docq.i["italics"],", ",.docq.b["bold"]," and ",.docq.fs["mono-space"]," text style examples.";
 t32:t0,enlist .docq.p["Subscript H"],.docq.sub["2"],"O and Superscript E=mc",.docq.sup["2"]," examples.";
 
-t33:t0,enlist .docq.code[`R;"2-3";`sample.q;c:"    sampleFunctParamDict:{[paramDict]\n      show avg[2 3 4];\n      count til 5;    }"];
+t33:t0,.docq.t["Code Block"];
+t34:t0,enlist .docq.code[`R;"2-3";`sample.q;c:"    sampleFunctParamDict:{[paramDict]\n      show avg[2 3 4];\n      count til 5;    }"];
 
 
 t4:t0,.docq.t["Cross-referencing"];

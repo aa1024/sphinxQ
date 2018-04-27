@@ -95,7 +95,6 @@ fn:{[fnl;fc] "    :",sv[" ";string (),fnl],": ",fc}
 /fn[fnl:`param`sym;"Instrument Id"]
 /fn[fnl:`returns;"Price"]
 
-
 /include
 inc:{".. include:: ",x}
 /inc["resources/inclusion.txt"]
@@ -103,7 +102,6 @@ inc:{".. include:: ",x}
 code:{[l;e;fn;c]   r:".. ","code","-block",":: ",string l;r,:"\n";   if[ not e~"" ;r,:("    :emphasize-lines: ",e);r,:"\n"];   if[not null fn;r,:"    :caption: ",string[fn];r,:"\n"];   r,("\n",c)   }
 /code[l:`R;e:"";fn:`;c:"    sampleFunctParamDict:{[paramDict]\n      show avg[2 3 4];\n      count til 5;    }"]
 
-/.. code-block:: language
 /Substitutions
 / .. image:: 
 
