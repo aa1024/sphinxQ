@@ -9,6 +9,7 @@
     <title>Document Title &#8212; docQ 0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -66,6 +67,29 @@
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">There must be a space between the link text and the opening &lt; for the URL.</p>
+</div>
+<div class="section" id="toggle-example">
+<h3>Toggle Example<a class="headerlink" href="#toggle-example" title="Permalink to this headline">¶</a></h3>
+<p>Click <strong>Show/Hide contents</strong> to toggle the contents.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Show/Hide content</strong></div>
+<p>A sample with paragraph, <em>italics</em>, <strong>bold</strong> and <code class="docutils literal notranslate"><span class="pre">mono-space</span></code> text style examples.</p>
+<p>Subscript H<sub>2</sub>O and Superscript E=mc<sup>2</sup> examples.</p>
+</div>
+</div>
+<div class="section" id="toggle-code">
+<h3>Toggle Code<a class="headerlink" href="#toggle-code" title="Permalink to this headline">¶</a></h3>
+<p>Click <strong>Show/Hide code</strong> to toggle the contents.</p>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>Show/Hide code</strong></div>
+<div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>show sums <span class="m">-5</span><span class="o">?</span><span class="m">100</span>
+<span class="kc">...</span>
+</pre></div>
+</td></tr></table></div>
+</div>
 </div>
 <div class="section" id="test-styles">
 <h3>Test Styles<a class="headerlink" href="#test-styles" title="Permalink to this headline">¶</a></h3>
@@ -338,6 +362,8 @@
   <ul>
 <li><a class="reference internal" href="#">Document Title</a><ul>
 <li><a class="reference internal" href="#document-subtitle">Document Subtitle</a><ul>
+<li><a class="reference internal" href="#toggle-example">Toggle Example</a></li>
+<li><a class="reference internal" href="#toggle-code">Toggle Code</a></li>
 <li><a class="reference internal" href="#test-styles">Test Styles</a></li>
 <li><a class="reference internal" href="#code-block">Code Block</a></li>
 <li><a class="reference internal" href="#cross-referencing">Cross-referencing</a></li>
@@ -391,20 +417,16 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2018, nyi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/docQ.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
 
-    
-
-    
   </body>
 </html>
