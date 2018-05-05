@@ -47,6 +47,41 @@ Document Subtitle
 
         
 
+
+Toggle Example
+==============
+
+Click **Show/Hide contents** to toggle the contents.
+
+.. container:: toggle
+
+    .. container:: header
+
+        **Show/Hide content**
+
+    A sample with paragraph, *italics*, **bold** and ``mono-space`` text style examples.
+
+    Subscript H\ :sub:`2`\O and Superscript E=mc\ :sup:`2`\  examples.
+
+
+Toggle Code
+===========
+
+Click **Show/Hide code** to toggle the contents.
+
+.. container:: toggle
+
+    .. container:: header
+
+        **Show/Hide code**
+
+    .. code-block:: R
+       :linenos:
+
+       show sums -5?100
+       ...
+
+
 Test Styles
 ===========
 
