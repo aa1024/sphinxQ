@@ -114,7 +114,8 @@ split:{[t;s] t vs s}
 
 
 /Substitutions
-/ .. image:: 
+img:{[f] ".. image:: ",string[f]}
+//img[`$"resources/images/docq.png"]
 
 toggle:{[h;b] (enlist ".. container:: toggle\n    .. container:: header\n        **",h,"**\n"),#[4;" "],/: enlist b};
 toggle[h:"show/hide";b:code[l:`R;e:"";fn:`;c:"    sampleFunctParamDict:{[paramDict]\n      show avg[2 3 4];\n      count til 5;    }"]]
