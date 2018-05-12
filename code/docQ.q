@@ -103,22 +103,32 @@ code:{[l;e;fn;c]
     :(".. ","code","-block",":: ",string l; 
         $[e~"";"";"    :emphasize-lines: ",e];   
         $[null fn;"";"    :caption: ",string[fn]];""),
-        ind[4;]each mlc[c]  }
+        ind[4;]each ml[c]  }
 /show  code[l:`R;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]
 
 //multiline code
-mlc:{[x] $[0h<>type x;enlist x;x]}
+ml:{[x] $[0h<>type x;enlist x;x]}
 //indent
 ind:{[c;l]#[c;" "],l}
 split:{[t;s] t vs s}
-
 
 /Substitutions
 img:{[f] ".. image:: ",string[f]}
 //img[`$"resources/images/docq.png"]
 
-toggle:{[h;b] (".. container:: toggle";"";"    .. container:: header";"";"        **",h,"**"),ind[4]each b};
+toggle:{[h;b] (".. container:: toggle";"";"    .. container:: header";"";"        **",h,"**"),ind[4]each ml[b]};
 /show toggle[h:"show/hide code";b:code[l:`j;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]]
+
+//admonition 
+adm:{[a;b] (".. ",string[a],"::";""),ind[4;]each ml[b]}
+/show adm[`warning;"Some Info"]
+err:{[b]alert[`error;b]}
+warn:{[b]alert[`warning;b]}
+tip:{[b]alert[`tip;b]}
+imp:{[b]alert[`important;b]}
+/other admonition supported - danger,caution,hint,attention
+
+
 
 
 
