@@ -99,8 +99,19 @@ fn:{[fnl;fc] "    :",sv[" ";string (),fnl],": ",fc}
 inc:{".. include:: ",x}
 /inc["resources/inclusion.txt"]
 
-code:{[l;e;fn;c]   r:".. ","code","-block",":: ",string l;r,:"\n";   if[ not e~"" ;r,:("    :emphasize-lines: ",e);r,:"\n"];   if[not null fn;r,:"    :caption: ",string[fn];r,:"\n"];   r,("\n",c)   }
-/show code[l:`R;e:"";fn:`;c:"    sampleFunctParamDict:{[paramDict]\n      show avg[2 3 4];\n      count til 5;    }"]
+code:{[l;e;fn;c]   
+    :(".. ","code","-block",":: ",string l; 
+        $[e~"";"";"    :emphasize-lines: ",e];   
+        $[null fn;"";"    :caption: ",string[fn]];""),
+        ind[4;]each mlc[c]  }
+/show  code[l:`R;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]
+
+//multiline code
+mlc:{[x] $[0h<>type x;enlist x;x]}
+//indent
+ind:{[c;l]#[c;" "],l}
+split:{[t;s] t vs s}
+
 
 /Substitutions
 / .. image:: 
