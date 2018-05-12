@@ -78,6 +78,7 @@ img:{".. image:: ",x}
 wrn:{img["images/warning.gif"]}
 tip:{img["images/tip.gif"]}
 
+/TODO - Simplify the csv logic
 strif:{$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];"'";"''"];"\"";"'\""],s:"\""]}
 csvt:{( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","sv string cols x;""),{"   ","," sv strif each value x} each x:0!x}
 /\l sp.q
