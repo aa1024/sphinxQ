@@ -10,10 +10,13 @@ Document Subtitle
 .. include:: resources/inclusion.txt
 
 
+.. |info| image:: resources/images/info.png
+             :alt: Info!
+
 
 .. warning::
 
-    Some Info
+   Some warning!     
 
 .. attention::
 
@@ -96,29 +99,6 @@ Code Block
     sampleFunctParamDict:{[paramDict]
       show avg[2 3 4];
       count til 5;    }
-
-
-.. code-block:: R
-
-
-
-    show avg[2 3 4]
-    count til 5
-
-.. image:: resources/images/docq.png
-
-.. container:: toggle
-
-    .. container:: header
-
-        **show/hide code**
-    .. code-block:: j
-        :emphasize-lines: 2
-    
-    
-        show avg[2 3 4]
-        count til 5
-
 
 Cross-referencing
 =================
