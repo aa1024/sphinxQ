@@ -117,8 +117,8 @@ split:{[t;s] t vs s}
 img:{[f] ".. image:: ",string[f]}
 //img[`$"resources/images/docq.png"]
 
-toggle:{[h;b] (enlist ".. container:: toggle\n    .. container:: header\n        **",h,"**\n"),#[4;" "],/: enlist b};
-toggle[h:"show/hide";b:code[l:`R;e:"";fn:`;c:"    sampleFunctParamDict:{[paramDict]\n      show avg[2 3 4];\n      count til 5;    }"]]
+toggle:{[h;b] (".. container:: toggle";"";"    .. container:: header";"";"        **",h,"**"),ind[4]each b};
+/show toggle[h:"show/hide code";b:code[l:`j;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]]
 
 
 
