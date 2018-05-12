@@ -1,3 +1,5 @@
+import`str;
+
 \d .docq
 
 /text styles
