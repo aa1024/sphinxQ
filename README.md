@@ -49,6 +49,6 @@ Table row; cells are "|" (pipe) separated.
 
 
 ## Rules
-#. Search for all the lines containing `/**`
-#. Ingore the second appearance of `/**` just like in above line and this line.
-#. For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
+* Search for all the lines containing `/**`
+* Ingore the second appearance of `/**` just like in above line and this line.
+* For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
