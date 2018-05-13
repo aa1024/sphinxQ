@@ -1,3 +1,4 @@
+//TODO rename the docq files
 import`str;
 
 \d .docq
@@ -14,16 +15,16 @@ b:{ts[x;"**"]}
 /fixed-space or mono-space
 fs:{ts[x;"``"]}
 
+//TODO 
 /paragraph
 p:{x}
 /p[([] 1 2 2 3)]
-/p .Q.s t
 
 /subscript
 sub:{"\\ :sub:`",x,"`\\"}
 /"H",sub["2"],"O"
 /superscript
-sup:{"\\ :sup:`",x,"`\\ "}
+sup:{"\\ :sup:`",x,"`\\"}
 /"E = mc",sup["2"]
 
 /list
