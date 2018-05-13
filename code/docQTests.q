@@ -1,29 +1,30 @@
-/@desc String helper functions tests
+/@desc docQ helper functions tests
 
-\d .strTests
+\d .docQTests
 
 import `str`unittest;
 
 .unittest.init[];
 
-//Snakecase test
-.unittest.assert[`.str.sc; enlist "An example of Snake case" ; "An_example_of_Snake_case"];
+//Italics test
+.unittest.assert[`.docq.i; enlist "italics" ;"*italics*"];
 
-//Train case test
-.unittest.assert[`.str.tc; enlist "An example of Train case" ; "An-example-of-Train-case"];
+//Bold test
+.unittest.assert[`.docq.b; enlist "bold" ;"**bold**"];
 
-//Camelcase test
-.unittest.assert[`.str.cc; enlist "camel-case_function_TEST" ; "camelCaseFunctionTest"];
-.unittest.assert[`.str.cc;enlist "Another Test";"anotherTest"];
+//Fixed-space/Monospace test
+.unittest.assert[`.docq.fs; enlist "mono-space" ;"``mono-space``"];
 
-//Uncamelcase test
-.unittest.assert[`.str.ucc;enlist "addSpaceBetweenCamelCase";"add space between camel case" ];
+//paragraph test
+.unittest.assert[`.docq.p; enlist "paragraph" ;"paragraph"];
 
-//underscore
-.unittest.assert[`.str.us;enlist "underscoreSeperatedText";"underscore_seperated_text"];
+//Subscript test
+.unittest.assert[`.docq.sub; enlist "2" ;"\\ :sub:`2`\\"];
 
-//swapcase test
-.unittest.assert[`.str.fc;enlist "FlipCase";"fLIPcASE"];
+//Superscript test
+.unittest.assert[`.docq.sup; enlist "2" ;"\\ :sup:`2`\\"];
+
+
 
 //Space Fill Test
 .unittest.assert[`.str.sfl; (3;12);" 12"];
