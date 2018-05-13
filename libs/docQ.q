@@ -41,8 +41,9 @@ nl:{l[x;"#. "]}
 lb:{("::";""),"  ",/:x}
 /lb string`trade`price
 
-/doctest block
-dtb:{eval parse x}
+/doctest block - evaluate the block 
+/TODO protect the execution 
+dtb:{.Q.s eval parse x}
 /dtb ("{x*y}[3;2]")
 
 /simple table @TODO need to revisit this function
