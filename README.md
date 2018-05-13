@@ -38,7 +38,7 @@ Output returned by the function
 It can be used to define the keywords that can be found by browsing.  
 
 ### @schema
-To specify a schema defination ; should be used with `@heaader` and `@row`
+To specify a schema defination ; should be used with `@header` and `@row`
 
 ### @header
 Table header; the columns can be defined using pipe (e.g. `Col1|Col2|Col3`).
@@ -49,6 +49,6 @@ Table row; cells are `|` (pipe) separated.
 
 
 ## Rules
-* Search for all the lines containing `/**`
-* Ingore the second appearance of `/**` just like in above line and this line.
+* Search for all the lines containing `/# `
+* Ingore the second appearance of `/# ` just like in above line and this line.
 * For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
