@@ -1,4 +1,4 @@
-# docQ
+# doc[Q]
 A proof of concept around the commenting the q code with some predifined tags which would generate html/wiki style documents.
 
 ## Tags
@@ -14,19 +14,25 @@ Explanation of the function , package, paramaters etc. it will be used as paragr
 ### @function
 Name of the function 
 
-@alias
+### @alias
 
 ### @param
 Input Parameter to the function
 
-### @returns
+### @return
 Output returned by the function
 
-@error
+### @error
 
-@code
+### @code
 
-@refer
+### @see
+
+### @file
+
+### @todo
+
+### @version
 
 ### @tags
 It can be used to define the keywords that can be found by browsing.  
@@ -40,3 +46,9 @@ It can be used with or without schema tag.
 
 ### @row 
 Table row; cells are "|" (pipe) separated.
+
+
+## Rules
+### * Search for all the lines containing /**
+###  * Ingore the second appearance of /** just like above line and this line.
+###  * For few tags (package, function, schema etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
