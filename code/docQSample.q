@@ -22,9 +22,9 @@ t41:t0,enlist "Link to",.docq.ref[`trade`schema];
 t50:t0,.docq.t["Lists"];
 t5:t0,.docq.st["Bullet List"];
 t51:t0,.docq.sst["Bullet List with *"];
-t52:t0,.docq.bl[("Bullet 1";"Bulltet 2")];
+t52:t0,.docq.bl[("Bullet 1";"Bullet 2")];
 t53:t0,.docq.sst["Bullet List with -"];
-t54:t0,.docq.l[("Bullet 1";"Bulltet 2");"- "];
+t54:t0,.docq.l[("Bullet 1";"Bullet 2");"- "];
 
 t6:t0,.docq.t["Enumerated List"];
 t61:t0,.docq.nl[("Item 1";"Item 2")];
