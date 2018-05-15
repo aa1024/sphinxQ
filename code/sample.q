@@ -1,4 +1,6 @@
-/## @package sample Group of sample function for document generation
+/## @file Sample.q Group of sample function for document generation
+
+/## @package example
 
 /## @function sampleFunctParamDict A sample function to generate 
 /##. an inline table for input parameter dictionary
