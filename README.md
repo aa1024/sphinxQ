@@ -49,10 +49,10 @@ Table row; cells are `|` (pipe) separated.
 
 
 ## Rules
-* Search for all the lines containing `/##`
+* Search for all the lines containing `/##` (which also includes `/##.` for multiline comments)
 * Ingore the second appearance of `/##` just like in above line and this line.
 * Search the lines which contains tags prefixed by `@` (e.g. `@function` , `@param`)
 * For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
 
 ## TODO
-* Multiline comments support
+* Multiline comments support (`/##.`)
