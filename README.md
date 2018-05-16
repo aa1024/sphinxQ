@@ -15,6 +15,7 @@ Explanation of the function , package, paramaters etc. it will be used as paragr
 Name of the function 
 
 ### @eval
+The code after this tag will be executed and output will be shown on the generated document.
 
 ### @param
 Input Parameter to the function
