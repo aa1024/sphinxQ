@@ -14,7 +14,7 @@ Explanation of the function , package, paramaters etc. it will be used as paragr
 ### @function
 Name of the function 
 
-### @alias
+### @eval
 
 ### @param
 Input Parameter to the function
@@ -25,6 +25,7 @@ Output returned by the function
 ### @error
 
 ### @code
+Literal code block to be dsiplayed on the generated documents.
 
 ### @see
 
