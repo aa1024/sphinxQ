@@ -1,6 +1,7 @@
+.. _trade-schema-label:
+
 trade Table Details
 ===================
-.. _trade-schema-label:
 
 trade
 +++++
@@ -16,4 +17,8 @@ price        float   Trade Price
 size         float   Trade Size     
 side         symbol  Trade Direction
 ===========  ======  ===============
+
+.. index:: schema;trade
+
+.. index:: calculator; simple
 

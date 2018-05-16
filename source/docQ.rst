@@ -125,6 +125,8 @@ Cross-referencing
 
 Link to :ref:`trade-schema-label`
 
+Link to :ref:`price-schema-label`
+
 Lists
 =====
 
