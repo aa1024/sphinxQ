@@ -12,7 +12,8 @@ init[];
 /   @param r   @desc expected results
 /@returns tr    @desc test results
 assert:{[fn;p;r]
-    res:$[1=count p;@[ value fn; first p;{`$x}] ;.[value fn; p ;{`$x}]];
+    //res:$[1=count p;@[ value fn; first p;{`$x}] ;.[value fn; p ;{`$x}]];
+    res:$[1=count p;.[ value fn; p;{`$x}] ;.[value fn; p ;{`$x}]];
     tr:res~r;
     `.unittest.report upsert (fn;enlist p; enlist r;enlist res;tr);
     tr
