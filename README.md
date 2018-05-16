@@ -58,3 +58,4 @@ Table row; cells are `|` (pipe) separated.
 
 ## TODO
 * Multiline comments support (`/##.`)
+* @bullet tag
