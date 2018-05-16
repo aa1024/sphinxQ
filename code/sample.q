@@ -1,4 +1,4 @@
-/## @file Sample.q Group of sample function for document generation
+/## @name Sample Group of sample function for document generation
 
 /## @package example
 
