@@ -1,5 +1,8 @@
+.. _price-schema-label:
+
 price Table Details
 ===================
+
 trade
 +++++
 Stores the Trade details
@@ -14,6 +17,11 @@ price        float   Trade Price
 size         float   Trade Size     
 side         symbol  Trade Direction
 ===========  ======  ===============
+
+.. todo:
+
+   asf
+
 
 tob
 +++
@@ -30,4 +38,8 @@ bid_size     float   Bid Size
 ask          float   Ask Price    
 ask_size     float   Ask Size     
 ===========  ======  =============
+
+.. index:: schema; price
+
+.. index:: calculator; scientific
 
