@@ -1,14 +1,15 @@
 import `str`docq;
 
 \c 100 300
-tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`file`todo`version`tags`schema;
+tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema;
 searchTokens:`$"@",/:string tags;
-tagDesc:`file`function`param`package`alias`schema;
+tagDesc:`name`function`param`package`alias`schema;
 tdt:`$"@",/:string tagDesc;
 token:(),"/##";
 multiLinesToken:(),token,".";
 
-map:(`$"@",/:string(`file`function`param`return))!`dt`dst`fn`fn;
+//TODO package and file grouping
+map:(`$"@",/:string(`name`function`param`return`package))!`dt`dst`fn`fn`idx;
 
 
 
@@ -32,15 +33,18 @@ parseFile2:{[f;n]
 
     conTab:([] tag:`$f4[;0]; content:1_/:f4);
    
-    conTab1:update h:count[i]#enlist "" from conTab;
-    conTab1:update h:first each content , content:content from conTab1 where  tag in tdt ;
-    conTab1:update trim each " "sv/:1_/:content from conTab1;
+    conTab1:update para :count[i]#enlist enlist "" from conTab;
+
+    conTab2:update content :enlist each first each content , para:1_/:content from conTab1 where  tag in tdt ;
+    conTab3:update trim each " "sv/:content, " "sv/:para from conTab2;
     
+    conTab4:update f:map tag from conTab3;
 
-conTab2:update f:map tag from conTab1;
+    update d:(value f)@'content from conTab4
 
-conTab2
+conTab4
 
+(value `idx) `$"example"
 
 //--TODO
     f2:1_/:(f1?\:"/")_'f1;
