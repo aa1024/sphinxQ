@@ -15,6 +15,7 @@ Welcome to docQ's documentation!
    price
    str
    docQ
+   sample
 
 
 Indices and tables
