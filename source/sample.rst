@@ -1,16 +1,50 @@
-sample Package Details
-======================
-sampleFunctParamDict
-++++++++++++++++++++
 
 
-====================
-sampleFunctParamDict
-====================
-                    
-                    
-                    
-                    
-                    
-====================
+======
+Sample
+======
+Group of sample function for document generation
+
+.. index:: example 
+
+
+func1
+~~~~~
+A sample function to generate
+an inline table for input parameter dictionary
+
+    :param dict: Input Parameter Dictionary
+
+    :returns: 
+
+Param details
+
+
+
+.. csv-table:: 
+   :escape: '
+   :delim: |
+   :widths: auto
+   :header: Key,Type,Required,Default,Desc    
+
+
+
+      startDate|date|0b|.z.d|Start Date  (if null or not provided, will be set as current date)    
+
+      endDate|date|0b|startDate|End Date (if null or not provided, will be set as start date)
+
+
+show dict  show input
+
+
+func2
+~~~~~
+Another sample function
+
+    :param x: Input Parameter x
+    :param y: Input Parameter y
+
+    :returns sum of x & y: 
+
+: x+y   show sum of inputs
 
