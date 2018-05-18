@@ -2,6 +2,8 @@
 /## @name docQ-test docQ helper functions tests.
 
 /## @todo add more tests around functions (symbol, symbol list , string, list of strings etc.)
+/## @todo csvth
+/## @todo csvtr
 
 \d .docQTests
 
@@ -63,8 +65,11 @@ import `str`unittest`docq;
 
 .unittest.assert[`.docq.lbl;enlist `trade`schema ; ".. _trade-schema-label:"];
 .unittest.assert[`.docq.ref;enlist `trade`schema; " :ref:`trade-schema-label`"];
+
 .unittest.assert[`.docq.fn; (`param`sym;"Instrument Id");"    :param sym: Instrument Id"];
 .unittest.assert[`.docq.fn; (`returns;"Price");"    :returns: Price"];
+.unittest.assert[`.docq.prm; (`sym;"Instrument Id");"    :param sym: Instrument Id"];
+.unittest.assert[`.docq.ret; (`;"Price");"    :returns : Price"];
 
 .unittest.assert[`.docq.inc;enlist "resources/inclusion.txt";".. include:: resources/inclusion.txt"];
 
