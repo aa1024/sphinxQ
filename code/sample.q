@@ -1,30 +1,25 @@
-/## @name Sample Group of sample function for document generation
+/# @name Sample Group of sample function for document generation
 
-/## @package example
+/# @package example
 
-/## @function sampleFunctParamDict A sample function to generate 
-/##. an inline table for input parameter dictionary
-/##    @param paramDict  Input Parameter Dictionary   
-/##    @return
+/# @function func1 A sample function to generate 
+/#. an inline table for input parameter dictionary
+/#    @param dict Input Parameter Dictionary   
+/#    @return
+/# Param details
+/#    @header Key|Type|Required|Default|Desc
+/#    @row    startDate|date|0b|.z.d|Start Date  (if null or not provided, will be set as current date)
+/#    @row    endDate|date|0b|startDate|End Date (if null or not provided, will be set as start date)
 
-/##    @header Key|Type|Required|Default|Desc
-/##    @row    startDate|date|0b|.z.d|Start Date  (if null or not provided, will be set as current date)
-/##    @row    endDate|date|0b|startDate|End Date (if null or not provided, will be set as start date)
-
-
-sampleFunctParamDict:{[paramDict]
-    show paramDict  /## show input
+func1:{[dict]
+    show dict /# show input
  }
 
-/## @function sampleFunct2 A sample function to generate an inline table for input parameter dictionary
-/##    @param paramDict  Input Parameter Dictionary   
-/##    @return
+/# @function func2 Another sample function
+/#    @param x  Input Parameter x   
+/#    @param y  Input Parameter y   
+/#    @return sum of x & y
 
-/##    @header Key|Type|Required|Default|Desc
-/##    @row    startDate|date|0b|.z.d|Start Date  (if null or not provided, will be set as current date)
-/##    @row    endDate|date|0b|startDate|End Date (if null or not provided, will be set as start date)
-
-
-sampleFunct2 :{[paramDict]
-    show paramDict  /# show input
+func2 :{[x;y]
+    : x+y  /# show sum of inputs
  }
