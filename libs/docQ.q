@@ -1,210 +1,94 @@
-/# @package lib
-/# @name docq docQ helper functions to generate the ReST documents.
-
-/# @todo rename the docq files
-/# @todo list table
-/# @todo math support  - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support
-/# @todo http://www.sphinx-doc.org/en/stable/markup/misc.html?highlight=parameter#
-/# @todo http://www.sphinx-doc.org/en/stable/markup/index.html
-
-
-import`str;
-
 \d .docq
 
-/# @function text styles
-ts:{y,x,y}
+import `str`sphinx;
 
-/# @function italics
-i:{ts[x;"*"]}
+/# @todo way to change the table delimiters
+/# @todo remember previous state and make decision to enter the new line
 
-/# @function bold
-b:{ts[x;"**"]}
+tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc;
+searchTokens:`$"@",/:string tags;
+/# @todo test when desc is multiline @func x a b c /#. d
+tagDesc:`name`function`param`alias`schema;
+tdt:`$"@",/:string tagDesc;
+token:(),"/#";
+multiLinesToken:(),token,".";
 
-/# @function fixed-space or mono-space
-fs:{ts[x;"``"]}
+//TODO package and file grouping
+map:(`$"@",/:string(`name`function`param`return`package`header`row`desc`todo`code))!`$"."sv/:string `.sphinx,/:`dt`sst`prm`ret`idx`csvth`csvtr`p`todo`code2;
+fnl:`$("@param";"@return");
 
-/# @function paragraph
-p:{trim each ml x}
-/# @code p[([] 1 2 2 3)]
+/subtitleTokens:`function`schema;
 
-/# @function subscript
-sub:{"\\ :sub:`",x,"`\\"}
-/# @code "H",sub["2"],"O"
+/f:`$getenv[`QDOCS],"\\code\\sample.q"
 
-/# @function superscript
-sup:{"\\ :sup:`",x,"`\\"}
-/# @code "E = mc",sup["2"]
+addNewline:{[t;o] if[.gd.prevTag<>t;o:enlist[""],o];.gd.prevTag:t;:o};
 
-/# @function list
-l:{y,/:x}
-/# @function bullet list
-bl:{l[x;"* "]}
-/# @code bl string`trade`price
+isEmpty:{""~raze x};
 
-/# @function number list
-nl:{l[x;"#. "]}
-/# @code nl string`trade`price
+init:{
+    .gd.name:"";
+    .gd.package:"";
+    .gd.prevTag:`;
+ };
 
-/# @function literal block
-lb:{("::";""),"  ",/:x}
-/# @code lb string`trade`price
-
-/# @function doctest block - evaluate the block 
-/# @todo protect the execution 
-dtb:{.Q.s eval parse x}
-/# @code dtb ("{x*y}[3;2]")
-
-/# @function underline the text with input charecter
-ul:{(x;count[x]#y)}
-/# @code ul["SubTitle";"-"]
-
-/# @function Title
-t:{ul[x;"="]}
-/# @code t["Title"]
-
-/# @function Section Title
-st:{ul[x;"-"]}
-/# @code st["SubTitle"]
-
-/# @function Subsection Title
-sst:{ul[x;"~"]}
-/# @code sst["Subsection Title"]
+getMeta:{[tl]
+    package:tl where tl[;0] like"@package*";
+    .gd.package:package[0;1];
+    name:tl where tl[;0] like"@name*";
+    .gd.name:name[0;1];
+ };
 
 
+func2:{[l] 
+    t:`$l[0]; c:1_l; p:"";
+    if[t in tdt; p:1_c; c:c[0] ];
+    if[t in fnl; 
+        o:.sphinx.ml value[map[t]][ trim ssr[;token;""] " "sv .sphinx.ml c; trim ssr[;token;""] ssr[;multiLinesToken;""] " "sv .sphinx.ml p];    
+        :addNewline[t;o]
+    ];
 
-/# @function overline-underline the text with input charecter
-olul:{(t;x;t:count[x]#y)}
-/# @code olul["Overline-Underline";"-"]
+    /r1:e2[( map[t];   ssr[;token;""] " "sv .sphinx.ml c)];
+    r1:map[t]@   ssr[;token;""] " "sv .sphinx.ml c;
+    r2:map[`$"@desc"]@ssr[;token;""]each trim each multiLinesToken vs " "sv .sphinx.ml p;
+    addNewline[t;$[isEmpty r2;.sphinx.ml[r1];.sphinx.ml[r1],.sphinx.ml[r2]]]
+ };
 
-/# @function Document Title
-dt:{olul[x;"="]}
-/# @code dt["Document Title"]
+parseFile:{[f]
 
-/# @function Document Subtitle
-dst:{olul[x;"-"]}
-/# @code dst["Document Subtitle"]
+    init[];
+    fc:read0 hsym f;
+    f1:fc where any fc like/:(token,"*";"* ",token,"*");
+    /ti:where f1 like "*",token,"*";
+    /mlti:where f1 like "*",multiLinesToken,"*";
 
-/# @function strif handle the simple case otherwise flaten it to string
-strif:{$[10h=t:type x;x; t=11h;string x;t<0;string x;.Q.s1 x]}
-/# @code strif[`test]
-/# @code strif[2#`test]
-/# @code strif[string `test]
-/# @code strif[string 2#`test]
+    dl:where not any  f1 like/:("*",multiLinesToken,"*";"*@*");
 
-/# @function label
-lbl:{".. _",sv["-";string x],"-label:"}
-/# @code lbl[`trade`schema]
-
-/# @function reference
-ref:{" :","ref",":`",sv["-";string x],"-label`"}
-/# @code ref[`trade`schema]
-
-/# @function field list
-fn:{[fnl;fc] "    :",sv[" ";ml strif (),fnl],": ",fc}
-/# @code fn[fnl:`param`sym;"Instrument Id"]
-/# @code fn[fnl:`returns;"Price"]
-
-/# @function field list param
-prm:{[fnl;fc] "    :param ",strif[fnl],": ",fc}
-/# @code prm[fnl:`sym;"Instrument Id"]
-
-/# @function field list ret
-ret:{[fnl;fc] "    :returns",$[""~s:strif[fnl];""; " ",s],": ",fc}
-/# @code ret[fnl:`p;"Price"]
-/# @code ret[fnl:`;"Price"]
+    f11:@[f1;dl;{y,x};(count dl)#enlist "@desc "];
 
 
+    /add an extra space at the end of each comment and then raze the whole list.
+    f2:raze f11,\:" ";
+    
+    /tokenize with space
+    f3:" "vs f2;
+    //search the tags
+    
+    tokenInd:where (`$f3)in\:searchTokens ;
+    f4:tokenInd cut f3;
+    
+    getMeta[f4];    
 
-/# @function include
-inc:{".. include:: ",x}
-/# @code inc["resources/inclusion.txt"]
+    raze func2 each f4
 
-/# @function multiline code
-ml:{[x] $[0h<>type x;enlist x;x]}
-/# @code ml["test"]
-/# @code ml[("test1";"test2")]
-
-/# @function ind indent the content
-ind:{[c;l]#[c;" "],l}
-/# @code ind[4;"1"]
-
-/# @function code
-code:{[l;e;fn;c]   
-    :(".. ","code","-block",":: ",string l; 
-        $[e~"";"";"    :emphasize-lines: ",e];   
-        $[null fn;"";"    :caption: ",string[fn]];""),
-        ind[4;]each ml[c]  }
-/# @code code[l:`R;e:"";fn:`sample.q;c:("show avg[2 3 4]";"count til 5")]
-
-code2:{[c] :code[`R;"";`;c] }
-/# @code code2[c:("show avg[2 3 4]";"count til 5")]
+ };
 
 
-/# @function split
-split:{[t;s] t vs s}
-/# @code split["-";"test-string"]
+process:{[file]
+    rst:parseFile[file];
+    show rst;
+    hsym[ `$getenv[`QDOCS],"\\source\\",strif[.gd.name],".rst"]  0: rst
+ };
 
-/# @function Substitutions
-img:{[f] ".. image:: ",strif[f]}
-/# @code img[`$"resources/images/docq.png"]
-
-/# @function Substitutions Warn
-wrnImg:{img["images/warning.gif"]}
-/# @code wrnImg[]
-
-/# @function Substitutions Tip
-tipImg:{img["images/tip.gif"]}
-/# @code tipImg[]
-
-
-toggle:{[h;b] (".. container:: toggle";"";"    .. container:: header";"";"        **",h,"**"),ind[4]each ml[b]};
-/# @code toggle[h:"show/hide code";b:code[l:`j;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]]
-
-/# @function admonition 
-adm:{[a;b] (".. ",string[a],"::";""),ind[4;]each ml[b]}
-/# @code adm[`warning;"Some warning"]
-err:{[b]adm[`error;b]}
-/# @code err["Some error"]
-
-warn:{[b]adm[`warning;b]}
-/# @code warn["Some warning"]
-
-tip:{[b]adm[`tip;b]}
-/# @code tip["Some tip"]
-
-imp:{[b]adm[`important;b]}
-/# @code imp["Some important message"]
-
-todo:{[b]adm[`todo;b]}
-/# @code todo["Things pending to do."]
-
-
-/# other admonition supported - danger,caution,hint,attention
-
-
-/# @function index
-idx:{[il]".. index:: ",";"sv ml il};
-/# @code idx[ ("schema";"trade")]
-
-
-/----
-/# @todo test code
-strif2:{$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];"'";"''"];"\"";"'\""],s:"\""]}
-/# @function 
-/# @todo Simplify the csv logic
-csvt:{( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","sv string cols x;""),{"   ","," sv strif each value x} each x:0!x}
-/# @code \l sp.q
-/# @code csvt p
-/# @code strif each (`str;12.;1b)
-
-csvth:{[h]( "";".. csv-table:: ";"   :escape: '";"   :delim: |";"   :widths: auto";"   :header: ",ssr[h;"|";","];"")}
-csvtr:{[r]"   ",r}
-
-
-/# @function simple table 
-/# @todo need to revisit this function
-/tab:{r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r];h:.[count[r 0]#"=";enlist where 1_1=deltas " "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }
-/# @code \l sp.q
-/# @code tab[p] 
-
+//process[file:`$getenv[`QDOCS],"\\libs\\sphinx.q"]
+process[file:`$getenv[`QDOCS],"\\code\\sphinxTests.q"]
+process[file:`$getenv[`QDOCS],"\\libs\\docq.q"]
