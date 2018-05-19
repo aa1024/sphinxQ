@@ -7,6 +7,9 @@ Group of sample function for document generation
 .. index:: example 
 
 func1
+-----
+
+func3
 ~~~~~
 A sample function to generate
 an inline table for input parameter dictionary

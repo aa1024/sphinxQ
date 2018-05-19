@@ -7,7 +7,7 @@ Welcome to docQ's documentation!
 ================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
    
@@ -15,6 +15,7 @@ Welcome to docQ's documentation!
    price
    str
    docQ
+   docQTests
    sample
 
 
