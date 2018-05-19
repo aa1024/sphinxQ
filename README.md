@@ -1,5 +1,5 @@
 ### Table of Contents
-**[Desc](#docq**<br>
+**[Desc](#docq)**<br>
 **[Tags](#tags)**<br>
 **[Rulles](#rules)**<br>
 **[Todo](#todo)**<br>
