@@ -12,7 +12,7 @@ token:(),"/#";
 multiLinesToken:(),token,".";
 
 //TODO package and file grouping
-map:(`$"@",/:string(`name`function`param`return`package`header`row`desc`todo))!`$"."sv/:string `.docq,/:`dt`sst`prm`ret`idx`csvth`csvtr`p`todo;
+map:(`$"@",/:string(`name`function`param`return`package`header`row`desc`todo`code))!`$"."sv/:string `.docq,/:`dt`sst`prm`ret`idx`csvth`csvtr`p`todo`code2;
 fnl:`$("@param";"@return");
 
 /subtitleTokens:`function`schema;
@@ -63,11 +63,11 @@ parseFile2:{[f;n]
 
  };
 
-/fileName:`sample;
-fileName:`docQ;
 saveFile:{[n;rst] hsym[ `$getenv[`QDOCS],"\\source\\",string[n],".rst"]  0: rst};
 
-//parseFile[f:`$getenv[`QDOCS],"\\code\\str.q" ;`str]
+/fileName:`sample;
+fileName:`docQ;
+
 rst:parseFile2[f:`$getenv[`QDOCS],"\\libs\\",string[fileName],".q" ;fileName];
 show rst;
 saveFile[fileName;rst]
