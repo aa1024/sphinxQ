@@ -1,232 +1,440 @@
-.. _docq-sample-label:
 
-==============
-Document Title
-==============
------------------
-Document Subtitle
------------------
+.. index:: lib 
 
-.. include:: resources/inclusion.txt
+====
+docq
+====
+docQ helper functions to generate the ReST documents.
 
+.. todo::
 
+    rename the docq files 
+.. todo::
 
-.. warning::
+    list table 
+.. todo::
 
-    Some Info
+    math support  - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support 
+.. todo::
 
-.. attention::
+    http://www.sphinx-doc.org/en/stable/markup/misc.html?highlight=parameter# 
+.. todo::
 
-   Some attention!  
+    http://www.sphinx-doc.org/en/stable/markup/index.html 
 
-.. error::
-
-   Some error!  
-
-.. tip::
-
-   Some tip!  
-
-.. caution::
-
-   Some caution!  
-
-.. danger::
-
-   Some danger!  
-
-.. hint::
-
-   Some hint!  
-
-
-.. important:: There must be a space between the link text and the opening \< for the URL.
-
-        
-
-
-Toggle Example
-==============
-
-Click **Show/Hide contents** to toggle the contents.
-
-.. container:: toggle
-
-    .. container:: header
-
-        **Show/Hide content**
-
-    A sample with paragraph, *italics*, **bold** and ``mono-space`` text style examples.
-
-    Subscript H\ :sub:`2`\O and Superscript E=mc\ :sup:`2`\  examples.
-
-
-Toggle Code
-===========
-
-Click **Show/Hide code** to toggle the contents.
-
-.. container:: toggle
-
-    .. container:: header
-
-        **Show/Hide code**
-
-    .. code-block:: R
-       :linenos:
-
-       show sums -5?100
-       ...
-
-
-Test Styles
-===========
-
-A sample with paragraph, *italics*, **bold** and ``mono-space`` text style examples.
-
-Subscript H\ :sub:`2`\O and Superscript E=mc\ :sup:`2`\  examples.
-
-Code Block
-==========
-
-.. code-block:: R
-    :emphasize-lines: 2-3
-    :caption: sample.q
-
-    sampleFunctParamDict:{[paramDict]
-      show avg[2 3 4];
-      count til 5;    }
-
+text
+~~~~
+styles
+italics
+~~~~~~~
+bold
+~~~~
+fixed-space
+~~~~~~~~~~~
+or mono-space
+paragraph
+~~~~~~~~~
 
 .. code-block:: R
 
 
 
-    show avg[2 3 4]
-    count til 5
+    p[([] 1 2 2 3)] 
 
-.. image:: resources/images/docq.png
+subscript
+~~~~~~~~~
 
-.. container:: toggle
-
-    .. container:: header
-
-        **show/hide code**
-    .. code-block:: j
-        :emphasize-lines: 2
-    
-    
-        show avg[2 3 4]
-        count til 5
+.. code-block:: R
 
 
-Cross-referencing
-=================
 
-Link to :ref:`trade-schema-label`
+    "H",sub["2"],"O" 
 
-Link to :ref:`price-schema-label`
+superscript
+~~~~~~~~~~~
 
-Lists
-=====
+.. code-block:: R
 
-Bullet List
------------
 
-Bullet List with *
+
+    "E = mc",sup["2"] 
+
+list
+~~~~
+bullet
+~~~~~~
+list
+
+.. code-block:: R
+
+
+
+    bl string`trade`price 
+
+number
+~~~~~~
+list
+
+.. code-block:: R
+
+
+
+    nl string`trade`price 
+
+literal
+~~~~~~~
+block
+
+.. code-block:: R
+
+
+
+    lb string`trade`price 
+
+doctest
+~~~~~~~
+block - evaluate the block
+
+.. todo::
+
+    protect the execution  
+
+.. code-block:: R
+
+
+
+    dtb ("{x*y}[3;2]") 
+
+underline
+~~~~~~~~~
+the text with input charecter
+
+.. code-block:: R
+
+
+
+    ul["SubTitle";"-"] 
+
+Title
+~~~~~
+
+.. code-block:: R
+
+
+
+    t["Title"] 
+
+Section
+~~~~~~~
+Title
+
+.. code-block:: R
+
+
+
+    st["SubTitle"] 
+
+Subsection
+~~~~~~~~~~
+Title
+
+.. code-block:: R
+
+
+
+    sst["Subsection Title"] 
+
+overline-underline
 ~~~~~~~~~~~~~~~~~~
+the text with input charecter
 
-* Bullet 1
-* Bulltet 2
+.. code-block:: R
 
-Bullet List with -
-~~~~~~~~~~~~~~~~~~
 
-- Bullet 1
-- Bulltet 2
 
-Enumerated List
-===============
+    olul["Overline-Underline";"-"] 
 
-#. Item 1
-#. Item 2
+Document
+~~~~~~~~
+Title
 
-Tables
-======
+.. code-block:: R
 
-Simple Table
-------------
 
-===== ==================================================================================================================================================================================================
-func  def                                                                                                                                                                                               
-===== ==================================================================================================================================================================================================
-ts    {y,x,y}                                                                                                                                                                                           
-i     {ts[x;"*"]}                                                                                                                                                                                       
-b     {ts[x;"**"]}                                                                                                                                                                                      
-fs    {ts[x;"``"]}                                                                                                                                                                                      
-p     {x}                                                                                                                                                                                               
-sub   {"\\ :sub:`",x,"`\\"}                                                                                                                                                                             
-sup   {"\\ :sup:`",x,"`\\ "}                                                                                                                                                                            
-l     {y,/:x}                                                                                                                                                                                           
-bl    {l[x;"* "]}                                                                                                                                                                                       
-nl    {l[x;"#. "]}                                                                                                                                                                                      
-lb    {("::";""),"  ",/:x}                                                                                                                                                                              
-dtb   {eval parse x}                                                                                                                                                                                    
-tab   {r:.Q.S[value["\\C"];0;0!x];if[".."~last r;r:-1_r];h:.[count[r 0]#"=";enlist where 1_1=deltas " "<>r 0;:;" "];(h;r[0];h),(2_r),enlist h }                                                         
-ul    {(x;count[x]#y)}                                                                                                                                                                                  
-t     {ul[x;"="]}                                                                                                                                                                                       
-st    {ul[x;"-"]}                                                                                                                                                                                       
-sst   {ul[x;"~"]}                                                                                                                                                                                       
-olul  {(t;x;t:count[x]#y)}                                                                                                                                                                              
-dt    {olul[x;"="]}                                                                                                                                                                                     
-dst   {olul[x;"-"]}                                                                                                                                                                                     
-img   {".. image:: ",x}                                                                                                                                                                                 
-wrn   {img["images/warning.gif"]}                                                                                                                                                                       
-tip   {img["images/tip.gif"]}                                                                                                                                                                           
-strif {$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];"'";"''"];"\"";"'\""],s:"\""]}                                                                                                                
-csvt  {( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","sv string cols x;""),{"   ","," sv strif each value x} each x:0!x}                                                      
-lbl   {".. _",sv["-";string x],"-label:"}                                                                                                                                                               
-ref   {" :","ref",":`",sv["-";string x],"-label`"}                                                                                                                                                      
-fn    {[fnl;fc] "    :",sv[" ";string (),fnl],": ",fc}                                                                                                                                                  
-inc   {".. include:: ",x}                                                                                                                                                                               
-code  {[l;e;fn;c]   r:".. ","code","-block",":: ",string l;r,:"\n";   if[ not e~"" ;r,:("    :emphasize-lines: ",e);r,:"\n"];   if[not null fn;r,:"    :caption: ",string[fn];r,:"\n"];   r,("\n",c)   }
-===== ==================================================================================================================================================================================================
 
-csv Table
----------
+    dt["Document Title"] 
 
-.. csv-table:: 
-   :escape: '
-   :widths: auto
-   :header: func,def
+Document
+~~~~~~~~
+Subtitle
 
-   ts,"{y,x,y}"
-   i,"{ts[x;'"*'"]}"
-   b,"{ts[x;'"**'"]}"
-   fs,"{ts[x;'"``'"]}"
-   p,"{x}"
-   sub,"{'"\\ :sub:`'",x,'"`\\'"}"
-   sup,"{'"\\ :sup:`'",x,'"`\\ '"}"
-   l,"{y,/:x}"
-   bl,"{l[x;'"* '"]}"
-   nl,"{l[x;'"#. '"]}"
-   lb,"{('"::'";'"'"),'"  '",/:x}"
-   dtb,"{eval parse x}"
-   tab,"{r:.Q.S[value['"\\C'"];0;0!x];if['"..'"~last r;r:-1_r];h:.[count[r 0]#'"='";enlist where 1_1=deltas '" '"<>r 0;:;'" '"];(h;r[0];h),(2_r),enlist h }"
-   ul,"{(x;count[x]#y)}"
-   t,"{ul[x;'"='"]}"
-   st,"{ul[x;'"-'"]}"
-   sst,"{ul[x;'"~'"]}"
-   olul,"{(t;x;t:count[x]#y)}"
-   dt,"{olul[x;'"='"]}"
-   dst,"{olul[x;'"-'"]}"
-   img,"{'".. image:: '",x}"
-   wrn,"{img['"images/warning.gif'"]}"
-   tip,"{img['"images/tip.gif'"]}"
-   strif,"{$[10h=t:type x; x;t<0;string x;s, ssr[ssr[.Q.s1[x];'"'''";'"'''''"];'"\'"'";'"''\'"'"],s:'"\'"'"]}"
-   csvt,"{( '".. csv-table:: '";'"   :escape: '''";'"   :widths: auto'";'"   :header: '",'",'"sv string cols x;'"'"),{'"   '",'",'" sv strif each value x} each x:0!x}"
-   lbl,"{'".. _'",sv['"-'";string x],'"-label:'"}"
-   ref,"{'" :'",'"ref'",'":`'",sv['"-'";string x],'"-label`'"}"
-   fn,"{[fnl;fc] '"    :'",sv['" '";string (),fnl],'": '",fc}"
-   inc,"{'".. include:: '",x}"
-   code,"{[l;e;fn;c]   r:'".. '",'"code'",'"-block'",'":: '",string l;r,:'"\n'";   if[ not e~'"'" ;r,:('"    :emphasize-lines: '",e);r,:'"\n'"];   if[not null fn;r,:'"    :caption: '",string[fn];r,:'"\n'"];   r,('"\n'",c)   }"
+.. code-block:: R
+
+
+
+    dst["Document Subtitle"] 
+
+strif
+~~~~~
+handle the simple case otherwise flaten it to string
+
+.. code-block:: R
+
+
+
+    strif[`test] 
+.. code-block:: R
+
+
+
+    strif[2#`test] 
+.. code-block:: R
+
+
+
+    strif[string `test] 
+.. code-block:: R
+
+
+
+    strif[string 2#`test] 
+
+label
+~~~~~
+
+.. code-block:: R
+
+
+
+    lbl[`trade`schema] 
+
+reference
+~~~~~~~~~
+
+.. code-block:: R
+
+
+
+    ref[`trade`schema] 
+
+field
+~~~~~
+list
+
+.. code-block:: R
+
+
+
+    fn[fnl:`param`sym;"Instrument Id"] 
+.. code-block:: R
+
+
+
+    fn[fnl:`returns;"Price"] 
+
+field
+~~~~~
+list param
+
+.. code-block:: R
+
+
+
+    prm[fnl:`sym;"Instrument Id"] 
+
+field
+~~~~~
+list ret
+
+.. code-block:: R
+
+
+
+    ret[fnl:`p;"Price"] 
+.. code-block:: R
+
+
+
+    ret[fnl:`;"Price"] 
+
+include
+~~~~~~~
+
+.. code-block:: R
+
+
+
+    inc["resources/inclusion.txt"] 
+
+multiline
+~~~~~~~~~
+code
+
+.. code-block:: R
+
+
+
+    ml["test"] 
+.. code-block:: R
+
+
+
+    ml[("test1";"test2")] 
+
+ind
+~~~
+indent the content
+
+.. code-block:: R
+
+
+
+    ind[4;"1"] 
+
+code
+~~~~
+
+.. code-block:: R
+
+
+
+    code[l:`R;e:"";fn:`sample.q;c:("show avg[2 3 4]";"count til 5")] 
+.. code-block:: R
+
+
+
+    code2[c:("show avg[2 3 4]";"count til 5")] 
+
+split
+~~~~~
+
+.. code-block:: R
+
+
+
+    split["-";"test-string"] 
+
+Substitutions
+~~~~~~~~~~~~~
+
+.. code-block:: R
+
+
+
+    img[`$"resources/images/docq.png"] 
+
+Substitutions
+~~~~~~~~~~~~~
+Warn
+
+.. code-block:: R
+
+
+
+    wrnImg[] 
+
+Substitutions
+~~~~~~~~~~~~~
+Tip
+
+.. code-block:: R
+
+
+
+    tipImg[] 
+.. code-block:: R
+
+
+
+    toggle[h:"show/hide code";b:code[l:`j;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]] 
+
+admonition
+~~~~~~~~~~
+
+.. code-block:: R
+
+
+
+    adm[`warning;"Some warning"] 
+.. code-block:: R
+
+
+
+    err["Some error"] 
+.. code-block:: R
+
+
+
+    warn["Some warning"] 
+.. code-block:: R
+
+
+
+    tip["Some tip"] 
+.. code-block:: R
+
+
+
+    imp["Some important message"] 
+.. code-block:: R
+
+
+
+    todo["Things pending to do."]
+
+other admonition supported - danger,caution,hint,attention
+
+index
+~~~~~
+
+.. code-block:: R
+
+
+
+    idx[ ("schema";"trade")] 
+
+.. todo::
+
+    test code 
+
+
+
+
+.. todo::
+
+    Simplify the csv logic 
+
+.. code-block:: R
+
+
+
+    \l sp.q 
+.. code-block:: R
+
+
+
+    csvt p 
+.. code-block:: R
+
+
+
+    strif each (`str;12.;1b) 
+
+simple
+~~~~~~
+table
+
+.. todo::
+
+    need to revisit this function 
+
+.. code-block:: R
+
+
+
+    \l sp.q 
+.. code-block:: R
+
+
+
+    tab[p]  

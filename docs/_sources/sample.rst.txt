@@ -7,6 +7,9 @@ Group of sample function for document generation
 .. index:: example 
 
 func1
+-----
+
+func3
 ~~~~~
 A sample function to generate
 an inline table for input parameter dictionary
@@ -61,6 +64,6 @@ Another sample function
 
    This function is not suitable for sending spam e-mails.
 
-.. abc::
+.. note::
 
    This function is not suitable for sending spam e-mails.
