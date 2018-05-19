@@ -53,9 +53,10 @@ To specify a schema defination ; should be used with `@header` and `@row`
 
 ## Rules
 * Search for all the lines containing `/#` (which also includes `/#.` for multiline comments)
-* Ingore the second appearance of `/#`.
+* Except for the first delimiter `/#` appearance, all subsequent `/#` will be treated as `@desc` or paragraph.
 * Search the lines which contains tags prefixed by `@` (e.g. `@function` , `@param`)
 * For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
+* In case `@package` or `@name` is defined multiple times, the first entry will used for meta uses (labeling the links , rst naming, document title etc.)
 * Now process each tag along with the content using the `ReST` helper functions.
 
 ## TODO
