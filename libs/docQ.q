@@ -1,12 +1,12 @@
+/# @package lib
+/# @name docq docQ helper functions to generate the ReST documents.
+
 /# @todo rename the docq files
 /# @todo list table
 /# @todo math support  - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support
 /# @todo http://www.sphinx-doc.org/en/stable/markup/misc.html?highlight=parameter#
 /# @todo http://www.sphinx-doc.org/en/stable/markup/index.html
 
-
-/# @package lib
-/# @name docq docQ helper functions to generate the ReST documents.
 
 import`str;
 
@@ -24,7 +24,6 @@ b:{ts[x;"**"]}
 /# @function fixed-space or mono-space
 fs:{ts[x;"``"]}
 
-/# @todo  
 /# @function paragraph
 p:{trim each ml x}
 /# @code p[([] 1 2 2 3)]
