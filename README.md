@@ -1,10 +1,10 @@
 ### Table of Contents
-**[Desc](#doc[Q]**<br>
+**[Desc](#docq**<br>
 **[Tags](#tags)**<br>
 **[Rulles](#rules)**<br>
 **[Todo](#todo)**<br>
 
-
+----
 
 # doc[Q]
 A proof of concept around the commenting the q code with some predifined tags which would generate html/wiki style documents.
