@@ -5,7 +5,7 @@
 /## @todo csvth
 /## @todo csvtr
 
-\d .docQTests
+//\d .docQTests
 
 import `str`unittest`docq;
 
@@ -20,7 +20,7 @@ import `str`unittest`docq;
 /## @bullet Fixed-space/Monospace test
 .unittest.assert[`.docq.fs; enlist "mono-space" ;"``mono-space``"];
 /## @bullet paragraph test
-.unittest.assert[`.docq.p; enlist "paragraph" ;"paragraph"];
+.unittest.assert[`.docq.p; enlist "  paragraph  " ;enlist "paragraph"];
 
 /## @bullet Subscript test
 .unittest.assert[`.docq.sub; enlist "2" ;"\\ :sub:`2`\\"];
@@ -69,7 +69,7 @@ import `str`unittest`docq;
 .unittest.assert[`.docq.fn; (`param`sym;"Instrument Id");"    :param sym: Instrument Id"];
 .unittest.assert[`.docq.fn; (`returns;"Price");"    :returns: Price"];
 .unittest.assert[`.docq.prm; (`sym;"Instrument Id");"    :param sym: Instrument Id"];
-.unittest.assert[`.docq.ret; (`;"Price");"    :returns : Price"];
+.unittest.assert[`.docq.ret; (`;"Price");"    :returns: Price"];
 
 .unittest.assert[`.docq.inc;enlist "resources/inclusion.txt";".. include:: resources/inclusion.txt"];
 
@@ -79,6 +79,8 @@ import `str`unittest`docq;
 
 .unittest.assert[`.docq.code;(`R;"2";`;("show avg[2 3 4]";"count til 5"));(".. code-block:: R";"    :emphasize-lines: 2";"";"";"    show avg[2 3 4]";"    count til 5")];
 .unittest.assert[`.docq.code;(`R;"";`sample.q;("show avg[2 3 4]";"count til 5"));(".. code-block:: R";"";"    :caption: sample.q";"";"    show avg[2 3 4]";"    count til 5")];
+
+.unittest.assert[`.docq.code2;enlist ("show avg[2 3 4]";"count til 5");(".. code-block:: R";"";"";"";"    show avg[2 3 4]";"    count til 5")];
 
 
 .unittest.assert[`.docq.split; ("-";"test-string");("test";"string")];
@@ -99,7 +101,9 @@ import `str`unittest`docq;
 .unittest.assert[`.docq.warn;enlist "Some warning";(".. warning::";"";"    Some warning")];
 .unittest.assert[`.docq.tip;enlist "Some tip";(".. tip::";"";"    Some tip")];
 .unittest.assert[`.docq.imp;enlist "Some important message"; (".. important::";"";"    Some important message")];
+.unittest.assert[`.docq.todo;enlist "Things pending to do."; (".. todo::";"";"    Things pending to do.")];
 
 .unittest.assert[`.docq.idx;enlist ("schema";"trade");".. index:: schema;trade"];
 
 .unittest.results[]
+
