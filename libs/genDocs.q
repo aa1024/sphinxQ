@@ -12,7 +12,7 @@ token:(),"/#";
 multiLinesToken:(),token,".";
 
 //TODO package and file grouping
-map:(`$"@",/:string(`name`function`param`return`package`header`row`desc))!`$"."sv/:string `.docq,/:`dt`sst`prm`ret`idx`csvth`csvtr`p;
+map:(`$"@",/:string(`name`function`param`return`package`header`row`desc`todo))!`$"."sv/:string `.docq,/:`dt`sst`prm`ret`idx`csvth`csvtr`p`todo;
 fnl:`$("@param";"@return");
 
 /subtitleTokens:`function`schema;
@@ -21,6 +21,8 @@ fnl:`$("@param";"@return");
 .gd.prevTag:`;
 
 addNewline:{[t;o] if[.gd.prevTag<>t;o:enlist[""],o];.gd.prevTag:t;:o};
+
+isEmpty:{""~raze x};
 
 func2:{[l] 
     t:`$l[0]; c:1_l; p:"";
@@ -33,7 +35,7 @@ func2:{[l]
     /r1:e2[( map[t];   ssr[;token;""] " "sv .docq.ml c)];
     r1:map[t]@   ssr[;token;""] " "sv .docq.ml c;
     r2:map[`$"@desc"]@ssr[;token;""]each trim each multiLinesToken vs " "sv .docq.ml p;
-    addNewline[t;.docq.ml[r1],.docq.ml[r2]]
+    addNewline[t;$[isEmpty r2;.docq.ml[r1];.docq.ml[r1],.docq.ml[r2]]]
  };
 
 parseFile2:{[f;n]
@@ -61,34 +63,11 @@ parseFile2:{[f;n]
 
  };
 
-ext:{
-    conTab:([] tag:`$f4[;0]; content:1_/:f4);
-   
-    /conTab:ungroup update {[content](( 0,where content  like multiLinesToken)cut content)} each content from conTab;
-
-    conTab11:update content:{string (`$x)except `$(multiLinesToken;token)} each content from conTab;
-    conTab11 :delete  from conTab11 where content~\:();
-
-    conTab1:update para :count[i]#enlist enlist "" from conTab11;
-
-    conTab2:update content :enlist each first each content , para:1_/:content from conTab1 where  tag in tdt ;
-    conTab3:update trim each " "sv/:content, " "sv/:para from conTab2;
-    
-    conTab4:update f:map tag from conTab3;
-
-    conTab5:update v:enlist each content from conTab4;
-    //rules
-    conTab5:update v:((enlist each content),'enlist each para)from conTab5 where any tag like/:("@param";"@return");
-
-    e2:{.[value x[0];  x[1];{show x;:""}]};
-    raze exec ml each e2 each  (f,'enlist each v) from conTab5
-
- };
-
-
+/fileName:`sample;
+fileName:`docQ;
 saveFile:{[n;rst] hsym[ `$getenv[`QDOCS],"\\source\\",string[n],".rst"]  0: rst};
 
 //parseFile[f:`$getenv[`QDOCS],"\\code\\str.q" ;`str]
-rst:parseFile2[f:`$getenv[`QDOCS],"\\code\\sample.q" ;n:`sample];
+rst:parseFile2[f:`$getenv[`QDOCS],"\\libs\\",string[fileName],".q" ;fileName];
 show rst;
-saveFile[`sample;rst]
+saveFile[fileName;rst]
