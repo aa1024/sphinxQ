@@ -7,9 +7,6 @@ Group of sample function for document generation
 .. index:: example 
 
 func1
------
-
-func3
 ~~~~~
 A sample function to generate
 an inline table for input parameter dictionary
@@ -40,30 +37,4 @@ Another sample function
     :param x: Input Parameter x
     :param y: Input Parameter y
 
-    :returns sum of x & y: 
-
-: x+y   show sum of inputs
-
-.. todo::
-
-   This function is not suitable for sending spam e-mails.
-
-.. error::
-
-   This function is not suitable for sending spam e-mails.
-
-.. warning::
-
-   This function is not suitable for sending spam e-mails.
-
-.. tip::
-
-   This function is not suitable for sending spam e-mails.
-
-.. important::
-
-   This function is not suitable for sending spam e-mails.
-
-.. note::
-
-   This function is not suitable for sending spam e-mails.
+    :returns sum of x & y     : x+y   @toggle show sum of inputs: 

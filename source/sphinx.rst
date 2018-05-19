@@ -1,14 +1,11 @@
 
 .. index:: lib 
 
-====
-docq
-====
-docQ helper functions to generate the ReST documents.
+======
+sphinx
+======
+Sphinx-ReST helper functions to generate the ReST documents.
 
-.. todo::
-
-    rename the docq files 
 .. todo::
 
     list table 
