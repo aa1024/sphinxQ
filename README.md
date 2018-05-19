@@ -1,7 +1,7 @@
 ### Table of Contents
 **[Desc](#docq)**<br>
 **[Tags](#tags)**<br>
-**[Rulles](#rules)**<br>
+**[Rules](#rules)**<br>
 **[Todo](#todo)**<br>
 
 ----
