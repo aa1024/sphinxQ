@@ -1,12 +1,10 @@
 
-
 ======
 Sample
 ======
 Group of sample function for document generation
 
 .. index:: example 
-
 
 func1
 ~~~~~
@@ -20,7 +18,6 @@ an inline table for input parameter dictionary
 Param details
 
 
-
 .. csv-table:: 
    :escape: '
    :delim: |
@@ -28,14 +25,10 @@ Param details
    :header: Key,Type,Required,Default,Desc    
 
 
-
       startDate|date|0b|.z.d|Start Date  (if null or not provided, will be set as current date)    
-
       endDate|date|0b|startDate|End Date (if null or not provided, will be set as start date)
 
-
 show dict  show input
-
 
 func2
 ~~~~~
@@ -48,3 +41,26 @@ Another sample function
 
 : x+y   show sum of inputs
 
+.. todo::
+
+   This function is not suitable for sending spam e-mails.
+
+.. error::
+
+   This function is not suitable for sending spam e-mails.
+
+.. warning::
+
+   This function is not suitable for sending spam e-mails.
+
+.. tip::
+
+   This function is not suitable for sending spam e-mails.
+
+.. important::
+
+   This function is not suitable for sending spam e-mails.
+
+.. abc::
+
+   This function is not suitable for sending spam e-mails.
