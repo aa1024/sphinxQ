@@ -75,7 +75,7 @@ sst:{ul[x;"~"]}
 
 
 /# @function overline-underline the text with input charecter
-olul:{("";t;x;t:count[x]#y)}
+olul:{(t;x;t:count[x]#y)}
 /# @code olul["Overline-Underline";"-"]
 
 /# @function Document Title
@@ -138,6 +138,10 @@ code:{[l;e;fn;c]
         ind[4;]each ml[c]  }
 /# @code code[l:`R;e:"";fn:`sample.q;c:("show avg[2 3 4]";"count til 5")]
 
+code2:{[c] :code[`R;"";`;c] }
+/# @code code2[c:("show avg[2 3 4]";"count til 5")]
+
+
 /# @function split
 split:{[t;s] t vs s}
 /# @code split["-";"test-string"]
@@ -172,6 +176,10 @@ tip:{[b]adm[`tip;b]}
 
 imp:{[b]adm[`important;b]}
 /# @code imp["Some important message"]
+
+todo:{[b]adm[`todo;b]}
+/# @code todo["Things pending to do."]
+
 
 /# other admonition supported - danger,caution,hint,attention
 
