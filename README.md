@@ -69,5 +69,5 @@ To specify a schema defination ; should be used with `@header` and `@row`
 
 ## TODO
 * Multiline comments support (`/#.`)
-* Enable @bullet tag
+* Enable `@bullet` tag
 * show hide code/content feature.
