@@ -71,4 +71,4 @@ To specify a schema defination ; should be used with `@header` and `@row`
 * Multiline comments support (`/#.`)
 * Enable `@bullet` tag
 * show hide code/content feature.
-* Handle secnarios when file with same name present in diffrent folders/package.
+* Handle scenarios when file with same name present in different folders/package.
