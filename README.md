@@ -21,6 +21,7 @@ Logical group name, it can be used to with multiple files (@name). This will be 
 
 ### @desc
 Explanation of the function , package, paramaters etc. it will be used as paragraph when the documents are generated.
+Any comment without any tag will also be considered as `@desc`.
 
 ### @function
 Name of the function, displayed as document section title.
@@ -44,20 +45,25 @@ It can be used with or without schema tag.
 ### @row 
 Table row; cells are `|` (pipe) separated.
 
+### @todo
+Something to be done
+
+### @schema
+To specify a schema defination ; should be used with `@header` and `@row`
+
 ### @error
 
 ### @see
-
-### @todo
-Something to be done
 
 ### @version
 
 ### @tags
 It can be used to define the keywords that can be found by browsing.  
 
-### @schema
-To specify a schema defination ; should be used with `@header` and `@row`
+## Tag chaining
+
+Applying the formatting of multiple tag over the same content. Tags can be chained using a `-` e.g. `@toggle-code` means apply the `@toggle` formatting over the output of `@code`.
+
 
 ## Rules
 * Search for all the lines containing `/#` (which also includes `/#.` for multiline comments)
