@@ -1,5 +1,13 @@
+### Table of Contents
+**[Desc](#docq)**<br>
+**[Tags](#tags)**<br>
+**[Rules](#rules)**<br>
+**[Todo](#todo)**<br>
+
+----
+
 # doc[Q]
-A proof of concept around the commenting the q code with some predifined tags which would generate html/wiki style documents.
+A tool powered by `sphinx` for documenting the q code with some predifined tags which would generate html/wiki style documents.
 
 ## Tags
 
@@ -53,12 +61,15 @@ To specify a schema defination ; should be used with `@header` and `@row`
 
 ## Rules
 * Search for all the lines containing `/#` (which also includes `/#.` for multiline comments)
-* Ingore the second appearance of `/#`.
+* Except for the first delimiter `/#` appearance, all subsequent `/#` will be treated as `@desc` or paragraph.
 * Search the lines which contains tags prefixed by `@` (e.g. `@function` , `@param`)
 * For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
+* In case `@package` or `@name` is defined multiple times, the first entry will used for meta uses (labeling the links , rst naming, document title etc.)
 * Now process each tag along with the content using the `ReST` helper functions.
 
 ## TODO
 * Multiline comments support (`/#.`)
-* Enable @bullet tag
+* Enable `@bullet` tag
 * show hide code/content feature.
+* Handle scenarios when file with same name present in different folders/package.
+* libs cyclic dependency
