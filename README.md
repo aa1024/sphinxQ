@@ -50,7 +50,7 @@ Table row; cells are `|` (pipe) separated.
 Something to be done
 
 ### @schema
-To specify a schema defination ; should be used with `@header` and `@row`
+To specify a schema defination , the formatting of this tag is similar to the `@function` tag; should be used with `@header` and `@row`
 
 ### @error
 
