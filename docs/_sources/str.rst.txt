@@ -1,167 +1,141 @@
-str Table Details
-=================
+
+.. index:: lib 
+
+===
+str
+===
+
+String helper functions - fc,sfl,zfl,tu,tl,tstr,cc,ucc,us (snakecase, startcase, traincase )
+
+stc
+~~~
+startcase "an example string" -> "An Example String"
+
+    :param string: 
+
+.. code-block:: R
+
+
+
+    stc"startcase test" 
+
 sc
-++
+~~
+
 Snakecase : underscore separated text , but the case is preserverd
 
-======
-sc    
-======
-string
-      
-======
+    :param string: 
+
+    :returns: underscore separated text without any case changes.: 
 
 tc
-++
+~~
+
 Traincase : hyphen separated text , but the case is preserverd
 
-======
-tc    
-======
-string
-      
-======
+    :param string: 
+
+    :returns: hyphen separated text without any case changes.: 
 
 us
-++
+~~
+
 Camel case to lower case underscore separated
 
-==
-us
-==
-x 
-  
-==
+    :param x: string in camel case form
+
+    :returns: underscore separated text: 
 
 cc
-++
+~~
+
 To camel case
 
-================================================
-cc                                              
-================================================
-String containing underscores, hyphens or spaces
-                                                
-================================================
+    :param String: containing underscores, hyphens or spaces
+
+    :returns: Camel case string: 
 
 ucc
-+++
+~~~
+
 Uncamelcase - Camel case to space separated text
 
-========================
-ucc                     
-========================
-String Camel case string
-                        
-========================
+    :param String: Camel case string
+
+    :returns: Space separated string: 
 
 fc
-++
+~~
+
 Swap case
 
-======
-fc    
-======
-String
-      
-======
+    :param String: 
+
+    :returns: String with case swapped: 
 
 sfl
-+++
+~~~
+
 Space fill
 
-======
-sfl   
-======
-int   
-String
-      
-======
+    :param int: 
+    :param String: 
+
+    :returns: String left padded with space: 
 
 sfr
-+++
+~~~
+
 Space fill from right
 
-======
-sfr   
-======
-int   
-String
-      
-======
+    :param int: 
+    :param String: 
+
+    :returns: String right padded with space: 
 
 sflb
-++++
+~~~~
+
 Space fill from left for list of strings
 
-======
-sflb  
-======
-int   
-String
-      
-======
+    :param int: 
+    :param String: 
+
+    :returns: String left padded with space: 
 
 sfrb
-++++
+~~~~
+
 Space fill from right for list of strings
 
-======
-sfrb  
-======
-int   
-String
-      
-======
+    :param int: 
+    :param String: 
+
+    :returns: String right padded with space: 
 
 zfl
-+++
+~~~
+
 zero fill
 
-======
-zfl   
-======
-int   
-String
-      
-======
+    :param int: 
+    :param String: 
+
+    :returns: String left padded with zero: 
 
 zfr
-+++
+~~~
+
 zero fill from right
 
-======
-zfr   
-======
-int   
-String
-      
-======
+    :param int: 
+    :param String: 
 
-tu
-++
-to upper
-
-==
-tu
-==
-==
-
-tl
-++
-to lower
-
-==
-tl
-==
-==
+    :returns: String right padded with zero: 
 
 tstr
-++++
+~~~~
+
 to string
 
-====
-tstr
-====
-====
-
+Convert the nested structures to string using -3!
