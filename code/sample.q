@@ -21,5 +21,5 @@ func1:{[dict]
 /#    @return sum of x & y
 
 func2 :{[x;y]
-    : x+y  /# @toggle show sum of inputs
+    : x+y  /# @toggle-code  (x+y)
  }
