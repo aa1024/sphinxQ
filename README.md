@@ -1,6 +1,7 @@
 ### Table of Contents
 **[Desc](#docq)**<br>
 **[Tags](#tags)**<br>
+**[Tag chaining](#tag-chaining)**<br>
 **[Rules](#rules)**<br>
 **[Todo](#todo)**<br>
 
