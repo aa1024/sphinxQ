@@ -109,9 +109,8 @@ prm:{[fnl;fc] "    :param ",strif[fnl],": ",fc}
 /# @code prm[fnl:`sym;"Instrument Id"]
 
 /# @function field list ret
-ret:{[fnl;fc] "    :returns",$[""~s:strif[fnl];""; " ",s],": ",fc}
-/# @code ret[fnl:`p;"Price"]
-/# @code ret[fnl:`;"Price"]
+ret:{[fc] "    :returns: ",fc}
+/# @code ret["Price"]
 
 
 
@@ -130,7 +129,8 @@ ind:{[c;l]#[c;" "],l}
 
 /# @function code
 code:{[l;e;fn;c]   
-    :(".. ","code","-block",":: ",string l; 
+    :(".. ","code","-block",":: ",string l;
+        "    :linenos:"; 
         $[e~"";"";"    :emphasize-lines: ",e];   
         $[null fn;"";"    :caption: ",string[fn]];""),
         ind[4;]each ml[c]  }
