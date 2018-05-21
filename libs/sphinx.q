@@ -11,7 +11,7 @@ import`str;
 
 \d .sphinx
 
-/# @function text styles
+/# @function text-styles
 ts:{y,x,y}
 
 /# @function italics
@@ -38,11 +38,11 @@ sup:{"\\ :sup:`",x,"`\\"}
 /# @function list
 l:{y,/:x}
 /# @function bullet list
-bl:{l[x;"* "]}
+bl:{l[ml x;"* "]}
 /# @code bl string`trade`price
 
 /# @function number list
-nl:{l[x;"#. "]}
+nl:{l[ml x;"#. "]}
 /# @code nl string`trade`price
 
 /# @function literal block
@@ -55,7 +55,7 @@ dtb:{.Q.s eval parse x}
 /# @code dtb ("{x*y}[3;2]")
 
 /# @function underline the text with input charecter
-ul:{(x;count[x]#y)}
+ul:{("";x;count[x]#y)}
 /# @code ul["SubTitle";"-"]
 
 /# @function Title
@@ -130,7 +130,7 @@ ind:{[c;l]#[c;" "],l}
 /# @function code
 code:{[l;e;fn;c]   
     :(".. ","code","-block",":: ",string l;
-        "    :linenos:"; 
+        //"    :linenos:"; 
         $[e~"";"";"    :emphasize-lines: ",e];   
         $[null fn;"";"    :caption: ",string[fn]];""),
         ind[4;]each ml[c]  }
