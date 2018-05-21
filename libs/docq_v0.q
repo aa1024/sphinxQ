@@ -3,7 +3,7 @@ import `str`sphinx`file;
 /\d .docq
 
 tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle;
-tagDesc:`name`function`alias`schema;
+tagDesc:`name`function`param`alias`schema;
 fieldList:`param`return;
 token:(),"/#";
 multiLinesToken:(),token,".";
@@ -16,7 +16,7 @@ fnl:getTag each fieldList;
 
 
 //TODO package and file grouping
-map:(`$"@",/:string(`name`function`schema`param`return`package`header`row`desc`todo`code`toggle`eval))!`$"."sv/:string `.sphinx,/:`dt`sst`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2`dtb;
+map:(`$"@",/:string(`name`function`param`return`package`header`row`desc`todo`code`toggle))!`$"."sv/:string `.sphinx,/:`dt`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2;
 
 /subtitleTokens:`function`schema;
 
@@ -44,55 +44,46 @@ func2:{[l]
     t:`$l[0]; c:1_l;
     tc:tokenChain[t];
     func3/[c; reverse tc]     
-    /c:func3[c;t:last tc] ; t:first tc
- };
-
-tagWithDescF:{[c;t] 
-    p:1_c; c:c[0];
-    r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
-    r2:map[`$"@desc"]@ssr[;token;""]each trim each multiLinesToken vs " "sv .sphinx.ml p;
-    addNewline[t;$[isEmpty r2;.sphinx.ml[r1];.sphinx.ml[r1],.sphinx.ml[r2]]]
-
+    /c:func3[c;last tc] ; t:first tc
  };
 
 func3:{[c;t] 
      p:"";
-    
-    if[t in tagWithDesc; :tagWithDescF [c;t]];
-    if[t~`$"@param";
-        o:.sphinx.ml value[map[t]][ trim first .sphinx.ml c; trim ssr[;token;""] ssr[;multiLinesToken;""] " "sv 1_.sphinx.ml c];    
+    if[t in tagWithDesc; p:1_c; c:c[0] ];
+    if[t in fnl; 
+        o:.sphinx.ml value[map[t]][ trim ssr[;token;""] " "sv .sphinx.ml c; trim ssr[;token;""] ssr[;multiLinesToken;""] " "sv .sphinx.ml p];    
         :addNewline[t;o]
-    ];
-
-    if[t~`$"@toggle";
-        :addNewline[t;map[t]@ .sphinx.ml c];
     ];
 
     /r1:e2[( map[t];   ssr[;token;""] " "sv .sphinx.ml c)];
     r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
-    addNewline[t; .sphinx.ml[r1]]
+    /# Convert the content as simple para
+    r2:map[`$"@desc"]@ssr[;token;""]each trim each multiLinesToken vs " "sv .sphinx.ml p;
+    addNewline[t;$[isEmpty r2;.sphinx.ml[r1];.sphinx.ml[r1],.sphinx.ml[r2]]]
  };
 
 parseFile:{[file]
 
     init[];
     fc:read0 hsym file;
-    /# Read the comments containing the tokens
     f1:fc where any fc like/:(token,"*";"* ",token,"*");
-    /# Extract only the comment part 
-    f1:@[f1 ;where f1 like ("* ",token," *");{trim " " sv  1_token vs x}];
+    f1:@[f1 ;where f1 like ("* ",token," *");{" " sv  1_token vs x}];
 
-    /# Assign `desc` tag explicitly to the lines which are not multiline comment and does not have any tag
     dl:where not any  f1 like/:("*",multiLinesToken,"*";"*@*");
+
     f11:@[f1;dl;{y,x};(count dl)#enlist "@desc "];
 
-    /# add an extra space at the end of each comment and then raze the whole list to a simple string.
+    /add an extra space at the end of each comment and then raze the whole list.
     f2:raze f11,\:" ";
+    
+    /tokenize with space
     f3:" "vs f2;
-    f3:f3 except ("";token);
-
-    /# Tokenise the string by tags
+    //search the tags
+    
+    //does not suport token chaining
+    //tokenInd:where (`$f3)in\:searchTokens ;
     tokenInd:where any f3 like/:"*",/:string[searchTokens ],\:"*";
+
     f4:tokenInd cut f3;
     
     getMeta[f4;file];    
