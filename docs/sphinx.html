@@ -17,7 +17,7 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="sphinx-tests" href="sphinxTests.html" />
+    <link rel="next" title="str" href="str.html" />
     <link rel="prev" title="Sample" href="sample.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="sphinxTests.html" title="sphinx-tests"
+          <a href="str.html" title="str"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="sample.html" title="Sample"
@@ -44,7 +44,11 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">sphinx</a><ul>
-<li><a class="reference internal" href="#text">text</a></li>
+<li><a class="reference internal" href="#text-styles">text-styles</a></li>
+<li><a class="reference internal" href="#italics">italics</a></li>
+<li><a class="reference internal" href="#bold">bold</a></li>
+<li><a class="reference internal" href="#fixed-space">fixed-space</a></li>
+<li><a class="reference internal" href="#paragraph">paragraph</a></li>
 <li><a class="reference internal" href="#subscript">subscript</a></li>
 <li><a class="reference internal" href="#superscript">superscript</a></li>
 <li><a class="reference internal" href="#list">list</a></li>
@@ -63,16 +67,16 @@
 <li><a class="reference internal" href="#label">label</a></li>
 <li><a class="reference internal" href="#reference">reference</a></li>
 <li><a class="reference internal" href="#field">field</a></li>
-<li><a class="reference internal" href="#id2">field</a></li>
 <li><a class="reference internal" href="#id3">field</a></li>
+<li><a class="reference internal" href="#id5">field</a></li>
 <li><a class="reference internal" href="#include">include</a></li>
 <li><a class="reference internal" href="#multiline">multiline</a></li>
 <li><a class="reference internal" href="#ind">ind</a></li>
 <li><a class="reference internal" href="#code">code</a></li>
 <li><a class="reference internal" href="#split">split</a></li>
 <li><a class="reference internal" href="#substitutions">Substitutions</a></li>
-<li><a class="reference internal" href="#id4">Substitutions</a></li>
-<li><a class="reference internal" href="#id5">Substitutions</a></li>
+<li><a class="reference internal" href="#id7">Substitutions</a></li>
+<li><a class="reference internal" href="#id9">Substitutions</a></li>
 <li><a class="reference internal" href="#admonition">admonition</a></li>
 <li><a class="reference internal" href="#index">index</a></li>
 <li><a class="reference internal" href="#simple">simple</a></li>
@@ -84,8 +88,8 @@
   <p class="topless"><a href="sample.html"
                         title="previous chapter">Sample</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="sphinxTests.html"
-                        title="next chapter">sphinx-tests</a></p>
+  <p class="topless"><a href="str.html"
+                        title="next chapter">str</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -114,7 +118,7 @@
           <div class="body" role="main">
             
   <div class="section" id="sphinx">
-<span id="index-0"></span><h1>sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h1>
+<span id="lib-sphinx-label"></span><span id="index-0"></span><h1>sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h1>
 <p>Sphinx-ReST helper functions to generate the ReST documents.</p>
 <div class="admonition-todo admonition" id="index-1">
 <p class="first admonition-title">Todo</p>
@@ -122,7 +126,7 @@
 </div>
 <div class="admonition-todo admonition" id="index-2">
 <p class="first admonition-title">Todo</p>
-<p class="last">math support  - <a class="reference external" href="http://www.sphinx-doc.org/en/stable/ext/math.html#math-support">http://www.sphinx-doc.org/en/stable/ext/math.html#math-support</a></p>
+<p class="last">math support - <a class="reference external" href="http://www.sphinx-doc.org/en/stable/ext/math.html#math-support">http://www.sphinx-doc.org/en/stable/ext/math.html#math-support</a></p>
 </div>
 <div class="admonition-todo admonition" id="index-3">
 <p class="first admonition-title">Todo</p>
@@ -132,60 +136,63 @@
 <p class="first admonition-title">Todo</p>
 <p class="last"><a class="reference external" href="http://www.sphinx-doc.org/en/stable/markup/index.html">http://www.sphinx-doc.org/en/stable/markup/index.html</a></p>
 </div>
-<div class="section" id="text">
-<h2>text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
-<p>styles
-italics
-~~~~~~~
-bold
-~~~~
-fixed-space
-~~~~~~~~~~~
-or mono-space
-paragraph
-~~~~~~~~~</p>
+<div class="section" id="text-styles">
+<span id="lib-sphinx-text-styles-label"></span><h2>text-styles<a class="headerlink" href="#text-styles" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="italics">
+<span id="lib-sphinx-italics-label"></span><h2>italics<a class="headerlink" href="#italics" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bold">
+<span id="lib-sphinx-bold-label"></span><h2>bold<a class="headerlink" href="#bold" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="fixed-space">
+<span id="lib-sphinx-fixed-space-label"></span><h2>fixed-space<a class="headerlink" href="#fixed-space" title="Permalink to this headline">¶</a></h2>
+<p>or mono-space</p>
+</div>
+<div class="section" id="paragraph">
+<span id="lib-sphinx-paragraph-label"></span><h2>paragraph<a class="headerlink" href="#paragraph" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>p<span class="p">[([]</span> <span class="m">1</span> <span class="m">2</span> <span class="m">2</span> <span class="m">3</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="subscript">
-<h2>subscript<a class="headerlink" href="#subscript" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-subscript-label"></span><h2>subscript<a class="headerlink" href="#subscript" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;H&quot;</span><span class="p">,</span><span class="kp">sub</span><span class="p">[</span><span class="s">&quot;2&quot;</span><span class="p">],</span><span class="s">&quot;O&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="superscript">
-<h2>superscript<a class="headerlink" href="#superscript" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-superscript-label"></span><h2>superscript<a class="headerlink" href="#superscript" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;E = mc&quot;</span><span class="p">,</span>sup<span class="p">[</span><span class="s">&quot;2&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list">
-<h2>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-list-label"></span><h2>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="bullet">
-<h2>bullet<a class="headerlink" href="#bullet" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-bullet-label"></span><h2>bullet<a class="headerlink" href="#bullet" title="Permalink to this headline">¶</a></h2>
 <p>list</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>bl string<span class="sb">`trade`</span>price
 </pre></div>
 </div>
 </div>
 <div class="section" id="number">
-<h2>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-number-label"></span><h2>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h2>
 <p>list</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>nl string<span class="sb">`trade`</span>price
 </pre></div>
 </div>
 </div>
 <div class="section" id="literal">
-<h2>literal<a class="headerlink" href="#literal" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-literal-label"></span><h2>literal<a class="headerlink" href="#literal" title="Permalink to this headline">¶</a></h2>
 <p>block</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>lb string<span class="sb">`trade`</span>price
 </pre></div>
 </div>
 </div>
 <div class="section" id="doctest">
-<h2>doctest<a class="headerlink" href="#doctest" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-doctest-label"></span><h2>doctest<a class="headerlink" href="#doctest" title="Permalink to this headline">¶</a></h2>
 <p>block - evaluate the block</p>
 <div class="admonition-todo admonition" id="index-5">
 <p class="first admonition-title">Todo</p>
@@ -196,55 +203,55 @@ paragraph
 </div>
 </div>
 <div class="section" id="underline">
-<h2>underline<a class="headerlink" href="#underline" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-underline-label"></span><h2>underline<a class="headerlink" href="#underline" title="Permalink to this headline">¶</a></h2>
 <p>the text with input charecter</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>ul<span class="p">[</span><span class="s">&quot;SubTitle&quot;</span><span class="p">;</span><span class="s">&quot;-&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="title">
-<h2>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-title-label"></span><h2>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">t</span><span class="p">[</span><span class="s">&quot;Title&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="section">
-<h2>Section<a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-section-label"></span><h2>Section<a class="headerlink" href="#section" title="Permalink to this headline">¶</a></h2>
 <p>Title</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>st<span class="p">[</span><span class="s">&quot;SubTitle&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="subsection">
-<h2>Subsection<a class="headerlink" href="#subsection" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-subsection-label"></span><h2>Subsection<a class="headerlink" href="#subsection" title="Permalink to this headline">¶</a></h2>
 <p>Title</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>sst<span class="p">[</span><span class="s">&quot;Subsection Title&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="overline-underline">
-<h2>overline-underline<a class="headerlink" href="#overline-underline" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-overline-underline-label"></span><h2>overline-underline<a class="headerlink" href="#overline-underline" title="Permalink to this headline">¶</a></h2>
 <p>the text with input charecter</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>olul<span class="p">[</span><span class="s">&quot;Overline-Underline&quot;</span><span class="p">;</span><span class="s">&quot;-&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="document">
-<h2>Document<a class="headerlink" href="#document" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-document-label"></span><h2>Document<a class="headerlink" href="#document" title="Permalink to this headline">¶</a></h2>
 <p>Title</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>dt<span class="p">[</span><span class="s">&quot;Document Title&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id1">
-<h2>Document<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Document<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Subtitle</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>dst<span class="p">[</span><span class="s">&quot;Document Subtitle&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="strif">
-<h2>strif<a class="headerlink" href="#strif" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-strif-label"></span><h2>strif<a class="headerlink" href="#strif" title="Permalink to this headline">¶</a></h2>
 <p>handle the simple case otherwise flaten it to string</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span>`test<span class="p">]</span>
 </pre></div>
@@ -260,19 +267,19 @@ paragraph
 </div>
 </div>
 <div class="section" id="label">
-<h2>label<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-label-label"></span><h2>label<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>lbl<span class="p">[</span><span class="sb">`trade`</span>schema<span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="reference">
-<h2>reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-reference-label"></span><h2>reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>ref<span class="p">[</span><span class="sb">`trade`</span>schema<span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="field">
-<h2>field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-field-label"></span><h2>field<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h2>
 <p>list</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>fn<span class="p">[</span>fnl<span class="o">:</span><span class="sb">`param`</span>sym<span class="p">;</span><span class="s">&quot;Instrument Id&quot;</span><span class="p">]</span>
 </pre></div>
@@ -281,31 +288,28 @@ paragraph
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>field<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<span id="id4"></span><h2>field<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>list param</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>prm<span class="p">[</span>fnl<span class="o">:</span>`sym<span class="p">;</span><span class="s">&quot;Instrument Id&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>field<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<span id="id6"></span><h2>field<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>list ret</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>ret<span class="p">[</span>fnl<span class="o">:</span>`p<span class="p">;</span><span class="s">&quot;Price&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>ret<span class="p">[</span>fnl<span class="o">:</span>`<span class="p">;</span><span class="s">&quot;Price&quot;</span><span class="p">]</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>ret<span class="p">[</span><span class="s">&quot;Price&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="include">
-<h2>include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-include-label"></span><h2>include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>inc<span class="p">[</span><span class="s">&quot;resources/inclusion.txt&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="multiline">
-<h2>multiline<a class="headerlink" href="#multiline" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-multiline-label"></span><h2>multiline<a class="headerlink" href="#multiline" title="Permalink to this headline">¶</a></h2>
 <p>code</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>ml<span class="p">[</span><span class="s">&quot;test&quot;</span><span class="p">]</span>
 </pre></div>
@@ -315,14 +319,14 @@ paragraph
 </div>
 </div>
 <div class="section" id="ind">
-<h2>ind<a class="headerlink" href="#ind" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-ind-label"></span><h2>ind<a class="headerlink" href="#ind" title="Permalink to this headline">¶</a></h2>
 <p>indent the content</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>ind<span class="p">[</span><span class="m">4</span><span class="p">;</span><span class="s">&quot;1&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="code">
-<h2>code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-code-label"></span><h2>code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>code<span class="p">[</span>l<span class="o">:</span><span class="sb">`R;e:&quot;&quot;;fn:`</span>sample.q<span class="p">;</span><span class="kt">c</span><span class="o">:</span><span class="p">(</span><span class="s">&quot;show avg[2 3 4]&quot;</span><span class="p">;</span><span class="s">&quot;count til 5&quot;</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -331,26 +335,26 @@ paragraph
 </div>
 </div>
 <div class="section" id="split">
-<h2>split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-split-label"></span><h2>split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">split</span><span class="p">[</span><span class="s">&quot;-&quot;</span><span class="p">;</span><span class="s">&quot;test-string&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="substitutions">
-<h2>Substitutions<a class="headerlink" href="#substitutions" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-substitutions-label"></span><h2>Substitutions<a class="headerlink" href="#substitutions" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>img<span class="p">[</span>`<span class="o">$</span><span class="s">&quot;resources/images/docq.png&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>Substitutions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<span id="id8"></span><h2>Substitutions<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>Warn</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>wrnImg<span class="p">[]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>Substitutions<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<span id="id10"></span><h2>Substitutions<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>Tip</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>tipImg<span class="p">[]</span>
 </pre></div>
@@ -360,7 +364,7 @@ paragraph
 </div>
 </div>
 <div class="section" id="admonition">
-<h2>admonition<a class="headerlink" href="#admonition" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-admonition-label"></span><h2>admonition<a class="headerlink" href="#admonition" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>adm<span class="p">[</span>`<span class="kp">warning</span><span class="p">;</span><span class="s">&quot;Some warning&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -382,7 +386,7 @@ paragraph
 <p>other admonition supported - danger,caution,hint,attention</p>
 </div>
 <div class="section" id="index">
-<h2>index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-index-label"></span><h2>index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>idx<span class="p">[</span> <span class="p">(</span><span class="s">&quot;schema&quot;</span><span class="p">;</span><span class="s">&quot;trade&quot;</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -391,7 +395,7 @@ paragraph
 <p class="last">test code</p>
 </div>
 <div class="admonition-todo admonition" id="index-7">
-<p class="first admonition-title">Todo</p>
+<span id="id11"></span><p class="first admonition-title">Todo</p>
 <p class="last">Simplify the csv logic</p>
 </div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>\l sp.q
@@ -405,7 +409,7 @@ paragraph
 </div>
 </div>
 <div class="section" id="simple">
-<h2>simple<a class="headerlink" href="#simple" title="Permalink to this headline">¶</a></h2>
+<span id="lib-sphinx-simple-label"></span><h2>simple<a class="headerlink" href="#simple" title="Permalink to this headline">¶</a></h2>
 <p>table</p>
 <div class="admonition-todo admonition" id="index-8">
 <p class="first admonition-title">Todo</p>
@@ -433,7 +437,7 @@ paragraph
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="sphinxTests.html" title="sphinx-tests"
+          <a href="str.html" title="str"
              >next</a> |</li>
         <li class="right" >
           <a href="sample.html" title="Sample"

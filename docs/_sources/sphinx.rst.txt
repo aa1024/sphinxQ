@@ -1,5 +1,8 @@
 
-.. index:: lib 
+.. index:: lib
+
+
+.. _lib-sphinx-label:
 
 ======
 sphinx
@@ -8,27 +11,46 @@ Sphinx-ReST helper functions to generate the ReST documents.
 
 .. todo::
 
-    list table 
+    list table
 .. todo::
 
-    math support  - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support 
+    math support - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support
 .. todo::
 
-    http://www.sphinx-doc.org/en/stable/markup/misc.html?highlight=parameter# 
+    http://www.sphinx-doc.org/en/stable/markup/misc.html?highlight=parameter#
 .. todo::
 
-    http://www.sphinx-doc.org/en/stable/markup/index.html 
+    http://www.sphinx-doc.org/en/stable/markup/index.html
 
-text
-~~~~
-styles
+
+.. _lib-sphinx-text-styles-label:
+
+
+text-styles
+~~~~~~~~~~~
+
+.. _lib-sphinx-italics-label:
+
+
 italics
 ~~~~~~~
+
+.. _lib-sphinx-bold-label:
+
+
 bold
 ~~~~
+
+.. _lib-sphinx-fixed-space-label:
+
+
 fixed-space
 ~~~~~~~~~~~
 or mono-space
+
+.. _lib-sphinx-paragraph-label:
+
+
 paragraph
 ~~~~~~~~~
 
@@ -36,7 +58,11 @@ paragraph
 
 
 
-    p[([] 1 2 2 3)] 
+    p[([] 1 2 2 3)]
+
+
+.. _lib-sphinx-subscript-label:
+
 
 subscript
 ~~~~~~~~~
@@ -45,7 +71,11 @@ subscript
 
 
 
-    "H",sub["2"],"O" 
+    "H",sub["2"],"O"
+
+
+.. _lib-sphinx-superscript-label:
+
 
 superscript
 ~~~~~~~~~~~
@@ -54,10 +84,18 @@ superscript
 
 
 
-    "E = mc",sup["2"] 
+    "E = mc",sup["2"]
+
+
+.. _lib-sphinx-list-label:
+
 
 list
 ~~~~
+
+.. _lib-sphinx-bullet-label:
+
+
 bullet
 ~~~~~~
 list
@@ -66,7 +104,11 @@ list
 
 
 
-    bl string`trade`price 
+    bl string`trade`price
+
+
+.. _lib-sphinx-number-label:
+
 
 number
 ~~~~~~
@@ -76,7 +118,11 @@ list
 
 
 
-    nl string`trade`price 
+    nl string`trade`price
+
+
+.. _lib-sphinx-literal-label:
+
 
 literal
 ~~~~~~~
@@ -86,7 +132,11 @@ block
 
 
 
-    lb string`trade`price 
+    lb string`trade`price
+
+
+.. _lib-sphinx-doctest-label:
+
 
 doctest
 ~~~~~~~
@@ -94,13 +144,17 @@ block - evaluate the block
 
 .. todo::
 
-    protect the execution  
+    protect the execution
 
 .. code-block:: R
 
 
 
-    dtb ("{x*y}[3;2]") 
+    dtb ("{x*y}[3;2]")
+
+
+.. _lib-sphinx-underline-label:
+
 
 underline
 ~~~~~~~~~
@@ -110,7 +164,11 @@ the text with input charecter
 
 
 
-    ul["SubTitle";"-"] 
+    ul["SubTitle";"-"]
+
+
+.. _lib-sphinx-Title-label:
+
 
 Title
 ~~~~~
@@ -119,7 +177,11 @@ Title
 
 
 
-    t["Title"] 
+    t["Title"]
+
+
+.. _lib-sphinx-Section-label:
+
 
 Section
 ~~~~~~~
@@ -129,7 +191,11 @@ Title
 
 
 
-    st["SubTitle"] 
+    st["SubTitle"]
+
+
+.. _lib-sphinx-Subsection-label:
+
 
 Subsection
 ~~~~~~~~~~
@@ -139,7 +205,11 @@ Title
 
 
 
-    sst["Subsection Title"] 
+    sst["Subsection Title"]
+
+
+.. _lib-sphinx-overline-underline-label:
+
 
 overline-underline
 ~~~~~~~~~~~~~~~~~~
@@ -149,7 +219,11 @@ the text with input charecter
 
 
 
-    olul["Overline-Underline";"-"] 
+    olul["Overline-Underline";"-"]
+
+
+.. _lib-sphinx-Document-label:
+
 
 Document
 ~~~~~~~~
@@ -159,7 +233,11 @@ Title
 
 
 
-    dt["Document Title"] 
+    dt["Document Title"]
+
+
+.. _lib-sphinx-Document-label:
+
 
 Document
 ~~~~~~~~
@@ -169,7 +247,11 @@ Subtitle
 
 
 
-    dst["Document Subtitle"] 
+    dst["Document Subtitle"]
+
+
+.. _lib-sphinx-strif-label:
+
 
 strif
 ~~~~~
@@ -179,22 +261,26 @@ handle the simple case otherwise flaten it to string
 
 
 
-    strif[`test] 
+    strif[`test]
 .. code-block:: R
 
 
 
-    strif[2#`test] 
+    strif[2#`test]
 .. code-block:: R
 
 
 
-    strif[string `test] 
+    strif[string `test]
 .. code-block:: R
 
 
 
-    strif[string 2#`test] 
+    strif[string 2#`test]
+
+
+.. _lib-sphinx-label-label:
+
 
 label
 ~~~~~
@@ -203,7 +289,11 @@ label
 
 
 
-    lbl[`trade`schema] 
+    lbl[`trade`schema]
+
+
+.. _lib-sphinx-reference-label:
+
 
 reference
 ~~~~~~~~~
@@ -212,7 +302,11 @@ reference
 
 
 
-    ref[`trade`schema] 
+    ref[`trade`schema]
+
+
+.. _lib-sphinx-field-label:
+
 
 field
 ~~~~~
@@ -222,12 +316,16 @@ list
 
 
 
-    fn[fnl:`param`sym;"Instrument Id"] 
+    fn[fnl:`param`sym;"Instrument Id"]
 .. code-block:: R
 
 
 
-    fn[fnl:`returns;"Price"] 
+    fn[fnl:`returns;"Price"]
+
+
+.. _lib-sphinx-field-label:
+
 
 field
 ~~~~~
@@ -237,7 +335,11 @@ list param
 
 
 
-    prm[fnl:`sym;"Instrument Id"] 
+    prm[fnl:`sym;"Instrument Id"]
+
+
+.. _lib-sphinx-field-label:
+
 
 field
 ~~~~~
@@ -247,12 +349,11 @@ list ret
 
 
 
-    ret[fnl:`p;"Price"] 
-.. code-block:: R
+    ret["Price"]
 
 
+.. _lib-sphinx-include-label:
 
-    ret[fnl:`;"Price"] 
 
 include
 ~~~~~~~
@@ -261,7 +362,11 @@ include
 
 
 
-    inc["resources/inclusion.txt"] 
+    inc["resources/inclusion.txt"]
+
+
+.. _lib-sphinx-multiline-label:
+
 
 multiline
 ~~~~~~~~~
@@ -271,12 +376,16 @@ code
 
 
 
-    ml["test"] 
+    ml["test"]
 .. code-block:: R
 
 
 
-    ml[("test1";"test2")] 
+    ml[("test1";"test2")]
+
+
+.. _lib-sphinx-ind-label:
+
 
 ind
 ~~~
@@ -286,7 +395,11 @@ indent the content
 
 
 
-    ind[4;"1"] 
+    ind[4;"1"]
+
+
+.. _lib-sphinx-code-label:
+
 
 code
 ~~~~
@@ -295,12 +408,16 @@ code
 
 
 
-    code[l:`R;e:"";fn:`sample.q;c:("show avg[2 3 4]";"count til 5")] 
+    code[l:`R;e:"";fn:`sample.q;c:("show avg[2 3 4]";"count til 5")]
 .. code-block:: R
 
 
 
-    code2[c:("show avg[2 3 4]";"count til 5")] 
+    code2[c:("show avg[2 3 4]";"count til 5")]
+
+
+.. _lib-sphinx-split-label:
+
 
 split
 ~~~~~
@@ -309,7 +426,11 @@ split
 
 
 
-    split["-";"test-string"] 
+    split["-";"test-string"]
+
+
+.. _lib-sphinx-Substitutions-label:
+
 
 Substitutions
 ~~~~~~~~~~~~~
@@ -318,7 +439,11 @@ Substitutions
 
 
 
-    img[`$"resources/images/docq.png"] 
+    img[`$"resources/images/docq.png"]
+
+
+.. _lib-sphinx-Substitutions-label:
+
 
 Substitutions
 ~~~~~~~~~~~~~
@@ -328,7 +453,11 @@ Warn
 
 
 
-    wrnImg[] 
+    wrnImg[]
+
+
+.. _lib-sphinx-Substitutions-label:
+
 
 Substitutions
 ~~~~~~~~~~~~~
@@ -338,12 +467,16 @@ Tip
 
 
 
-    tipImg[] 
+    tipImg[]
 .. code-block:: R
 
 
 
-    toggle[h:"show/hide code";b:code[l:`j;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]] 
+    toggle[h:"show/hide code";b:code[l:`j;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]]
+
+
+.. _lib-sphinx-admonition-label:
+
 
 admonition
 ~~~~~~~~~~
@@ -352,27 +485,27 @@ admonition
 
 
 
-    adm[`warning;"Some warning"] 
+    adm[`warning;"Some warning"]
 .. code-block:: R
 
 
 
-    err["Some error"] 
+    err["Some error"]
 .. code-block:: R
 
 
 
-    warn["Some warning"] 
+    warn["Some warning"]
 .. code-block:: R
 
 
 
-    tip["Some tip"] 
+    tip["Some tip"]
 .. code-block:: R
 
 
 
-    imp["Some important message"] 
+    imp["Some important message"]
 .. code-block:: R
 
 
@@ -381,6 +514,10 @@ admonition
 
 other admonition supported - danger,caution,hint,attention
 
+
+.. _lib-sphinx-index-label:
+
+
 index
 ~~~~~
 
@@ -388,34 +525,42 @@ index
 
 
 
-    idx[ ("schema";"trade")] 
+    idx[ ("schema";"trade")]
 
 .. todo::
 
-    test code 
+    test code
+
+
+.. _lib-sphinx--label:
+
 
 
 
 
 .. todo::
 
-    Simplify the csv logic 
+    Simplify the csv logic
 
 .. code-block:: R
 
 
 
-    \l sp.q 
+    \l sp.q
 .. code-block:: R
 
 
 
-    csvt p 
+    csvt p
 .. code-block:: R
 
 
 
-    strif each (`str;12.;1b) 
+    strif each (`str;12.;1b)
+
+
+.. _lib-sphinx-simple-label:
+
 
 simple
 ~~~~~~
@@ -423,15 +568,15 @@ table
 
 .. todo::
 
-    need to revisit this function 
+    need to revisit this function
 
 .. code-block:: R
 
 
 
-    \l sp.q 
+    \l sp.q
 .. code-block:: R
 
 
 
-    tab[p]  
+    tab[p]

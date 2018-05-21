@@ -1,10 +1,17 @@
 
+
+.. _example-Sample-label:
+
 ======
 Sample
 ======
 Group of sample function for document generation
 
 .. index:: example
+
+
+.. _example-Sample-func1-label:
+
 
 func1
 ~~~~~
@@ -31,11 +38,14 @@ Param details
 show the input on console
 
 .. code-block:: R
-    :linenos:
 
 
 
     show dict
+
+
+.. _example-Sample-func2-label:
+
 
 func2
 ~~~~~
@@ -47,11 +57,10 @@ Another sample function
     :returns: int sum of x & y
 
 .. code-block:: R
-    :linenos:
 
 
 
-    " func2[2;3] = 5"
+     " func2[2;3] = 5"
 
 
 .. container:: toggle
@@ -61,11 +70,15 @@ Another sample function
         **show/hide**
     
     .. code-block:: R
-        :linenos:
     
     
     
-        (x +y)
+        (x 
+         +y)
+
+
+.. _example-Sample-trade-label:
+
 
 trade
 ~~~~~
