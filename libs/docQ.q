@@ -2,7 +2,7 @@ import `str`sphinx`file;
 
 /\d .docq
 
-tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle;
+tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle`bullet;
 tagDesc:`name`function`alias`schema;
 fieldList:`param`return;
 token:(),"/#";
@@ -16,7 +16,7 @@ fnl:getTag each fieldList;
 
 
 //TODO package and file grouping
-map:(`$"@",/:string(`name`function`schema`param`return`package`header`row`desc`todo`code`toggle`eval))!`$"."sv/:string `.sphinx,/:`dt`sst`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2`dtb;
+map:(`$"@",/:string(`name`function`schema`param`return`package`header`row`desc`todo`code`toggle`eval`bullet))!`$"."sv/:string `.sphinx,/:`dt`sst`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2`dtb`bl;
 
 /subtitleTokens:`function`schema;
 
@@ -50,6 +50,9 @@ func2:{[l]
 tagWithDescF:{[c;t] 
     p:1_c; c:c[0];
     r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
+    if[t = `$"@name" ; r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name)];""),r1 ];
+    if[t in `$("@function";"@schema") ; r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name ; c)];""),r1 ];
+
     r2:map[`$"@desc"]@ssr[;token;""]each trim each multiLinesToken vs " "sv .sphinx.ml p;
     addNewline[t;$[isEmpty r2;.sphinx.ml[r1];.sphinx.ml[r1],.sphinx.ml[r2]]]
 
@@ -68,8 +71,11 @@ func3:{[c;t]
         :addNewline[t;map[t]@ .sphinx.ml c];
     ];
 
-    /r1:e2[( map[t];   ssr[;token;""] " "sv .sphinx.ml c)];
-    r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
+    /commenting as i want to check the mutliline formatting 
+    $[t=`$"@code"; 
+        r1:map[t]@ .sphinx.ml multiLinesToken vs " "sv .sphinx.ml c;
+        r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c];
+
     addNewline[t; .sphinx.ml[r1]]
  };
 
@@ -112,7 +118,7 @@ process:{[file]
 /process each  file :(raze getFiles each folders)
 
 
-/process[file:`$getenv[`QDOCS],"\\libs\\sphinx.q"]
+process[file:`$getenv[`QDOCS],"\\libs\\sphinx.q"];
 /process[file:`$getenv[`QDOCS],"\\libs\\str.q"]
 /process[file:`$getenv[`QDOCS],"\\code\\sphinxTests.q"]
-process[file:`$getenv[`QDOCS],"\\code\\sample.q"]
+/process[file:`$getenv[`QDOCS],"\\code\\sample.q"]
