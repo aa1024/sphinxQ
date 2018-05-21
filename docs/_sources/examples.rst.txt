@@ -1,8 +1,8 @@
 .. _docq-sample-label:
 
-==============
-Document Title
-==============
+====================
+Sphinx-ReST Examples
+====================
 -----------------
 Document Subtitle
 -----------------
