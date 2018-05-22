@@ -54,6 +54,13 @@ lb:{("::";""),"  ",/:x}
 dtb:{.Q.s eval parse x}
 /# @code dtb ("{x*y}[3;2]")
 
+/# @function doctest block - evaluate the block 
+/# @todo protect the execution 
+dtb2:{eval parse x}
+/# @code dtb2 ("{x*y}[3;2]")
+
+
+
 /# @function underline the text with input charecter
 ul:{("";x;count[x]#y)}
 /# @code ul["SubTitle";"-"]
