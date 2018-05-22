@@ -49,8 +49,11 @@ func2:{[l]
 
 tagWithDescF:{[c;t] 
     p:1_c; c:c[0];
+
+
     r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
     if[t = `$"@name" ; r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name)];""),r1 ];
+
     if[t in `$("@function";"@schema") ; r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name ; c)];""),r1 ];
 
     r2:map[`$"@desc"]@ssr[;token;""]each trim each multiLinesToken vs " "sv .sphinx.ml p;
@@ -62,6 +65,9 @@ func3:{[c;t]
      p:"";
     
     if[t in tagWithDesc; :tagWithDescF [c;t]];
+
+    if[t = `$"@package" ; :("";.sphinx.idx [  (.gd.package ; .gd.name)];"")];
+
     if[t~`$"@param";
         o:.sphinx.ml value[map[t]][ trim first .sphinx.ml c; trim ssr[;token;""] ssr[;multiLinesToken;""] " "sv 1_.sphinx.ml c];    
         :addNewline[t;o]
