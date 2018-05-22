@@ -1,5 +1,6 @@
 
-.. index:: lib
+.. index:: lib;sphinx
+
 
 
 .. _lib-sphinx-label:
