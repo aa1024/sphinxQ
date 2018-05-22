@@ -2,7 +2,7 @@ import `str`sphinx`file;
 
 /\d .docq
 
-tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle`bullet;
+tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle`bullet`eval;
 tagDesc:`name`function`alias`schema;
 fieldList:`param`return;
 token:(),"/#";
@@ -16,7 +16,7 @@ fnl:getTag each fieldList;
 
 
 //TODO package and file grouping
-map:(`$"@",/:string(`name`function`schema`param`return`package`header`row`desc`todo`code`toggle`eval`bullet))!`$"."sv/:string `.sphinx,/:`dt`sst`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2`dtb`bl;
+map:(`$"@",/:string(`name`function`schema`param`return`package`header`row`desc`todo`code`toggle`eval`bullet))!`$"."sv/:string `.sphinx,/:`dt`sst`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2`dtb2`bl;
 
 /subtitleTokens:`function`schema;
 
@@ -61,10 +61,23 @@ tagWithDescF:{[c;t]
 
  };
 
+evalCode:{[t;c]
+    o:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
+    //need to fix it
+    /:$[98h~type o;  [o1:"|" 0:o; (enlist""), (.sphinx.code2 .Q.s o1), (enlist"") ]; .Q.s 0]
+
+    :$[98h~type o;  [o1:"|" 0:o; (enlist""), (.sphinx.csvth  o1 0),( .sphinx.csvtr each 1_o1) ]; .Q.s 0]
+
+
+ };
+
 func3:{[c;t] 
      p:"";
-    
+    show t;
     if[t in tagWithDesc; :tagWithDescF [c;t]];
+
+    if[t = `$"@eval" ; :evalCode[t;c] ];
+    /if[t = `$"@eval" ; : .sphinx.code2 .sphinx.dtb@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c ];
 
     if[t = `$"@package" ; :("";.sphinx.idx [  (.gd.package ; .gd.name)];"")];
 
@@ -124,7 +137,7 @@ process:{[file]
 /process each  file :(raze getFiles each folders)
 
 
-process[file:`$getenv[`QDOCS],"\\libs\\sphinx.q"];
+/process[file:`$getenv[`QDOCS],"\\libs\\sphinx.q"];
 /process[file:`$getenv[`QDOCS],"\\libs\\str.q"]
 /process[file:`$getenv[`QDOCS],"\\code\\sphinxTests.q"]
-/process[file:`$getenv[`QDOCS],"\\code\\sample.q"]
+process[file:`$getenv[`QDOCS],"\\code\\sample.q"]
