@@ -1,5 +1,9 @@
 
-.. index:: test
+.. index:: test;sphinx-tests
+
+
+
+.. _test-sphinx-tests-label:
 
 ============
 sphinx-tests
@@ -35,6 +39,9 @@ sphinx helper functions tests.
 * overline-underline test
 * Document Title test
 * Document Subtitle test
+
+
+.. _test-sphinx-tests-strif-label:
 
 
 strif

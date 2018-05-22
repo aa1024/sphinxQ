@@ -7,7 +7,8 @@ Sample
 ======
 Group of sample function for document generation
 
-.. index:: example
+.. index:: example;Sample
+
 
 
 .. _example-Sample-func1-label:
