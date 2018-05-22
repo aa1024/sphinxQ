@@ -38,6 +38,19 @@ Param details
 
 show the input on console
 
+
+.. csv-table:: 
+   :escape: '
+   :delim: |
+   :widths: auto
+   :header: d,p
+
+   2018-05-19|10.2
+   2018-05-20|10.4
+   2018-05-21|10.4
+   2018-05-14|10.7
+   2018-05-19|10.9
+
 .. code-block:: R
 
 
@@ -61,7 +74,7 @@ Another sample function
 
 
 
-     " func2[2;3] = 5"
+    0
 
 
 .. container:: toggle
