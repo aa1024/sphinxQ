@@ -13,6 +13,7 @@
 
 func1:{[dict]
     show dict /# show the input on console 
+    /# @eval ([] d:.z.d-5?10;p:10+.1*5?10)
     /# @code show dict
     
  }
