@@ -13,7 +13,9 @@
 
 func1:{[dict]
     show dict /# show the input on console 
-    /# @eval ([] d:.z.d-5?10;p:10+.1*5?10)
+    /# @toggle-table-eval ([] d:.z.d-5?10;p:10+.1*5?10)
+    /# @toggle-code-eval ([] d:.z.d-5?10;p:10+.1*5?10)
+    /# @code-eval ([] d:.z.d-5?10;p:10+.1*5?10)
     /# @code show dict
     
  }
@@ -22,11 +24,11 @@ func1:{[dict]
 /#    @param x  Input Parameter x   
 /#    @param y  Input Parameter y   
 /#    @return int sum of x & y
-
+/# @toggle Calculate the sum
+/# @todo Change the function implementation
 func2 :{[x;y]
     /# @code-eval " func2[2;3] = ", string 2+3
-    : x+y  /# @toggle-code  (x
-    /#.  +y)
+    : x+y  /# @toggle-code  (x+y)
  }
 
 trade:([]           /# @schema trade @desc  Stores the Trade details @header Column Name|Type|Desc
