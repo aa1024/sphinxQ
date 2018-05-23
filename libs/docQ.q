@@ -2,21 +2,37 @@ import `str`sphinx`file;
 
 /\d .docq
 
-tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle`bullet`eval;
+tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle`bullet`eval`table;
 tagDesc:`name`function`alias`schema;
-fieldList:`param`return;
+
 token:(),"/#";
 multiLinesToken:(),token,".";
 
 getTag:{`$"@",.sphinx.strif[x]};
-
 searchTokens:getTag each tags;
-tagWithDesc:getTag each tagDesc;
-fnl:getTag each fieldList;
 
+.map:enlist[`]!enlist (::);
+.map[getTag`name]:`name;
+.map[getTag`package]:`package;
+.map[getTag`function]:`function;
+.map[getTag`schema]:`function;
+.map[getTag`param]:`param;
+.map[getTag`return]:`return;
+.map[getTag`header]:`header;
+.map[getTag`row]:`row;
+.map[getTag`desc]:`descr;
+.map[getTag`code]:`code;
+.map[getTag`todo]:`todo;
+.map[getTag`bullet]:`bullet;
+
+.map[getTag`toggle]:`toggle;
+.map[getTag`eval]:`evalCode;
+.map[getTag`text]:`text;
+
+.map[getTag`table]:`table;
 
 //TODO package and file grouping
-map:(`$"@",/:string(`name`function`schema`param`return`package`header`row`desc`todo`code`toggle`eval`bullet))!`$"."sv/:string `.sphinx,/:`dt`sst`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2`dtb2`bl;
+map:(`$"@",/:string(`name`function`schema`param`return`package`header`row`desc`todo`code`toggle`eval`bullet`table))!`$"."sv/:string `.sphinx,/:`dt`sst`sst`prm`ret`idx`csvth`csvtr`p`todo`code2`toggle2`dtb2`bl`csvt;
 
 /subtitleTokens:`function`schema;
 
@@ -26,10 +42,99 @@ addNewline:{[t;o] if[.gd.prevTag<>t;o:enlist[""],o];.gd.prevTag:t;:o};
 isEmpty:{""~raze over x};
 
 init:{
-    .gd.name:"";
-    .gd.package:"";
+    .gd.name:"getthefilenameasdefault";
+    .gd.package:"misc";
     .gd.prevTag:`;
  };
+
+tokenChain:{[t]  `$"@",/:"-" vs 1_string t};
+
+processTag:{[l] 
+    show .temp.l:l;   /l:.temp.l
+    tag:l[0];
+    if[ not any tag like/:("*code-eval*";"*table-eval*"); tag:ssr[tag;"eval";"text-eval"]];
+    t:`$tag; d:1_l;
+    tc:tokenChain[t];
+    {[d;t] .map[t][d;t]  }/[d; reverse tc]   /t:last tc ; d:.map[t][d;t] ;t:first tc
+ };
+
+/processTag l:f4 19
+/t:`$l[0]; d:1_l; ; map[t]
+/raze processTag each f4
+
+
+/# @bullet processTag ("@code-eval";enlist "\"";"func2[2;3]";enlist "=";"\",";"string";"2+3")
+/# @bullet processTag ("@eval"; "([]";"a:(1;2;3;4))")
+/# @bullet processTag ("@code-eval"; "([]";"a:(1;2;3;4))")
+/# @bullet processTag ("@table-eval"; "([]";"a:(1;2;3;4))")
+/# @bullet processTag l:("@row"; "startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)")
+
+/# @bullet name[("Sample";"Group";"of";"sample";"function";"for";"document";"generation"); getTag`name] 
+/# @bullet package[enlist "example"; getTag`package] 
+/# @bullet function[("func1";enlist "A";"sample";"function";"to";"generate";"/#.";"an";"inline";"table";"for";"input";"parameter";"dictionary"); getTag`function] 
+/# @bullet param[("dict";"Input";"Parameter";"Dictionary"); getTag`param]
+/# @bullet return[enlist ""; getTag`return] 
+/# @bullet descr [("Param";"details"); getTag`desc] 
+/# @bullet header[enlist "Key|Type|Required|Default|Desc"; getTag`header]
+/# @bullet row[("startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)");getTag`row] 
+/# @bullet code[d:("show";"dict") ;getTag`code]
+/# @bullet code[  evalCode[("([]";"a:(1;2;3;4))");getTag`eval] ;getTag`code]
+
+/# @bullet todo[("Change";"the";"function";"implementation") ;getTag`todo]
+/# @bullet bullet[("Change";"the";"function";"implementation") ;getTag`bullet]
+
+/# @bullet toggle[("Calculate";"the";"sum") ;getTag`toggle]
+/# @bullet flatten[("Param";"details") ]
+
+/# @bullet evalCode[("([]";"a:(1;2;3;4))");getTag`eval]
+/# @bullet table[([] a: 1 2 3 4);getTag`table]
+
+
+flatten:{[d] :" "sv trim each multiLinesToken vs " "sv .sphinx.ml d};
+table:{[d;t]  .sphinx.csvt d};
+
+package:{[d;t] :("";.sphinx.idx [  (.gd.package ; .gd.name)];"") };
+/desc func changed
+descr:  {[d;t] addNewline[t; .sphinx.p  [ssr[;token;""]          flatten[d] ] ]};
+return: {[d;t] addNewline[t;.sphinx.ml .sphinx.ret[ssr[;token;""]         flatten[d] ] ]};
+header: {[d;t] addNewline[t;.sphinx.csvth  ssr[;token;""]      flatten[d] ]};
+row:    {[d;t] addNewline[t;.sphinx.ml .sphinx.csvtr  ssr[;token;""]         flatten[d]] };
+toggle: {[d;t] addNewline[t;.sphinx.toggle2 @     d ] };
+todo:   {[d;t] addNewline[t;r1: .sphinx.todo  @  ssr[;token;""] flatten[d]  ]};
+bullet: {[d;t] addNewline[t;r1: .sphinx.bl   @ ssr[;token;""] flatten[d]  ]};
+code:{[d;t] 
+    $[ all 10h=type each .sphinx.ml d; 
+        [r1:.sphinx.code2@ .sphinx.ml multiLinesToken vs " "sv .sphinx.ml d; :addNewline[t; .sphinx.ml[r1]]] ;
+        $[98h~type d;  [o:"\n" vs ssr[;"\r";""].Q.s d; :(enlist""), (.sphinx.code2  o), (enlist"") ]; .Q.s1 flip d]
+    ]    
+ };
+
+name:{[d;t] 
+    para:1_d; c:d[0];
+    r1:.sphinx.dt@ ssr[;token;""] flatten  c;
+    r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name)];""),r1 ;
+    r2:descr[para;t] ;
+    addNewline[t;$[isEmpty r2;.sphinx.ml[r1];.sphinx.ml[r1],.sphinx.ml[r2]]]
+ };
+
+/# @todo in case of schema add an extra index of schema
+function:{[d;t] 
+    para:1_d; c:d[0];
+    r1:.sphinx.sst@ ssr[;token;""] flatten  c;
+    r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name ; c)];""),r1;
+    r2:descr[para;t] ;
+    addNewline[t;$[isEmpty r2;.sphinx.ml[r1];.sphinx.ml[r1],.sphinx.ml[r2]]]
+ };
+
+param:{[d;t] 
+     o:.sphinx.ml value[map[t]][ trim first .sphinx.ml d; trim ssr[;token;""] ssr[;multiLinesToken;""] " "sv 1_.sphinx.ml d];    
+    :addNewline[t;o]
+ };
+
+evalCode:{[d;t]    .sphinx.dtb2 @ ssr[;token;""] flatten[d] };
+text:{[d;t]  .sphinx.ml .Q.s1 d};
+
+
 
 getMeta:{[tl;f]
     package:tl where tl[;0] like"@package*";
@@ -38,65 +143,6 @@ getMeta:{[tl;f]
     .gd.name:$[count name;name[0;1];getFileName[f]] ;
  };
 
-tokenChain:{[t]  `$"@",/:"-" vs 1_string t};
-
-func2:{[l] 
-    t:`$l[0]; c:1_l;
-    tc:tokenChain[t];
-    func3/[c; reverse tc]     
-    /c:func3[c;t:last tc] ; t:first tc
- };
-
-tagWithDescF:{[c;t] 
-    p:1_c; c:c[0];
-
-
-    r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
-    if[t = `$"@name" ; r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name)];""),r1 ];
-
-    if[t in `$("@function";"@schema") ; r1:("";.sphinx.lbl [ `$( .gd.package ; .gd.name ; c)];""),r1 ];
-
-    r2:map[`$"@desc"]@ssr[;token;""]each trim each multiLinesToken vs " "sv .sphinx.ml p;
-    addNewline[t;$[isEmpty r2;.sphinx.ml[r1];.sphinx.ml[r1],.sphinx.ml[r2]]]
-
- };
-
-evalCode:{[t;c]
-    o:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c;
-    //need to fix it
-    /:$[98h~type o;  [o1:"|" 0:o; (enlist""), (.sphinx.code2 .Q.s o1), (enlist"") ]; .Q.s 0]
-
-    :$[98h~type o;  [o1:"|" 0:o; (enlist""), (.sphinx.csvth  o1 0),( .sphinx.csvtr each 1_o1) ]; .Q.s 0]
-
-
- };
-
-func3:{[c;t] 
-     p:"";
-    show t;
-    if[t in tagWithDesc; :tagWithDescF [c;t]];
-
-    if[t = `$"@eval" ; :evalCode[t;c] ];
-    /if[t = `$"@eval" ; : .sphinx.code2 .sphinx.dtb@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c ];
-
-    if[t = `$"@package" ; :("";.sphinx.idx [  (.gd.package ; .gd.name)];"")];
-
-    if[t~`$"@param";
-        o:.sphinx.ml value[map[t]][ trim first .sphinx.ml c; trim ssr[;token;""] ssr[;multiLinesToken;""] " "sv 1_.sphinx.ml c];    
-        :addNewline[t;o]
-    ];
-
-    if[t~`$"@toggle";
-        :addNewline[t;map[t]@ .sphinx.ml c];
-    ];
-
-    /commenting as i want to check the mutliline formatting 
-    $[t=`$"@code"; 
-        r1:map[t]@ .sphinx.ml multiLinesToken vs " "sv .sphinx.ml c;
-        r1:map[t]@ ssr[;token;""] " "sv trim each multiLinesToken vs " "sv .sphinx.ml c];
-
-    addNewline[t; .sphinx.ml[r1]]
- };
 
 parseFile:{[file]
 
@@ -121,7 +167,8 @@ parseFile:{[file]
     f4:tokenInd cut f3;
     
     getMeta[f4;file];    
-    raze func2 each f4
+
+    raze processTag each f4
  };
 
 process:{[file]
