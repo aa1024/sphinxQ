@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>&lt;no title&gt; &#8212; docQ 0.1 documentation</title>
+    <title>Sample &#8212; docQ 0.1 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -17,6 +17,7 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Sphinx-ReST Examples" href="examples.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -28,15 +29,29 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Sphinx-ReST Examples"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">docQ 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sample</a><ul>
+<li><a class="reference internal" href="#func1">func1</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="examples.html"
+                        title="previous chapter">Sphinx-ReST Examples</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/packageList.rst.txt"
+      <li><a href="_sources/test.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -60,16 +75,86 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sample.html">Sample</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx.html">sphinx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="str.html">str</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sphinxTests.html">sphinx-tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Sphinx-ReST Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">Sample</a></li>
+  <div class="section" id="sample">
+<span id="example-sample-label"></span><h1>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h1>
+<p>Group of sample function for document generation</p>
+<div class="section" id="func1">
+<span id="example-sample-func1-label"></span><span id="index-0"></span><h2>func1<a class="headerlink" href="#func1" title="Permalink to this headline">¶</a></h2>
+<p>A sample function to generate
+an inline table for input parameter dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param dict:</th><td class="field-body">Input Parameter Dictionary</td>
+</tr>
+<tr class="field-even field"><th class="field-name">returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Param details</p>
+<table border="1" class="colwidths-auto docutils">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+<th class="head">Default</th>
+<th class="head">Desc</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>startDate</td>
+<td>date</td>
+<td>0b</td>
+<td>.z.d</td>
+<td>Start Date (if null or not provided, will be set as current date)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>show dict
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Change the function implementation</p>
+</div>
+<ul class="simple">
+<li>Change the function implementation</li>
 </ul>
+<div class="toggle docutils container">
+<div class="header docutils container">
+<strong>show/hide</strong></div>
+<p>Calculate the sum</p>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>show dict
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>a
+<span class="o">-</span>
+<span class="m">1</span>
+<span class="m">2</span>
+<span class="m">3</span>
+<span class="m">4</span>
+</pre></div>
+</div>
+<table border="1" class="colwidths-auto docutils">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">a</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+</tr>
+<tr class="row-even"><td>3</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+</tr>
+</tbody>
+</table>
+<p>+(,`a)!,1 2 3 4</p>
+</div>
 </div>
 
 
@@ -84,6 +169,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Sphinx-ReST Examples"
+             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">docQ 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
