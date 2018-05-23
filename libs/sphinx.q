@@ -112,11 +112,11 @@ fn:{[fnl;fc] "    :",sv[" ";ml strif (),fnl],": ",fc}
 /# @code fn[fnl:`returns;"Price"]
 
 /# @function field list param
-prm:{[fnl;fc] "    :param ",strif[fnl],": ",fc}
+prm:{[fnl;fc] ":param ",strif[fnl],": ",fc}
 /# @code prm[fnl:`sym;"Instrument Id"]
 
 /# @function field list ret
-ret:{[fc] "    :returns: ",fc}
+ret:{[fc] ":returns: ",fc}
 /# @code ret["Price"]
 
 
@@ -203,6 +203,10 @@ csvt:{( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",","s
 /# @code \l sp.q
 /# @code csvt p
 /# @code strif each (`str;12.;1b)
+
+/# @todo tests
+csvt2:{( ".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: ",  ssr[first x;"|";","] ;""),"   ",/:.sphinx.ml 1_x}
+
 
 csvth:{[h]( "";".. csv-table:: ";"   :escape: '";"   :delim: |";"   :widths: auto";"   :header: ",ssr[h;"|";","];"")}
 csvtr:{[r]"   ",r}
