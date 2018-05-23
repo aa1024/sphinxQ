@@ -1,14 +1,13 @@
 
-
 .. _example-Sample-label:
 
 ======
 Sample
 ======
+
 Group of sample function for document generation
 
 .. index:: example;Sample
-
 
 
 .. _example-Sample-func1-label:
@@ -16,12 +15,12 @@ Group of sample function for document generation
 
 func1
 ~~~~~
-A sample function to generate
-an inline table for input parameter dictionary
 
-    :param dict: Input Parameter Dictionary
+A sample function to generate an inline table for input parameter dictionary
 
-    :returns: void
+:param dict: Input Parameter Dictionary
+
+:returns: void
 
 Param details
 
@@ -38,18 +37,56 @@ Param details
 
 show the input on console
 
+.. container:: toggle
 
-.. csv-table:: 
-   :escape: '
-   :delim: |
-   :widths: auto
-   :header: d,p
+    .. container:: header
 
-   2018-05-19|10.2
-   2018-05-20|10.4
-   2018-05-21|10.4
-   2018-05-14|10.7
-   2018-05-19|10.9
+        **show/hide**
+    
+    .. csv-table:: 
+       :escape: '
+       :widths: auto
+       :header: d,p
+    
+       2018.05.18,10.4
+       2018.05.15,10.9
+       2018.05.17,10.4
+       2018.05.17,10.7
+       2018.05.19,10.8
+.. container:: toggle
+
+    .. container:: header
+
+        **show/hide**
+    
+    
+    .. code-block:: R
+    
+    
+    
+        d          p   
+        ---------------
+        2018.05.18 10.8
+        2018.05.20 10.4
+        2018.05.15 10.4
+        2018.05.17 10.5
+        2018.05.14 10  
+        
+    
+
+.. code-block:: R
+
+
+
+    d          p   
+    ---------------
+    2018.05.21 10.1
+    2018.05.20 10.5
+    2018.05.14 10.6
+    2018.05.20 10.1
+    2018.05.16 10  
+    
+
 
 .. code-block:: R
 
@@ -57,25 +94,38 @@ show the input on console
 
     show dict
 
-
 .. _example-Sample-func2-label:
 
 
 func2
 ~~~~~
+
 Another sample function
 
-    :param x: Input Parameter x
-    :param y: Input Parameter y
+:param x: Input Parameter x
+:param y: Input Parameter y
 
-    :returns: int sum of x & y
+:returns: int sum of x & y
+
+.. container:: toggle
+
+    .. container:: header
+
+        **show/hide**
+    
+    Calculate
+    the
+    sum
+
+.. todo::
+
+    Change the function implementation
 
 .. code-block:: R
 
 
 
-    0
-
+     func2[2;3] = 5
 
 .. container:: toggle
 
@@ -87,9 +137,7 @@ Another sample function
     
     
     
-        (x 
-         +y)
-
+        (x+y)
 
 .. _example-Sample-trade-label:
 
