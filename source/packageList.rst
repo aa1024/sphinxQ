@@ -6,7 +6,7 @@
    sphinx
    str
    sphinxTests
-   examples
-   test   
+
+
 
   

@@ -7,6 +7,8 @@ Project doc[Q]
 ================================
 
 .. include:: packageList.rst
+.. include:: staticList.rst
+
 
 Indices and tables
 ==================
