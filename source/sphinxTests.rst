@@ -2,12 +2,12 @@
 .. index:: test;sphinx-tests
 
 
-
 .. _test-sphinx-tests-label:
 
 ============
 sphinx-tests
 ============
+
 sphinx helper functions tests.
 
 .. todo::
@@ -40,12 +40,12 @@ sphinx helper functions tests.
 * Document Title test
 * Document Subtitle test
 
-
 .. _test-sphinx-tests-strif-label:
 
 
 strif
 ~~~~~
+
 test
 
 * Substitutions test

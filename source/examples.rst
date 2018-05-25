@@ -12,35 +12,7 @@ Document Subtitle
 .. include:: resources/inclusion.txt
 
 
-Toggle Code
-===========
 
-Click **Show/Hide code** to toggle the contents.
-
-.. container:: toggle
-
-    .. container:: header
-
-        **Show/Hide code**
-
-    .. code-block:: R
-       :linenos:
-
-       show sums -5?100
-       ...
-
-Toggle Example
-==============
-
-.. container:: toggle
-
-    .. container:: header
-
-        **Show/Hide content**
-
-    A sample with paragraph, *italics*, **bold** and ``mono-space`` text style examples.
-
-    Subscript H\ :sub:`2`\O and Superscript E=mc\ :sup:`2`\  examples.
 
 Test Styles
 ===========
@@ -63,7 +35,34 @@ Code Block
 Cross-referencing
 =================
 
-Link to :ref:`trade-schema-label`
+Link to some more examples :ref:`example-Sample-label`
+
+Toggle Code
+===========
+
+Click **Show/Hide code** to toggle the contents
+
+.. container:: toggle
+
+    .. container:: header
+
+        **Show/Hide code**
+
+    .. code-block:: R
+       :linenos:
+
+       show sums -5?100
+       ...
+
+.. container:: toggle
+
+    .. container:: header
+
+        **Show/Hide content**
+
+    A sample with paragraph, *italics*, **bold** and ``mono-space`` text style examples.
+
+    Subscript H\ :sub:`2`\O and Superscript E=mc\ :sup:`2`\  examples.
 
 Lists
 =====
