@@ -167,6 +167,9 @@ tipImg:{img["images/tip.gif"]}
 toggle:{[h;b] (".. container:: toggle";"";"    .. container:: header";"";"        **",h,"**"),ind[4]each ml[b]};
 /# @code toggle[h:"show/hide code";b:code[l:`j;e:"2";fn:`;c:("show avg[2 3 4]";"count til 5")]]
 
+toggle2:{toggle["show/hide" ;enlist[""],ml x] };
+
+
 /# @function admonition 
 adm:{[a;b] (".. ",string[a],"::";""),ind[4;]each ml[b]}
 /# @code adm[`warning;"Some warning"]
