@@ -4,9 +4,9 @@
   
    sample
    sphinx
-   str
    sphinxTests
-
+   str
+   docq
 
 
   
