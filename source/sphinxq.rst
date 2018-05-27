@@ -1,16 +1,16 @@
 
-.. _lib-docq-label:
+.. _lib-sphinxq-label:
 
-====
-docq
-====
+=======
+sphinxq
+=======
 
-Function Library for processing the docQ tags and generating the ReST style documents.
+Function Library for processing the sphinxQ tags and generating the ReST style documents.
 
-.. index:: lib;docq
+.. index:: lib;sphinxq
 
 
-.. _lib-docq-Tags-label:
+.. _lib-sphinxq-Tags-label:
 
 
 Tags
@@ -52,7 +52,7 @@ Following are the tags currently supported by this library
 
     in case of schema add an extra index of schema
 
-.. _lib-docq-parseFile-label:
+.. _lib-sphinxq-parseFile-label:
 
 
 parseFile

@@ -1,16 +1,16 @@
 
-.. _example-Sample-label:
+.. _example-sample-label:
 
 ======
-Sample
+sample
 ======
 
 Group of sample function for document generation
 
-.. index:: example;Sample
+.. index:: example;sample
 
 
-.. _example-Sample-func1-label:
+.. _example-sample-func1-label:
 
 
 func1
@@ -48,11 +48,11 @@ show the input on console
        :widths: auto
        :header: d,p
     
-       2018.05.25,10.5
-       2018.05.23,10.7
-       2018.05.24,10.5
-       2018.05.17,10.6
-       2018.05.24,10.7
+       2018.05.26,10.7
+       2018.05.18,10.7
+       2018.05.18,10.6
+       2018.05.27,10.5
+       2018.05.21,10.1
 .. container:: toggle
 
     .. container:: header
@@ -66,11 +66,11 @@ show the input on console
     
         d          p   
         ---------------
-        2018.05.17 10  
+        2018.05.25 10.4
+        2018.05.18 10.1
+        2018.05.21 10  
+        2018.05.20 10.3
         2018.05.23 10.7
-        2018.05.22 10.3
-        2018.05.17 10.3
-        2018.05.16 10.6
         
     
 
@@ -80,11 +80,11 @@ show the input on console
 
     d          p   
     ---------------
-    2018.05.16 10  
+    2018.05.26 10.8
+    2018.05.27 10.7
+    2018.05.22 10.1
     2018.05.18 10.1
-    2018.05.17 10.1
-    2018.05.21 10.9
-    2018.05.22 10.6
+    2018.05.20 10  
     
 
 
@@ -94,7 +94,7 @@ show the input on console
 
     show dict
 
-.. _example-Sample-func2-label:
+.. _example-sample-func2-label:
 
 
 func2
@@ -139,7 +139,7 @@ Another sample function
     
         (x+y)
 
-.. _example-Sample-trade-label:
+.. _example-sample-trade-label:
 
 
 trade

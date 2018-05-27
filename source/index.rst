@@ -1,9 +1,8 @@
-.. docQ documentation master file, created by
-   sphinx-quickstart on Fri Apr 13 21:55:15 2018.
+.. sphinxQ documentation master file
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Project doc[Q]
+Project sphinx[Q]
 ================================
 
 .. include:: packageList.rst

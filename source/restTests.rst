@@ -1,14 +1,14 @@
 
-.. index:: test;sphinx-tests
+.. index:: test;rest-tests
 
 
-.. _test-sphinx-tests-label:
+.. _test-rest-tests-label:
 
-============
-sphinx-tests
-============
+==========
+rest-tests
+==========
 
-sphinx helper functions tests.
+rest helper functions tests.
 
 .. todo::
 
@@ -40,7 +40,7 @@ sphinx helper functions tests.
 * Document Title test
 * Document Subtitle test
 
-.. _test-sphinx-tests-strif-label:
+.. _test-rest-tests-strif-label:
 
 
 strif
