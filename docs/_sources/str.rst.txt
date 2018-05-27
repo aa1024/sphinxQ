@@ -8,7 +8,7 @@
 str
 ===
 
-String helper functions - fc,sfl,zfl,tu,tl,tstr,cc,ucc,us (snakecase, startcase, traincase )
+String helper functions - fc,sfl,zfl,tu,tl,cc,ucc,us (snakecase, startcase, traincase )
 
 .. _lib-str-stc-label:
 
@@ -176,11 +176,31 @@ zero fill from right
 
 :returns: String right padded with zero
 
-.. _lib-str-tstr-label:
+.. _lib-str-strif-label:
 
 
-tstr
-~~~~
+strif
+~~~~~
 
-to string
-Convert the nested structures to string using -3!
+handle the simple case otherwise flaten it to string
+
+.. code-block:: R
+
+
+
+    strif[`test]
+.. code-block:: R
+
+
+
+    strif[2#`test]
+.. code-block:: R
+
+
+
+    strif[string `test]
+.. code-block:: R
+
+
+
+    strif[string 2#`test]

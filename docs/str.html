@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>str &#8212; docQ 0.1 documentation</title>
+    <title>str &#8212; sphinx[Q] 1.0 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="docq" href="docq.html" />
-    <link rel="prev" title="sphinx-tests" href="sphinxTests.html" />
+    <link rel="next" title="rest-tests" href="restTests.html" />
+    <link rel="prev" title="sphinxq" href="sphinxq.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -31,12 +31,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="docq.html" title="docq"
+          <a href="restTests.html" title="rest-tests"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="sphinxTests.html" title="sphinx-tests"
+          <a href="sphinxq.html" title="sphinxq"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">docQ 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">sphinx[Q] 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -57,17 +57,17 @@
 <li><a class="reference internal" href="#sfrb">sfrb</a></li>
 <li><a class="reference internal" href="#zfl">zfl</a></li>
 <li><a class="reference internal" href="#zfr">zfr</a></li>
-<li><a class="reference internal" href="#tstr">tstr</a></li>
+<li><a class="reference internal" href="#strif">strif</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="sphinxTests.html"
-                        title="previous chapter">sphinx-tests</a></p>
+  <p class="topless"><a href="sphinxq.html"
+                        title="previous chapter">sphinxq</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="docq.html"
-                        title="next chapter">docq</a></p>
+  <p class="topless"><a href="restTests.html"
+                        title="next chapter">rest-tests</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -97,7 +97,7 @@
             
   <div class="section" id="str">
 <span id="lib-str-label"></span><span id="index-0"></span><h1>str<a class="headerlink" href="#str" title="Permalink to this headline">¶</a></h1>
-<p>String helper functions - fc,sfl,zfl,tu,tl,tstr,cc,ucc,us (snakecase, startcase, traincase )</p>
+<p>String helper functions - fc,sfl,zfl,tu,tl,cc,ucc,us (snakecase, startcase, traincase )</p>
 <div class="section" id="stc">
 <span id="lib-str-stc-label"></span><h2>stc<a class="headerlink" href="#stc" title="Permalink to this headline">¶</a></h2>
 <p>startcase “an example string” -&gt; “An Example String”</p>
@@ -293,10 +293,21 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="tstr">
-<span id="lib-str-tstr-label"></span><h2>tstr<a class="headerlink" href="#tstr" title="Permalink to this headline">¶</a></h2>
-<p>to string
-Convert the nested structures to string using -3!</p>
+<div class="section" id="strif">
+<span id="lib-str-strif-label"></span><h2>strif<a class="headerlink" href="#strif" title="Permalink to this headline">¶</a></h2>
+<p>handle the simple case otherwise flaten it to string</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span>`test<span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span><span class="m">2</span><span class="c1">#`test]</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span>string `test<span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span>string <span class="m">2</span><span class="c1">#`test]</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -313,12 +324,12 @@ Convert the nested structures to string using -3!</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="docq.html" title="docq"
+          <a href="restTests.html" title="rest-tests"
              >next</a> |</li>
         <li class="right" >
-          <a href="sphinxTests.html" title="sphinx-tests"
+          <a href="sphinxq.html" title="sphinxq"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">docQ 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">sphinx[Q] 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
  <script type="text/javascript">
