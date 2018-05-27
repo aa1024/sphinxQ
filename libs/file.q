@@ -14,3 +14,7 @@ getFileName:{[fn]
     del:?[count[s]=(s:.str.tstr fn)?"/";"\\";"/"];
     string first ` vs `$last del vs  s
  };
+
+saveFile:{[]
+    hsym[ `$getenv[`QDOCS],"\\source\\",.str.cc[.sphinx.strif[.gd.name]],".rst"]  0: rst
+ };
