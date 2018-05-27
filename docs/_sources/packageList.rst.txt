@@ -3,7 +3,7 @@
   :caption: Contents
 
   rest
-  sphinxq
+  sphinx
   str
   restTests
   sample
