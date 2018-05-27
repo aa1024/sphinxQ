@@ -1,10 +1,10 @@
-/# @name sphinxq Function Library for processing the sphinxQ tags and generating the ReST style documents. 
+/# @name sphinx Function Library for processing the sphinxQ tags and generating the ReST style documents. 
 
 /# @package lib
 
 import `str`rest`file;
 
-/\d .sphinxq
+\d .sphinx
 
 /# @schema Tags Following are the tags currently supported by this library
 /# @code-eval ([] tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`name`todo`version`tags`schema`desc`toggle`bullet`eval`table)
@@ -19,22 +19,22 @@ getTag:{`$"@",.str.strif[x]};
 searchTokens:getTag each tags;
 
 .map:enlist[`]!enlist (::);
-.map[getTag`name]:`name;
-.map[getTag`package]:`package;
-.map[getTag`function]:`function;
-.map[getTag`schema]:`function;
-.map[getTag`param]:`param;
-.map[getTag`return]:`return;
-.map[getTag`header]:`header;
-.map[getTag`row]:`row;
-.map[getTag`desc]:`descr;
-.map[getTag`code]:`code;
-.map[getTag`todo]:`todo;
-.map[getTag`bullet]:`bullet;
-.map[getTag`toggle]:`toggle;
-.map[getTag`eval]:`evalCode;
-.map[getTag`text]:`text;
-.map[getTag`table]:`table;
+.map[getTag`name]    :`.sphinx.name;
+.map[getTag`package] :`.sphinx.package;
+.map[getTag`function]:`.sphinx.function;
+.map[getTag`schema]  :`.sphinx.function;
+.map[getTag`param]   :`.sphinx.param;
+.map[getTag`return]  :`.sphinx.return;
+.map[getTag`header]  :`.sphinx.header;
+.map[getTag`row]     :`.sphinx.row;
+.map[getTag`desc]    :`.sphinx.descr;
+.map[getTag`code]    :`.sphinx.code;
+.map[getTag`todo]    :`.sphinx.todo;
+.map[getTag`bullet]  :`.sphinx.bullet;
+.map[getTag`toggle]  :`.sphinx.toggle;
+.map[getTag`eval]    :`.sphinx.evalCode;
+.map[getTag`text]    :`.sphinx.text;
+.map[getTag`table]   :`.sphinx.table;
 
 addNewline:{[t;o] if[.sphinx.prevTag<>t;o:enlist[""],o];.sphinx.prevTag:t;:o};
 isEmpty:{""~raze over x};
@@ -141,6 +141,7 @@ getMeta:{[tl;f]
 /# @schema parseFile Steps how a file will be proceesed 
 parseFile:{[file]
     reset[];
+
     fc:read0 hsym file;
     /# @bullet Read the comments containing the tokens
     f1:fc where any fc like/:(token,"*";"* ",token,"*");
@@ -159,34 +160,37 @@ parseFile:{[file]
     /# @bullet Tokenise the string by tags
     tokenInd:where any f3 like/:"*",/:string[searchTokens ],\:"*";
     f4:tokenInd cut f3;
-    
+
     /# @bullet Get meta information that will be used in creating the labels and indexing
     getMeta[f4;file];    
 
     /# @bullet Start processing each tag
     rst:raze processTag each f4;
     `.sphinx.rstList upsert `$.str.strif[.sphinx.fileName];
-
     :rst
  };
 
-process:{[file]
+process:{[base;file]
+    show "[sphinx] Processing file : " ,string file;
     rst:.[parseFile;enlist file;`error];
-    if[rst~`error;:()];
-    hsym[ `$getenv[`QDOCS],"\\source\\",.str.cc[.str.strif[.sphinx.fileName]],".rst"]  0: rst
+    if[rst~`error;  show "[sphinx] Error in processing file : " ,string file ; :()];
+    restFn:.str.cc[.str.strif[.sphinx.fileName]];
+    show "[sphinx] Saving the ReST file : " , restFn;
+    .file.saveFile[ base,"/source/",restFn,".rst" ; rst ]
  };
 
 
-init:{
+init:{[base;fl;ext]
     .sphinx.rstList:0#.sphinx.rstList;
-    process each  (raze .file.getFiles each .file.folders);
-    toc:.rest.toc exec .str.cc each string rst from .sphinx.rstList;
-    hsym[ `$getenv[`QDOCS],"\\source\\packageList.rst"]  0: toc
+    process[base] each  .file.getFiles[fl;ext];
+    .temp.toc:toc:.rest.toc exec .str.cc each string rst from .sphinx.rstList;
+    show "[sphinx] Saving the index ReST file : packageList.rst" ;
+    .file.saveFile[base,"\\source\\packageList.rst" ; toc]
  };
 
-/file:first (raze .file.getFiles each .file.folders)
-/process[file:`$getenv[`QDOCS],"\\code\\sample.q"];
-/process[file:`$getenv[`QDOCS],"\\libs\\str.q"];
-/process[file:`$getenv[`QDOCS],"\\libs\\sphinx.q"];
-/process[file:`$getenv[`QDOCS],"\\code\\sphinxTests.q"];
+/file:first 1_.file.getFiles[fl;ext]
+/.sphinx.process[base;file:`$base,"\\code\\sample.q"]
+/process[file:`$baseFolder,"\\libs\\str.q"];
+/process[file:`$baseFolder,"\\libs\\sphinx.q"];
+/process[file:`$baseFolder,"\\code\\sphinxTests.q"];
 
