@@ -1,5 +1,5 @@
 ### Table of Contents
-**[Desc](#docq)**<br>
+**[Desc](#sphinxq)**<br>
 **[Tags](#tags)**<br>
 **[Tag chaining](#tag-chaining)**<br>
 **[Rules](#rules)**<br>
@@ -7,7 +7,7 @@
 
 ----
 
-# doc[Q]
+# sphinx[Q]
 A tool powered by `sphinx` for documenting the q code with some predifined tags which would generate html/wiki style documents.
 
 ## Tags
