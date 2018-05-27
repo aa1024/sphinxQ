@@ -1,6 +1,6 @@
 /# @package lib
 /# @name str
-/# @desc String helper functions - fc,sfl,zfl,tu,tl,tstr,cc,ucc,us (snakecase, startcase, traincase )
+/# @desc String helper functions - fc,sfl,zfl,tu,tl,cc,ucc,us (snakecase, startcase, traincase )
 
 
 \d .str
@@ -82,6 +82,9 @@ zfl:{"0"^neg[x]$string y}
 zfr:{"0"^x$string y}
 
 
-/# @function tstr @desc to string
-/# Convert the nested structures to string using -3! 
-tstr:{:$[10h=type x; x;0>type x;string x;-3!x]}
+/# @function strif handle the simple case otherwise flaten it to string
+strif:{$[10h=t:type x;x; t=11h;string x;t<0;string x;.Q.s1 x]}
+/# @code strif[`test]
+/# @code strif[2#`test]
+/# @code strif[string `test]
+/# @code strif[string 2#`test]
