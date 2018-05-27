@@ -1,10 +1,7 @@
 /# @package lib
 /# @name rest Sphinx-ReST helper functions to generate the ReST documents.
 
-/# @todo list table
 /# @todo math support  - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support
-/# @todo http://www.sphinx-doc.org/en/stable/markup/misc.html?highlight=parameter#
-/# @todo http://www.sphinx-doc.org/en/stable/markup/index.html
 
 
 import`str;
