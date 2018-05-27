@@ -1,4 +1,4 @@
-/# @name Sample Group of sample function for document generation
+/# @name sample Group of sample function for document generation
 
 /# @package example
 
