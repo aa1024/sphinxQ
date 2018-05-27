@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'docQ'
+project = 'sphinx[Q]'
 copyright = '2018, aa1024'
 author = 'aa1024'
 
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '1.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -109,7 +109,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'docQdoc'
+htmlhelp_basename = 'sphinxQdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -136,7 +136,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'docQ.tex', 'docQ Documentation',
+    (master_doc, 'sphinxQ.tex', 'sphinx[Q] Documentation',
      'aa1024', 'manual'),
 ]
 
@@ -146,7 +146,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'docq', 'docQ Documentation',
+    (master_doc, 'sphinxQ', 'sphinx[Q] Documentation',
      [author], 1)
 ]
 
@@ -157,8 +157,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'docQ', 'docQ Documentation',
-     author, 'docQ', 'One line description of project.',
+    (master_doc, 'sphinxQ', 'sphinx[Q] Documentation',
+     author, 'sphinxQ', 'One line description of project.',
      'Miscellaneous'),
 ]
 
