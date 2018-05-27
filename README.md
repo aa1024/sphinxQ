@@ -4,6 +4,7 @@
 **[Tag chaining](#tag-chaining)**<br>
 **[Rules](#rules)**<br>
 **[Todo](#todo)**<br>
+**[Resources](#resources)**<br>
 
 ----
 
@@ -84,3 +85,9 @@ Applying the formatting of multiple tag over the same content. Tags can be chain
 * Handle scenarios when file with same name present in different folders/package.
 * libs cyclic dependency
 * Handle multiline code scenario
+
+## Resources
+* http://www.sphinx-doc.org/en/stable/markup/misc.html?highlight=parameter#
+* http://www.sphinx-doc.org/en/stable/markup/index.html
+
+
