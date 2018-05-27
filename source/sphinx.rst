@@ -1,16 +1,16 @@
 
-.. _lib-sphinxq-label:
+.. _lib-sphinx-label:
 
-=======
-sphinxq
-=======
+======
+sphinx
+======
 
 Function Library for processing the sphinxQ tags and generating the ReST style documents.
 
-.. index:: lib;sphinxq
+.. index:: lib;sphinx
 
 
-.. _lib-sphinxq-Tags-label:
+.. _lib-sphinx-Tags-label:
 
 
 Tags
@@ -52,7 +52,7 @@ Following are the tags currently supported by this library
 
     in case of schema add an extra index of schema
 
-.. _lib-sphinxq-parseFile-label:
+.. _lib-sphinx-parseFile-label:
 
 
 parseFile
