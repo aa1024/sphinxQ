@@ -36,6 +36,8 @@ searchTokens:getTag each tags;
 .map[getTag`text]    :`.sphinx.text;
 .map[getTag`table]   :`.sphinx.table;
 .map[getTag`tags]    :`.sphinx.tag;
+.map[getTag`error]   :`.sphinx.error;
+.map[getTag`see]     :`.sphinx.see;
 
 
 addNewline:{[t;o] if[.sphinx.prevTag<>t;o:enlist[""],o];.sphinx.prevTag:t;:o};
@@ -55,18 +57,21 @@ processTag:{[l]
     if[ not any tag like/:("*code-eval*";"*table-eval*"); tag:ssr[tag;"eval";"text-eval"]];
     t:`$tag; d:1_l;
     tc:tokenChain[t];
-    {[d;t] .map[t][d;t]  }/[d; reverse tc]   /t:last tc ; d:.map[t][d;t] ;t:first tc
+    /{[d;t] .[value .map[t];(d;t);{.rest.err["Error in processing the tag : " ,string[y],"(",.Q.s1[x],")"]}[;t]] }/[d; reverse tc]   
+    .[processTagChain; (d;tc);{.rest.err["Error in processing the tag : " ,y,"(",.Q.s1[x],")"]}[;tag]]
  };
 
+processTagChain:{[d;tc]
+    {[d;t] .map[t][d;t]}/[d; reverse tc]   /t:last tc ; d:.map[t][d;t] ;t:first tc
+ };
 
-tag:{[d;t] :enlist[""],.rest.idxt[ .sphinx.fileName ; d] ,enlist[""]};
-
-/processTag l:f4 3
+/processTag l:f4 14
 /t:`$l[0]; d:1_l; ; map[t]
 /raze processTag each f4
 
+/ processTag l:(string getTag"code-eval";enlist "\"";"func2[2;3]";enlist "=";"\",";"string1";"2+3")
+/ processTag l:(string getTag"see";"lib-str")
 
-/ processTag (getTag"code-eval";enlist "\"";"func2[2;3]";enlist "=";"\",";"string";"2+3")
 / processTag (getTag"eval"; "([]";"a:(1;2;3;4))")
 / processTag (getTag"code-eval"; "([]";"a:(1;2;3;4))")
 / processTag (getTag"table-eval"; "([]";"a:(1;2;3;4))")
@@ -91,11 +96,12 @@ tag:{[d;t] :enlist[""],.rest.idxt[ .sphinx.fileName ; d] ,enlist[""]};
 
 / evalCode[("([]";"a:(1;2;3;4))");getTag`eval]
 / table[([] a: 1 2 3 4);getTag`table]
+/ see[d:"lib-str";getTag`see]
 
 
+tag:    {[d;t] :enlist[""],.rest.idxt[ .sphinx.fileName ; d] ,enlist[""]};
 flatten:{[d] :" "sv trim each multiLinesToken vs " "sv .rest.ml d};
-table:{[d;t]  .rest.csvt d};
-
+table:  {[d;t]  .rest.csvt d};
 package:{[d;t] :("";.rest.idx [  (.sphinx.filePackage ; .sphinx.fileName)];"") };
 descr:  {[d;t] addNewline[t; .rest.p  [ssr[;token;""]          flatten[d] ] ]};
 return: {[d;t] addNewline[t;.rest.ml .rest.ret[ssr[;token;""]         flatten[d] ] ]};
@@ -104,8 +110,10 @@ row:    {[d;t] addNewline[t;.rest.ml .rest.csvtr  ssr[;token;""]         flatten
 toggle: {[d;t] addNewline[t;.rest.toggle2 @     d ] };
 todo:   {[d;t] addNewline[t;r1: .rest.todo  @  ssr[;token;""] flatten[d]  ]};
 bullet: {[d;t] addNewline[t;r1: .rest.bl   @ ssr[;token;""] flatten[d]  ]};
+error:  {[d;t] addNewline[t;r1: .rest.err  @ ssr[;token;""] flatten[d]  ]};
+see:    {[d;t] addNewline[t;r1:.rest.ml .rest.ref2 @ ssr[;token;""] flatten[d]  ]};
+text:   {[d;t]  .rest.ml .Q.s1 d};
 evalCode:{[d;t]    .rest.dtb2 @ ssr[;token;""] flatten[d] };
-text:{[d;t]  .rest.ml .Q.s1 d};
 
 code:{[d;t] 
     $[ all 10h=type each .rest.ml d; 
@@ -194,7 +202,7 @@ init:{[base;fl;ext]
  };
 
 /file:first 1_.file.getFiles[fl;ext]
-/.sphinx.process[.settings.baseFolder;file:.settings.baseFolder:`$base,"\\code\\sample.q"]
+/.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sample.q"]
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\rest.q"];
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\sphinx.q"];
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sphinxTests.q"];
