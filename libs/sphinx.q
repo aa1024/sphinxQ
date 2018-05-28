@@ -35,6 +35,8 @@ searchTokens:getTag each tags;
 .map[getTag`eval]    :`.sphinx.evalCode;
 .map[getTag`text]    :`.sphinx.text;
 .map[getTag`table]   :`.sphinx.table;
+.map[getTag`tags]    :`.sphinx.tag;
+
 
 addNewline:{[t;o] if[.sphinx.prevTag<>t;o:enlist[""],o];.sphinx.prevTag:t;:o};
 isEmpty:{""~raze over x};
@@ -55,6 +57,9 @@ processTag:{[l]
     tc:tokenChain[t];
     {[d;t] .map[t][d;t]  }/[d; reverse tc]   /t:last tc ; d:.map[t][d;t] ;t:first tc
  };
+
+
+tag:{[d;t] :enlist[""],.rest.idxt[ .sphinx.fileName ; d] ,enlist[""]};
 
 /processTag l:f4 3
 /t:`$l[0]; d:1_l; ; map[t]
@@ -189,8 +194,8 @@ init:{[base;fl;ext]
  };
 
 /file:first 1_.file.getFiles[fl;ext]
-/.sphinx.process[base;file:`$base,"\\code\\sample.q"]
-/process[file:`$baseFolder,"\\libs\\str.q"];
-/process[file:`$baseFolder,"\\libs\\sphinx.q"];
-/process[file:`$baseFolder,"\\code\\sphinxTests.q"];
+/.sphinx.process[.settings.baseFolder;file:.settings.baseFolder:`$base,"\\code\\sample.q"]
+/.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\rest.q"];
+/.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\sphinx.q"];
+/.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sphinxTests.q"];
 
