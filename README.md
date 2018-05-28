@@ -21,7 +21,8 @@ A tool powered by `Sphinx` for documenting the q code with some predefined tags 
 2. There are multiple ways to get the sphinx installed on the machine, [here](http://www.sphinx-doc.org/en/master/usage/installation.html) is the full wiki on how to get it installed.
 
    A quick way to get the Sphinx installed if you already have Python installed using the *PyPI* (pip) : 
-     C:\> pip install -U sphinx
+   
+    C:\> pip install -U sphinx
 
 ## Run
     c:\Code\Github\sphinxQ>q run.q
