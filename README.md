@@ -2,7 +2,6 @@
 **[Desc](#sphinxq)**<br>
 **[Installation](#installation)**<br>
 **[Run](#run)**<br>
-
 **[Tags](#tags)**<br>
 **[Tag chaining](#tag-chaining)**<br>
 **[Rules](#rules)**<br>
@@ -17,7 +16,6 @@ A tool powered by `sphinx` for documenting the q code with some predifined tags 
 ## Installation
 
 ## Run
-
     c:\Code\Github\sphinxQ>q run.q
 
 ## Tags
