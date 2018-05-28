@@ -14,6 +14,14 @@
 A tool powered by `Sphinx` for documenting the q code with some predefined tags generating HTML/wiki-style documents.
 
 ## Installation
+# Windows 
+
+1. Sphinx is written in Python and supports both Python 3.3+ & Python 2.7. However the later is recommended. You must have [Python 3](http://docs.python-guide.org/en/latest/starting/install3/win/) or [Python 2.7](http://docs.python-guide.org/en/latest/starting/install/win/) installed.
+
+2. There are multiple ways to get the sphinx installed on the machine, [here](http://www.sphinx-doc.org/en/master/usage/installation.html) is the full wiki on how to get it installed.
+
+   A quick way to get the Sphinx installed if you already have Python installed using the *PyPI* (pip) : 
+     C:\> pip install -U sphinx
 
 ## Run
     c:\Code\Github\sphinxQ>q run.q
