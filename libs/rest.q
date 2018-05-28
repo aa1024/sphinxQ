@@ -93,9 +93,14 @@ dst:{olul[x;"-"]}
 lbl:{".. _",sv["-";string x],"-label:"}
 /# @code lbl[`trade`schema]
 
-/# @function reference
+/# @function ref reference
 ref:{" :","ref",":`",sv["-";string x],"-label`"}
-/# @code ref[`trade`schema]
+/# @code ref[`lib`str]
+
+/# @function ref2 reference
+ref2:{"**See** :","ref",":`",x,"-label`"}
+/# @code ref2["lib-str"]
+
 
 /# @function field list
 fn:{[fnl;fc] "    :",sv[" ";ml .str.strif (),fnl],": ",fc}
