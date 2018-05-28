@@ -14,10 +14,10 @@
 func1:{[dict]
     show dict /# show the input on console 
     /# @toggle-table-eval ([] d:.z.d-5?10;p:10+.1*5?10)
-    /# @toggle-code-eval ([] d:.z.d-5?10;p:10+.1*5?10)
-    /# @code-eval ([] d:.z.d-5?10;p:10+.1*5?10)
+    /# @toggle-code-eval  ([] d:.z.d-5?10;p:10+.1*5?10)
+    /# @code-eval         ([] d:.z.d-5?10;p:10+.1*5?10)
     /# @code show dict
-    
+    /# @see  lib-str
  }
 
 /# @function func2 Another sample function
@@ -26,7 +26,9 @@ func1:{[dict]
 /#    @return int sum of x & y
 /# @toggle Calculate the sum
 /# @todo Change the function implementation
+/# @error Throws an error when input is not numerical 
 func2 :{[x;y]
+    /# @code-eval " func2[2;3] = ", string1 2+3 /using string1 rather than string to diplay the evaluation as error
     /# @code-eval " func2[2;3] = ", string 2+3
     : x+y  /# @toggle-code  (x+y)
  }
