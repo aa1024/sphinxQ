@@ -11,7 +11,7 @@
 ----
 
 # sphinx[Q]
-A tool powered by `sphinx` for documenting the q code with some predifined tags which would generate html/wiki style documents.
+A tool powered by `sphinx` for documenting the q code with some predifined tags generating html/wiki style documents.
 
 ## Installation
 
