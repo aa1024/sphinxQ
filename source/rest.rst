@@ -14,6 +14,10 @@ Sphinx-ReST helper functions to generate the ReST documents.
 
     math support - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support
 
+.. index:: 
+   pair: rest;sphinx
+
+
 .. _lib-rest-text-styles-label:
 
 
@@ -489,17 +493,33 @@ admonition
 
 other admonition supported - danger,caution,hint,attention
 
-.. _lib-rest-index-label:
+.. _lib-rest-idx-label:
 
+
+idx
+~~~
 
 index
-~~~~~
 
 .. code-block:: R
 
 
 
     idx[ ("schema";"trade")]
+
+.. _lib-rest-idxt-label:
+
+
+idxt
+~~~~
+
+index these tags
+
+.. code-block:: R
+
+
+
+    idxt[ n:"sample";il:("schema";"trade")]
 .. code-block:: R
 
 
