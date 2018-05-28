@@ -14,7 +14,7 @@
 A tool powered by `Sphinx` for documenting the q code with some predefined tags generating HTML/wiki-style documents.
 
 ## Installation
-# Windows 
+### Windows 
 
 Sphinx is written in Python and supports both Python 3.3+ & Python 2.7. However the later is recommended. You must have [Python 3](http://docs.python-guide.org/en/latest/starting/install3/win/) or [Python 2.7](http://docs.python-guide.org/en/latest/starting/install/win/) installed.
 
