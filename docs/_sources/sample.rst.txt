@@ -48,11 +48,11 @@ show the input on console
        :widths: auto
        :header: d,p
     
-       2018.05.20,10.9
-       2018.05.19,10.7
-       2018.05.23,10.6
-       2018.05.23,10.6
-       2018.05.21,10.4
+       2018.05.22,10.8
+       2018.05.22,10.1
+       2018.05.27,10.9
+       2018.05.20,10.5
+       2018.05.23,10.4
 .. container:: toggle
 
     .. container:: header
@@ -66,11 +66,11 @@ show the input on console
     
         d          p   
         ---------------
-        2018.05.25 10.9
-        2018.05.22 10.9
-        2018.05.19 10.2
-        2018.05.20 10.5
-        2018.05.18 10.4
+        2018.05.27 10.4
+        2018.05.19 10.9
+        2018.05.26 10.2
+        2018.05.27 10.7
+        2018.05.20 10  
         
     
 
@@ -80,11 +80,11 @@ show the input on console
 
     d          p   
     ---------------
-    2018.05.26 10.9
-    2018.05.27 10.7
-    2018.05.19 10.7
-    2018.05.19 10.1
-    2018.05.24 10.9
+    2018.05.23 10.8
+    2018.05.24 10.1
+    2018.05.26 10.7
+    2018.05.21 10.2
+    2018.05.20 10.4
     
 
 
@@ -93,6 +93,8 @@ show the input on console
 
 
     show dict
+
+**See** :ref:`lib-str-label`
 
 .. _example-sample-func2-label:
 
@@ -120,6 +122,13 @@ Another sample function
 .. todo::
 
     Change the function implementation
+
+.. error::
+
+    Throws an error when input is not numerical
+.. error::
+
+    Error in processing the tag : @code-eval("string1")
 
 .. code-block:: R
 
