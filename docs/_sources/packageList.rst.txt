@@ -2,6 +2,7 @@
   :maxdepth: 1
   :caption: Contents
 
+  file
   rest
   sphinx
   str

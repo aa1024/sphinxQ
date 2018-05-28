@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Project sphinx[Q] &#8212; sphinx[Q] 1.0 documentation</title>
+    <title>file &#8212; sphinx[Q] 1.0 documentation</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -17,7 +17,8 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="file" href="file.html" />
+    <link rel="next" title="rest" href="rest.html" />
+    <link rel="prev" title="Project sphinx[Q]" href="index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -30,28 +31,36 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="file.html" title="file"
+          <a href="rest.html" title="rest"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">sphinx[Q] 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="index.html" title="Project sphinx[Q]"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sphinx[Q] 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Project sphinx[Q]</a><ul>
+<li><a class="reference internal" href="#">file</a><ul>
+<li><a class="reference internal" href="#getfiles">getFiles</a></li>
+<li><a class="reference internal" href="#getfilename">getFileName</a></li>
+<li><a class="reference internal" href="#savefile">saveFile</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Project sphinx[Q]</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="file.html"
-                        title="next chapter">file</a></p>
+  <p class="topless"><a href="rest.html"
+                        title="next chapter">rest</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
+      <li><a href="_sources/file.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -75,32 +84,49 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="project-sphinx-q">
-<h1>Project sphinx[Q]<a class="headerlink" href="#project-sphinx-q" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="file.html">file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rest.html">rest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx.html">sphinx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="str.html">str</a></li>
-<li class="toctree-l1"><a class="reference internal" href="restTests.html">rest-tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample.html">sample</a></li>
-</ul>
+  <div class="section" id="file">
+<span id="lib-file-label"></span><span id="index-0"></span><h1>file<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h1>
+<p>File helper functions</p>
+<div class="section" id="getfiles">
+<span id="lib-file-getfiles-label"></span><h2>getFiles<a class="headerlink" href="#getfiles" title="Permalink to this headline">¶</a></h2>
+<p>Get the list of files</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param fl:</th><td class="field-body">Folder List</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param ext:</th><td class="field-body">Extension of the files to be returned</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Examples</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Sphinx-ReST Examples</a></li>
-</ul>
+<div class="section" id="getfilename">
+<span id="lib-file-getfilename-label"></span><h2>getFileName<a class="headerlink" href="#getfilename" title="Permalink to this headline">¶</a></h2>
+<p>Get the name of the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param fn:</th><td class="field-body">file name</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="section" id="savefile">
+<span id="lib-file-savefile-label"></span><h2>saveFile<a class="headerlink" href="#savefile" title="Permalink to this headline">¶</a></h2>
+<p>Save the file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param fn:</th><td class="field-body">file name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param con:</th><td class="field-body">contents to be saved</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
 </div>
 
 
@@ -116,9 +142,12 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="file.html" title="file"
+          <a href="rest.html" title="rest"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">sphinx[Q] 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="index.html" title="Project sphinx[Q]"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sphinx[Q] 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
  <script type="text/javascript">
