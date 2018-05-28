@@ -270,17 +270,33 @@ label
 
     lbl[`trade`schema]
 
-.. _lib-rest-reference-label:
+.. _lib-rest-ref-label:
 
+
+ref
+~~~
 
 reference
-~~~~~~~~~
 
 .. code-block:: R
 
 
 
-    ref[`trade`schema]
+    ref[`lib`str]
+
+.. _lib-rest-ref2-label:
+
+
+ref2
+~~~~
+
+reference
+
+.. code-block:: R
+
+
+
+    ref2["lib-str"]
 
 .. _lib-rest-field-label:
 
