@@ -2,7 +2,7 @@
 /# @name rest Sphinx-ReST helper functions to generate the ReST documents.
 
 /# @todo math support  - http://www.sphinx-doc.org/en/stable/ext/math.html#math-support
-
+/# @tags sphinx
 
 import`str;
 
@@ -183,9 +183,14 @@ todo:{[b]adm[`todo;b]}
 /# other admonition supported - danger,caution,hint,attention
 
 
-/# @function index
+/# @function idx index
 idx:{[il]".. index:: ",";"sv ml il};
 /# @code idx[ ("schema";"trade")]
+
+/# @function idxt index these tags
+idxt:{[n;il](enlist ".. index:: ") , ind[3;] each ("pair: ",n,";"),/: ml il};
+/# @code idxt[ n:"sample";il:("schema";"trade")]
+
 
 toc:{[l] (".. toctree::";"  :maxdepth: 1";"  :caption: Contents";""),ind[2;]each ml l}
 /# @code toc[ ("samples")]
