@@ -16,7 +16,7 @@ A tool powered by `Sphinx` for documenting the q code with some predefined tags 
 ## Installation
 ### Windows 
 
-Sphinx is written in Python and supports both Python 3.3+ & Python 2.7. However the later is recommended. You must have [Python 3](http://docs.python-guide.org/en/latest/starting/install3/win/) or [Python 2.7](http://docs.python-guide.org/en/latest/starting/install/win/) installed.
+Sphinx is written in Python and supports both Python 3.3+ & Python 2.7, You must have [Python 3](http://docs.python-guide.org/en/latest/starting/install3/win/) or [Python 2.7](http://docs.python-guide.org/en/latest/starting/install/win/) installed. However the later is recommended. 
 
 There are multiple ways to get the sphinx installed on the machine, [here](http://www.sphinx-doc.org/en/master/usage/installation.html) is the full wiki on how to get it installed.
 
@@ -73,13 +73,14 @@ To specify a schema defination , the formatting of this tag is similar to the `@
 The content followed by this tag will be displayed as a bullet point in documentation. 
 
 ### @error
+To Display an error message explicitly. The same formating is used to report an error while processing the tags.
 
 ### @see
 
-### @version
-
 ### @tags
 It can be used to define the keywords that can be found by browsing.  
+
+### @version
 
 ## Tag chaining
 
