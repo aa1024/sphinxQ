@@ -32,20 +32,20 @@ A quick way to get the Sphinx installed if you already have Python installed usi
 Here are some tags that can be used in the code as comments and it will be automatically parsed and included in the documents.
 
 ### @name
-Title of the documented page, will be displayed as a link on the main index page. 
+Title of the documented page will be displayed as a link on the main index page. 
 
 ### @package
 Logical group name, it can be used to with multiple files (@name). This will be used for grouping the various @name under the same @package name.
 
 ### @desc
-Explanation of the function , package, paramaters etc. it will be used as paragraph when the documents are generated.
+Explanation of the function, package, parameters etc. it will be used as paragraph when the documents are generated.
 Any comment without any tag will also be considered as `@desc`.
 
 ### @function
-Name of the function, displayed as document section title.
+Name of the function displayed as document section title.
 
 ### @code
-Literal code block to be dsiplayed on the generated documents.
+Literal code block to be displayed on the generated documents.
 
 ### @eval
 The code after this tag will be executed and output will be shown on the generated document.
@@ -67,13 +67,13 @@ Table row; cells are `|` (pipe) separated.
 Something to be done
 
 ### @schema
-To specify a schema defination , the formatting of this tag is similar to the `@function` tag; should be used with `@header` and `@row`
+To specify a schema definition , the formatting of this tag is similar to the `@function` tag; should be used with `@header` and `@row`
 
 ### @ bullet
-The content followed by this tag will be displayed as a bullet point in documentation. 
+The content followed by this tag will be displayed as a bullet point in the documentation. 
 
 ### @error
-To Display an error message explicitly. The same formating is used to report an error while processing the tags.
+To Display an error message explicitly. The same formatting is used to report an error while processing the tags.
 
 ### @see
 
@@ -84,22 +84,22 @@ It can be used to define the keywords that can be found by browsing.
 
 ## Tag chaining
 
-Applying the formatting of multiple tag over the same content. Tags can be chained using a `-` e.g. `@toggle-code` means apply the `@toggle` formatting over the output of `@code`.
+Applying the formatting of multiple tags over the same content. Tags can be chained using a `-` e.g. `@toggle-code` means apply the `@toggle` formatting over the output of `@code`.
 
 
 ## Rules
 * Search for all the lines containing `/#` (which also includes `/#.` for multiline comments)
 * Except for the first delimiter `/#` appearance, all subsequent `/#` will be treated as `@desc` or paragraph.
-* Search the lines which contains tags prefixed by `@` (e.g. `@function` , `@param`)
-* For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be traeated as the tag name and rest will be treated as description.
-* In case `@package` or `@name` is defined multiple times, the first entry will used for meta uses (labeling the links , rst naming, document title etc.)
+* Search the lines which contain tags prefixed by `@` (e.g. `@function` , `@param`)
+* For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be treated as the tag name and rest will be treated as a description.
+* In case `@package` or `@name` is defined multiple times, the first entry will be used for meta uses (labeling the links, rst naming, document title etc.)
 * Now process each tag along with the content using the `ReST` helper functions.
 
 ## TODO
 * Multiline comments support (`/#.`)
 * Enable `@bullet` tag
 * show hide code/content feature.
-* Handle scenarios when file with same name present in different folders/package.
+* Handle scenarios when a file with same name present in different folders/package.
 * libs cyclic dependency
 * Handle multiline code scenario
 
