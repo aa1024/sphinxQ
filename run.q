@@ -5,6 +5,8 @@ baseFolder:".";
 folders:(`$baseFolder,"/libs/";`$baseFolder,"/code/");
 fileExt:enlist ("*.q");
 
+/# @todo changes in the basefolder logic
+
 \d .
 
 import:{ x:(),x; r:0N!x!.sys.importLib each x;:r};
