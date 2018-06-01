@@ -8,9 +8,7 @@ import `sphinx`unittest;
 
 .sphinx.reset[];
 
-/# @bullet 
-.unittest.assert[`.rest.ts; ("italics";"*") ;"*italics*"];
-
+/ @bullet 
 
 .unittest.assert[`.sphinx.processTag ;enlist (string .sphinx.getTag"code-eval";enlist "\"";"func2[2;3]";enlist "=";"\",";"string1";"2+3");(".. error::";"";"    Error in processing the tag : @code-eval(\"string1\")")];
 
@@ -67,51 +65,39 @@ import `sphinx`unittest;
 
 .unittest.assert[`.sphinx.package;( enlist "example"; .sphinx.getTag`package);("";".. index:: misc;getthefilenameasdefault";"")];
 
-.unittest.assert[`.sphinx.function[("func1";enlist "A";"sample";"function";"to";"generate";"/#.";"an";"inline";"table";"for";"input";"parameter";"dictionary"); .sphinx.getTag`function] 
-("";".. _misc-getthefilenameasdefault-func1-label:";"";"";"func1";"~~~~~";"";"A sample function to generate an inline table for input parameter dictionary")
-
-.unittest.assert[`.sphinx.param[("dict";"Input";"Parameter";"Dictionary"); .sphinx.getTag`param]
-("";":param dict: Input Parameter Dictionary")
-
-.unittest.assert[`.sphinx.return[enlist ""; .sphinx.getTag`return] 
-("";":returns: ")
-
-.unittest.assert[`.sphinx.descr [("Param";"details"); .sphinx.getTag`desc] 
-("";"Param details")
-
-.unittest.assert[`.sphinx.header[enlist "Key|Type|Required|Default|Desc"; .sphinx.getTag`header]
-("";"";".. csv-table:: ";"   :escape: '";"   :delim: |";"   :widths: auto";"   :header: Key,Type,Required,Default,Desc";"")
-
-.unittest.assert[`.sphinx.row[("startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)");.sphinx.getTag`row] 
-("";"   startDate|date|0b|.z.d|Start Date (if null or not provided, will be set as current date)")
-
-.unittest.assert[`.sphinx.code[d:("show";"dict") ;.sphinx.getTag`code]
-("";".. code-block:: R";"";"";"";"    show dict")
-
-.unittest.assert[`.sphinx.code[  .sphinx.evalCode[("([]";"a:(1;2;3;4))"); .sphinx.getTag`eval ] ;.sphinx.getTag`code] 
-("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")
 
 
-.unittest.assert[`.sphinx.todo[("Change";"the";"function";"implementation") ;.sphinx.getTag`todo]
-("";".. todo::";"";"    Change the function implementation")
+
+.unittest.assert[`.sphinx.function; ( ("func1";enlist "A";"sample";"function";"to";"generate";"/#.";"an";"inline";"table";"for";"input";"parameter";"dictionary"); .sphinx.getTag`function ) ;("";".. _misc-getthefilenameasdefault-func1-label:";"";"";"func1";"~~~~~";"";"A sample function to generate an inline table for input parameter dictionary")];
+
+.unittest.assert[`.sphinx.param; ( ("dict";"Input";"Parameter";"Dictionary"); .sphinx.getTag`param);("";":param dict: Input Parameter Dictionary")];
+
+.unittest.assert[`.sphinx.return; (enlist ""; .sphinx.getTag`return) ;("";":returns: ")];
+
+.unittest.assert[`.sphinx.descr ; ( ("Param";"details"); .sphinx.getTag`desc); ("";"Param details")];
+
+.unittest.assert[`.sphinx.header; ( enlist "Key|Type|Required|Default|Desc"; .sphinx.getTag`header) ; ("";"";".. csv-table:: ";"   :escape: '";"   :delim: |";"   :widths: auto";"   :header: Key,Type,Required,Default,Desc";"")];
+
+.unittest.assert[`.sphinx.row; ( ("startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)");.sphinx.getTag`row); ("";"   startDate|date|0b|.z.d|Start Date (if null or not provided, will be set as current date)")];
+
+.unittest.assert[`.sphinx.code;( ("show";"dict") ;.sphinx.getTag`code); ("";".. code-block:: R";"";"";"";"    show dict")];
+
+.unittest.assert[`.sphinx.code; (  .sphinx.evalCode[("([]";"a:(1;2;3;4))"); .sphinx.getTag`eval ] ;.sphinx.getTag`code); ("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
 
 
-.unittest.assert[`.sphinx.bullet[("Change";"the";"function";"implementation") ;.sphinx.getTag`bullet]
-("";"* Change the function implementation")
-
-.unittest.assert[`.sphinx.toggle[("Calculate";"the";"sum") ;.sphinx.getTag`toggle]
-("";".. container:: toggle";"";"    .. container:: header";"";"        **show/hide**";"    ";"    Calculate";"    the";"    sum")
-
-.unittest.assert[`.sphinx.flatten[("Param";"details") ]
-"Param details"
+.unittest.assert[`.sphinx.todo; ( ("Change";"the";"function";"implementation") ;.sphinx.getTag`todo) ;("";".. todo::";"";"    Change the function implementation")];
 
 
-.unittest.assert[`.sphinx.evalCode[("([]";"a:(1;2;3;4))");.sphinx.getTag`eval]
-([] a:1 2 3 4)
+.unittest.assert[`.sphinx.bullet; ( ("Change";"the";"function";"implementation") ;.sphinx.getTag`bullet); ("";"* Change the function implementation")];
 
-.unittest.assert[`.sphinx.table[([] a: 1 2 3 4);.sphinx.getTag`table]
-(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")
+.unittest.assert[`.sphinx.toggle;( ("Calculate";"the";"sum") ;.sphinx.getTag`toggle) ;("";".. container:: toggle";"";"    .. container:: header";"";"        **show/hide**";"    ";"    Calculate";"    the";"    sum")];
 
-.unittest.assert[`.sphinx.see[d:"lib-str";.sphinx.getTag`see]
-("";"**See** :ref:`lib-str-label`")
+.unittest.assert[`.sphinx.flatten ; enlist  ("Param";"details") ;"Param details"];
+
+
+.unittest.assert[`.sphinx.evalCode ; ( ("([]";"a:(1;2;3;4))");.sphinx.getTag`eval);([] a:1 2 3 4)];
+
+.unittest.assert[`.sphinx.table ; ( ([] a: 1 2 3 4);.sphinx.getTag`table); (".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4") ];
+
+.unittest.assert[`.sphinx.see ; ( "lib-str";.sphinx.getTag`see); ("";"**See** :ref:`lib-str-label`")];
 
