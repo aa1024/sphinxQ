@@ -50,14 +50,14 @@ reset:{
     .sphinx.filePackage:"misc";
     .sphinx.prevTag:`;
  };
+reset[];
 
 processTag:{[l] 
-    .temp.l:l;   /l:.temp.l
+    .temp.l:l;
     tag:l[0];
     if[ not any tag like/:("*code-eval*";"*table-eval*"); tag:ssr[tag;"eval";"text-eval"]];
     t:`$tag; d:1_l;
     tc:tokenChain[t];
-    /{[d;t] .[value .map[t];(d;t);{.rest.err["Error in processing the tag : " ,string[y],"(",.Q.s1[x],")"]}[;t]] }/[d; reverse tc]   
     .[processTagChain; (d;tc);{.rest.err["Error in processing the tag : " ,y,"(",.Q.s1[x],")"]}[;tag]]
  };
 
@@ -69,34 +69,6 @@ processTagChain:{[d;tc]
 /t:`$l[0]; d:1_l; ; map[t]
 /raze processTag each f4
 
-/ processTag l:(string getTag"code-eval";enlist "\"";"func2[2;3]";enlist "=";"\",";"string1";"2+3")
-/ processTag l:(string getTag"see";"lib-str")
-
-/ processTag (getTag"eval"; "([]";"a:(1;2;3;4))")
-/ processTag (getTag"code-eval"; "([]";"a:(1;2;3;4))")
-/ processTag (getTag"table-eval"; "([]";"a:(1;2;3;4))")
-/ processTag l:(getTag"row"; "startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)")
-
-/ name[("Sample";"Group";"of";"sample";"function";"for";"document";"generation"); getTag`name] 
-/ package[enlist "example"; getTag`package] 
-/ function[("func1";enlist "A";"sample";"function";"to";"generate";"/#.";"an";"inline";"table";"for";"input";"parameter";"dictionary"); getTag`function] 
-/ param[("dict";"Input";"Parameter";"Dictionary"); getTag`param]
-/ return[enlist ""; getTag`return] 
-/ descr [("Param";"details"); getTag`desc] 
-/ header[enlist "Key|Type|Required|Default|Desc"; getTag`header]
-/ row[("startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)");getTag`row] 
-/ code[d:("show";"dict") ;getTag`code]
-/ code[  evalCode[("([]";"a:(1;2;3;4))");getTag`eval] ;getTag`code]
-
-/ todo[("Change";"the";"function";"implementation") ;getTag`todo]
-/ bullet[("Change";"the";"function";"implementation") ;getTag`bullet]
-
-/ toggle[("Calculate";"the";"sum") ;getTag`toggle]
-/ flatten[("Param";"details") ]
-
-/ evalCode[("([]";"a:(1;2;3;4))");getTag`eval]
-/ table[([] a: 1 2 3 4);getTag`table]
-/ see[d:"lib-str";getTag`see]
 
 
 tag:    {[d;t] :enlist[""],.rest.idxt[ .sphinx.fileName ; d] ,enlist[""]};
@@ -201,9 +173,6 @@ init:{[base;fl;ext]
     .file.saveFile[base,"\\source\\packageList.rst" ; toc]
  };
 
-/file:first 1_.file.getFiles[fl;ext]
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sample.q"]
-/.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\rest.q"];
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\sphinx.q"];
-/.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sphinxTests.q"];
 
