@@ -12,8 +12,8 @@ tags:`table`desc`header`row`function`param`return`package`alias`error`code`see`n
 
 tagDesc:`name`function`alias`schema;
 
-token:(),"/#";
-multiLinesToken:(),token,".";
+token:.settings.token;
+multiLinesToken:.settings.multiLinesToken;
 
 getTag:{`$"@",.str.strif[x]};
 searchTokens:getTag each tags;
