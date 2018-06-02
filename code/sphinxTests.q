@@ -6,57 +6,52 @@ import `sphinx`unittest;
 
 .unittest.init[];
 
+
+/# @bullet code-eval tests
 .sphinx.reset[];
-
-/ @bullet 
-
 .unittest.assert[`.sphinx.processTag ;enlist (string .sphinx.getTag"code-eval";enlist "\"";"func2[2;3]";enlist "=";"\",";"string1";"2+3");(".. error::";"";"    Error in processing the tag : @code-eval(\"string1\")")];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval ([] a: 1 2 3 4)");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval {([] a: 1 2 3 4)}[]");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval {h:hopen 1234; t1:h\"3#t\";hclose h; :t1}[]");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    ";"")];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag; enlist ( "@code-eval"; "([]";"a:(1;2;3;4))");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
+
+/# @bullet code tests
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code ([] a: 1 2 3 4)") ; ("";".. code-block:: R";"";"";"";"    ([] a: 1 2 3 4)")];
+
+/# @bullet eval tests
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@eval ([] a: 1 2 3 4)"); enlist "+(,`a)!,1 2 3 4"];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@eval {([] a: 1 2 3 4)}[]"); enlist "+(,`a)!,1 2 3 4"];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag; enlist  ("@eval"; "([]";"a:(1;2;3;4))");enlist "+(,`a)!,1 2 3 4"];
+
+/# @bullet text-eval tests
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@text-eval {([] a: 1 2 3 4)}[]");enlist ",\"+(,`a)!,1 2 3 4\""];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@text-eval ([] a: 1 2 3 4)");enlist ",\"+(,`a)!,1 2 3 4\""];
+
+
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval {([] a: 1 2 3 4)}[]");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval ([] a: 1 2 3 4)");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval {h:hopen 1234; t1:h\"2#t\";hclose h; :t1}[]");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2")];
+.sphinx.reset[];
+.unittest.assert[`.sphinx.processTag ; enlist  ("@table-eval"; "([]";"a:(1;2;3;4))");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
+
+
 
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ;enlist (string .sphinx.getTag"see";"lib-str");("";"**See** :ref:`lib-str-label`")];
 
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code ([] a: 1 2 3 4)") ; ("";".. code-block:: R";"";"";"";"    ([] a: 1 2 3 4)")];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@eval ([] a: 1 2 3 4)"); enlist "+(,`a)!,1 2 3 4"];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@text-eval ([] a: 1 2 3 4)");enlist ",\"+(,`a)!,1 2 3 4\""];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval ([] a: 1 2 3 4)");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval ([] a: 1 2 3 4)");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@eval {([] a: 1 2 3 4)}[]"); enlist "+(,`a)!,1 2 3 4"];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@text-eval {([] a: 1 2 3 4)}[]");enlist ",\"+(,`a)!,1 2 3 4\""];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval {([] a: 1 2 3 4)}[]");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval {([] a: 1 2 3 4)}[]");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval {h:hopen 1234; t1:h\"2#t\";hclose h; :t1}[]");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2")];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval {h:hopen 1234; t1:h\"3#t\";hclose h; :t1}[]");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    ";"")];
-
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag; enlist  ("@eval"; "([]";"a:(1;2;3;4))");enlist "+(,`a)!,1 2 3 4"];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag; enlist ( "@code-eval"; "([]";"a:(1;2;3;4))");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
-
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ; enlist  ("@table-eval"; "([]";"a:(1;2;3;4))");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
 
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ;enlist ("@row"; "startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)");("";"   startDate|date|0b|.z.d|Start Date (if null or not provided, will be set as current date)") ]; 
