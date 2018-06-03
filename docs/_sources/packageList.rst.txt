@@ -8,3 +8,4 @@
   str
   restTests
   sample
+  sphinxTests
