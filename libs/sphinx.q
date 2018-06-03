@@ -143,7 +143,9 @@ parseFile:{[file]
     f3:f3 except ("";token);
 
     /# @bullet Tokenise the string by tags
-    tokenInd:where any f3 like/:"*",/:string[searchTokens ],\:"*";
+    /tokenInd:where any f3 like/:"*",/:string[searchTokens ],\:"*";
+    tokenInd:where any f3 like/:string[searchTokens ],\:"*";
+
     f4:tokenInd cut f3;
 
     /# @bullet Get meta information that will be used in creating the labels and indexing
@@ -174,5 +176,7 @@ init:{[base;fl;ext]
  };
 
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sample.q"]
+/.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sphinxTests.q"]
+
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\sphinx.q"];
 
