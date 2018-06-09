@@ -34,59 +34,24 @@ A quick way to get the Sphinx installed if you already have Python installed usi
 
 Here are some tags that can be used in the code as comments and it will be automatically parsed and included in the documents.
 
-### @name
-Title of the documented page will be displayed as a link on the main index page. 
-
-### @package
-Logical group name, it can be used to with multiple files (@name). This will be used for grouping the various @name under the same @package name.
-
-### @desc
-Explanation of the function, package, parameters etc. it will be used as paragraph when the documents are generated.
-Any comment without any tag will also be considered as `@desc`.
-
-### @function
-Name of the function displayed as document section title.
-
-### @code
-Literal code block to be displayed on the generated documents.
-
-### @eval
-The code after this tag will be executed and output will be shown on the generated document.
-
-### @param
-Input Parameter to the function
-
-### @return
-Output returned by the function
-
-### @header
-Table header; the columns can be defined using pipe (e.g. `Col1|Col2|Col3`).
-It can be used with or without schema tag.
-
-### @row 
-Table row; cells are `|` (pipe) separated.
-
-### @todo
-Something to be done
-
-### @schema
-To specify a schema definition , the formatting of this tag is similar to the `@function` tag; should be used with `@header` and `@row`
-
-### @toggle 
-Show/hide the contents.
-
-### @ bullet
-The content followed by this tag will be displayed as a bullet point in the documentation. 
-
-### @error
-To Display an error message explicitly. The same formatting is used to report an error while processing the tags.
-
-### @see
-
-### @tags
-It can be used to define the keywords that can be found by browsing.  
-
-### @version
+* @name
+* @package
+* @desc
+* @function
+* @code
+* @eval
+* @param
+* @return
+* @header
+* @row 
+* @todo
+* @schema
+* @toggle 
+* @ bullet
+* @error
+* @see
+* @tags
+* @version
 
 ## Tag chaining
 
