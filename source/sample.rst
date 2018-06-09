@@ -5,16 +5,16 @@
 sample
 ======
 
-Group of sample function for document generation
+Sample functions to demostrate the usage of tags for document generation
 
 .. index:: example;sample
 
 
-.. _example-sample-func1-label:
+.. _example-sample-foo-label:
 
 
-func1
-~~~~~
+foo
+~~~
 
 A sample function to generate an inline table for input parameter dictionary
 
@@ -37,6 +37,14 @@ Param details
 
 show the input on console
 
+.. _example-sample-bar-label:
+
+
+bar
+~~~
+
+A sample function to display a KDB table in various ways
+
 .. container:: toggle
 
     .. container:: header
@@ -48,11 +56,11 @@ show the input on console
        :widths: auto
        :header: d,p
     
-       2018.05.30,10
-       2018.05.25,10.4
-       2018.05.26,10.5
-       2018.06.03,10.8
-       2018.05.31,10
+       2018.06.06,10.3
+       2018.06.01,10.8
+       2018.05.31,10.1
+       2018.06.07,10.6
+       2018.06.04,10.3
 .. container:: toggle
 
     .. container:: header
@@ -66,11 +74,11 @@ show the input on console
     
         d          p   
         ---------------
-        2018.05.28 10.9
-        2018.05.26 10.9
-        2018.06.03 10  
-        2018.05.25 10.6
-        2018.05.29 10.2
+        2018.06.06 10.5
+        2018.06.04 10.1
+        2018.06.02 10.2
+        2018.06.08 10.4
+        2018.06.04 10.1
         
     
 
@@ -80,11 +88,11 @@ show the input on console
 
     d          p   
     ---------------
-    2018.05.27 10.1
-    2018.05.30 10.5
-    2018.05.27 10  
-    2018.05.27 10.2
-    2018.06.03 10.3
+    2018.06.05 10.5
+    2018.06.04 10.2
+    2018.06.04 10.7
+    2018.06.03 10.7
+    2018.05.31 10.2
     
 
 
@@ -96,11 +104,11 @@ show the input on console
 
 **See** :ref:`lib-str-label`
 
-.. _example-sample-func2-label:
+.. _example-sample-foobar-label:
 
 
-func2
-~~~~~
+foobar
+~~~~~~
 
 Another sample function
 
@@ -121,7 +129,7 @@ Another sample function
 
 .. todo::
 
-    Change the function implementation
+    Change the function name?
 
 .. error::
 
@@ -148,13 +156,13 @@ Another sample function
     
         (x+y)
 
-.. _example-sample-trade-label:
+.. _example-sample-tab-label:
 
 
-trade
-~~~~~
+tab
+~~~
 
-Stores the Trade details
+Stores the trades
 
 
 .. csv-table:: 
@@ -164,9 +172,8 @@ Stores the Trade details
    :header: Column Name,Type,Desc
 
 
-   date|date|Trade Date
-   time|time|Trade Time
-   sym|symbol|Instrument Id
-   price|float|Trade Price
-   size|float|Trade Size
-   side|symbol|Trade Direction
+   d |date |Trade Date
+   t |time |Trade Time
+   s |symbol|Instrument
+   pr|float |Trade Price
+   sz|float |Trade Size
