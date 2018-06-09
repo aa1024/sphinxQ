@@ -1,4 +1,4 @@
-/# @name sphinx Function Library for processing the sphinxQ tags and generating the ReST style documents. 
+/# @name sphinx Library for processing the sphinxQ tags and generating the ReST style documents. 
 
 /# @package lib
 
