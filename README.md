@@ -35,23 +35,23 @@ A quick way to get the Sphinx installed if you already have Python installed usi
 
 Here are some tags that can be used in the code as comments and it will be automatically parsed and included in the documents.
 
-* @name
-* @package
-* @desc
-* @function
-* @code
-* @eval
-* @param
-* @return
-* @header
-* @row 
-* @todo
-* @schema
-* @toggle 
-* @ bullet
-* @error
-* @see
-* @tags
+* [@name](https://github.com/aa1024/sphinxQ/wiki/Tags#name)
+* [@package](https://github.com/aa1024/sphinxQ/wiki/Tags#package-index)
+* [@desc](https://github.com/aa1024/sphinxQ/wiki/Tags#desc)
+* [@function](https://github.com/aa1024/sphinxQ/wiki/Tags#function)
+* [@code](https://github.com/aa1024/sphinxQ/wiki/Tags#code)
+* [@eval](https://github.com/aa1024/sphinxQ/wiki/Tags#eval)
+* [@param](https://github.com/aa1024/sphinxQ/wiki/Tags#param)
+* [@return](https://github.com/aa1024/sphinxQ/wiki/Tags#return)
+* [@header](https://github.com/aa1024/sphinxQ/wiki/Tags#header)
+* [@row](https://github.com/aa1024/sphinxQ/wiki/Tags#row)
+* [@todo](https://github.com/aa1024/sphinxQ/wiki/Tags#todo)
+* [@schema](https://github.com/aa1024/sphinxQ/wiki/Tags#schema)
+* [@toggle](https://github.com/aa1024/sphinxQ/wiki/Tags#toggle)
+* [@bullet](https://github.com/aa1024/sphinxQ/wiki/Tags#bullet)
+* [@error](https://github.com/aa1024/sphinxQ/wiki/Tags#error)
+* [@see](https://github.com/aa1024/sphinxQ/wiki/Tags#see)
+* [@tags](https://github.com/aa1024/sphinxQ/wiki/Tags#tags)
 * @version
 
 ## Tag chaining
