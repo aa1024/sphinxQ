@@ -44,9 +44,10 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">sample</a><ul>
-<li><a class="reference internal" href="#func1">func1</a></li>
-<li><a class="reference internal" href="#func2">func2</a></li>
-<li><a class="reference internal" href="#trade">trade</a></li>
+<li><a class="reference internal" href="#foo">foo</a></li>
+<li><a class="reference internal" href="#bar">bar</a></li>
+<li><a class="reference internal" href="#foobar">foobar</a></li>
+<li><a class="reference internal" href="#tab">tab</a></li>
 </ul>
 </li>
 </ul>
@@ -86,9 +87,9 @@
             
   <div class="section" id="sample">
 <span id="example-sample-label"></span><h1>sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h1>
-<p>Group of sample function for document generation</p>
-<div class="section" id="func1">
-<span id="example-sample-func1-label"></span><span id="index-0"></span><h2>func1<a class="headerlink" href="#func1" title="Permalink to this headline">¶</a></h2>
+<p>Sample functions to demostrate the usage of tags for document generation</p>
+<div class="section" id="foo">
+<span id="example-sample-foo-label"></span><span id="index-0"></span><h2>foo<a class="headerlink" href="#foo" title="Permalink to this headline">¶</a></h2>
 <p>A sample function to generate an inline table for input parameter dictionary</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -126,6 +127,10 @@
 </tbody>
 </table>
 <p>show the input on console</p>
+</div>
+<div class="section" id="bar">
+<span id="example-sample-bar-label"></span><h2>bar<a class="headerlink" href="#bar" title="Permalink to this headline">¶</a></h2>
+<p>A sample function to display a KDB table in various ways</p>
 <div class="toggle docutils container">
 <div class="header docutils container">
 <strong>show/hide</strong></div>
@@ -136,20 +141,20 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>2018.05.30</td>
-<td>10</td>
+<tr class="row-even"><td>2018.06.06</td>
+<td>10.3</td>
 </tr>
-<tr class="row-odd"><td>2018.05.25</td>
-<td>10.4</td>
-</tr>
-<tr class="row-even"><td>2018.05.26</td>
-<td>10.5</td>
-</tr>
-<tr class="row-odd"><td>2018.06.03</td>
+<tr class="row-odd"><td>2018.06.01</td>
 <td>10.8</td>
 </tr>
 <tr class="row-even"><td>2018.05.31</td>
-<td>10</td>
+<td>10.1</td>
+</tr>
+<tr class="row-odd"><td>2018.06.07</td>
+<td>10.6</td>
+</tr>
+<tr class="row-even"><td>2018.06.04</td>
+<td>10.3</td>
 </tr>
 </tbody>
 </table>
@@ -159,21 +164,21 @@
 <strong>show/hide</strong></div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>d          p
 <span class="o">---------------</span>
-<span class="m">2018.05.28</span> <span class="m">10.9</span>
-<span class="m">2018.05.26</span> <span class="m">10.9</span>
-<span class="m">2018.06.03</span> <span class="m">10</span>
-<span class="m">2018.05.25</span> <span class="m">10.6</span>
-<span class="m">2018.05.29</span> <span class="m">10.2</span>
+<span class="m">2018.06.06</span> <span class="m">10.5</span>
+<span class="m">2018.06.04</span> <span class="m">10.1</span>
+<span class="m">2018.06.02</span> <span class="m">10.2</span>
+<span class="m">2018.06.08</span> <span class="m">10.4</span>
+<span class="m">2018.06.04</span> <span class="m">10.1</span>
 </pre></div>
 </div>
 </div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>d          p
 <span class="o">---------------</span>
-<span class="m">2018.05.27</span> <span class="m">10.1</span>
-<span class="m">2018.05.30</span> <span class="m">10.5</span>
-<span class="m">2018.05.27</span> <span class="m">10</span>
-<span class="m">2018.05.27</span> <span class="m">10.2</span>
-<span class="m">2018.06.03</span> <span class="m">10.3</span>
+<span class="m">2018.06.05</span> <span class="m">10.5</span>
+<span class="m">2018.06.04</span> <span class="m">10.2</span>
+<span class="m">2018.06.04</span> <span class="m">10.7</span>
+<span class="m">2018.06.03</span> <span class="m">10.7</span>
+<span class="m">2018.05.31</span> <span class="m">10.2</span>
 </pre></div>
 </div>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span>show dict
@@ -181,8 +186,8 @@
 </div>
 <p><strong>See</strong> <a class="reference internal" href="str.html#lib-str-label"><span class="std std-ref">str</span></a></p>
 </div>
-<div class="section" id="func2">
-<span id="example-sample-func2-label"></span><h2>func2<a class="headerlink" href="#func2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="foobar">
+<span id="example-sample-foobar-label"></span><h2>foobar<a class="headerlink" href="#foobar" title="Permalink to this headline">¶</a></h2>
 <p>Another sample function</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -205,7 +210,7 @@ sum</p>
 </div>
 <div class="admonition-todo admonition" id="index-1">
 <p class="first admonition-title">Todo</p>
-<p class="last">Change the function implementation</p>
+<p class="last">Change the function name?</p>
 </div>
 <div class="admonition error">
 <p class="first admonition-title">Error</p>
@@ -226,9 +231,9 @@ sum</p>
 </div>
 </div>
 </div>
-<div class="section" id="trade">
-<span id="example-sample-trade-label"></span><h2>trade<a class="headerlink" href="#trade" title="Permalink to this headline">¶</a></h2>
-<p>Stores the Trade details</p>
+<div class="section" id="tab">
+<span id="example-sample-tab-label"></span><h2>tab<a class="headerlink" href="#tab" title="Permalink to this headline">¶</a></h2>
+<p>Stores the trades</p>
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Column Name</th>
@@ -237,29 +242,25 @@ sum</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>date</td>
+<tr class="row-even"><td>d</td>
 <td>date</td>
 <td>Trade Date</td>
 </tr>
-<tr class="row-odd"><td>time</td>
+<tr class="row-odd"><td>t</td>
 <td>time</td>
 <td>Trade Time</td>
 </tr>
-<tr class="row-even"><td>sym</td>
+<tr class="row-even"><td>s</td>
 <td>symbol</td>
-<td>Instrument Id</td>
+<td>Instrument</td>
 </tr>
-<tr class="row-odd"><td>price</td>
+<tr class="row-odd"><td>pr</td>
 <td>float</td>
 <td>Trade Price</td>
 </tr>
-<tr class="row-even"><td>size</td>
+<tr class="row-even"><td>sz</td>
 <td>float</td>
 <td>Trade Size</td>
-</tr>
-<tr class="row-odd"><td>side</td>
-<td>symbol</td>
-<td>Trade Direction</td>
 </tr>
 </tbody>
 </table>

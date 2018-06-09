@@ -5,7 +5,7 @@
 sphinx
 ======
 
-Function Library for processing the sphinxQ tags and generating the ReST style documents.
+Library for processing the sphinxQ tags and generating the ReST style documents.
 
 .. index:: lib;sphinx
 
