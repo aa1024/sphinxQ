@@ -12,6 +12,7 @@
 
 # sphinx[Q]
 A tool powered by `Sphinx` for documenting the q code with some predefined tags generating HTML/wiki-style documents.
+For more information please visit the [sphinx[Q] wiki](https://github.com/aa1024/sphinxQ/wiki).
 
 
 ![](https://github.com/aa1024/sphinxQ/blob/master/source/resources/images/wiki/sample.png)
