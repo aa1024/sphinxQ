@@ -69,6 +69,9 @@ Something to be done
 ### @schema
 To specify a schema definition , the formatting of this tag is similar to the `@function` tag; should be used with `@header` and `@row`
 
+### @toggle 
+Show/hide the contents.
+
 ### @ bullet
 The content followed by this tag will be displayed as a bullet point in the documentation. 
 
