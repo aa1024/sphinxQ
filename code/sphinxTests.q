@@ -14,8 +14,8 @@ import `sphinx`unittest;
 .unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval ([] a: 1 2 3 4)");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval {([] a: 1 2 3 4)}[]");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval {h:hopen 1234; t1:h\"3#t\";hclose h; :t1}[]");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    ";"")];
+/.sphinx.reset[];
+/.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code-eval {h:hopen 1234; t1:h\"3#t\";hclose h; :t1}[]");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    ";"")];
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag; enlist ( "@code-eval"; "([]";"a:(1;2;3;4))");("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
 .unittest.assert[`.sphinx.evalCode ; ( ("([]";"a:(1;2;3;4))");.sphinx.getTag`eval);([] a:1 2 3 4)];
@@ -23,7 +23,9 @@ import `sphinx`unittest;
 /# @bullet ``@code`` tests
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ;enlist (" " vs "@code ([] a: 1 2 3 4)") ; ("";".. code-block:: R";"";"";"";"    ([] a: 1 2 3 4)")];
+.sphinx.reset[];
 .unittest.assert[`.sphinx.code;( ("show";"dict") ;.sphinx.getTag`code); ("";".. code-block:: R";"";"";"";"    show dict")];
+.sphinx.reset[];
 .unittest.assert[`.sphinx.code; (  .sphinx.evalCode[("([]";"a:(1;2;3;4))"); .sphinx.getTag`eval ] ;.sphinx.getTag`code); ("";".. code-block:: R";"";"";"";"    a";"    -";"    1";"    2";"    3";"    4";"    ";"")];
 
 /# @bullet ``@eval`` tests
@@ -45,8 +47,8 @@ import `sphinx`unittest;
 .unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval {([] a: 1 2 3 4)}[]");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval ([] a: 1 2 3 4)");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
-.sphinx.reset[];
-.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval {h:hopen 1234; t1:h\"2#t\";hclose h; :t1}[]");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2")];
+/.sphinx.reset[];
+/.unittest.assert[`.sphinx.processTag ;enlist (" " vs "@table-eval {h:hopen 1234; t1:h\"2#t\";hclose h; :t1}[]");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2")];
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ; enlist  ("@table-eval"; "([]";"a:(1;2;3;4))");(".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4")];
 
@@ -54,11 +56,13 @@ import `sphinx`unittest;
 /# @bullet ``@see`` tests
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ;enlist (string .sphinx.getTag"see";"lib-str");("";"**See** :ref:`lib-str-label`")];
+.sphinx.reset[];
 .unittest.assert[`.sphinx.see ; ( "lib-str";.sphinx.getTag`see); ("";"**See** :ref:`lib-str-label`")];
 
 /# @bullet ``@row`` test
 .sphinx.reset[];
 .unittest.assert[`.sphinx.processTag ;enlist ("@row"; "startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)");("";"   startDate|date|0b|.z.d|Start Date (if null or not provided, will be set as current date)") ]; 
+.sphinx.reset[];
 .unittest.assert[`.sphinx.row; ( ("startDate|date|0b|.z.d|Start";"Date";"(if";"null";"or";"not";"provided,";"will";"be";"set";"as";"current";"date)");.sphinx.getTag`row); ("";"   startDate|date|0b|.z.d|Start Date (if null or not provided, will be set as current date)")];
 
 
@@ -97,4 +101,6 @@ import `sphinx`unittest;
 
 /# @bullet ``@table``  test
 .unittest.assert[`.sphinx.table ; ( ([] a: 1 2 3 4);.sphinx.getTag`table); (".. csv-table:: ";"   :escape: '";"   :widths: auto";"   :header: a";"";"   1";"   2";"   3";"   4") ];
+
+.unittest.results[]
 
