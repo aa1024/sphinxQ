@@ -17,7 +17,7 @@ import `str`unittest;
 .unittest.assert[`.str.cc;enlist "Another Test";"anotherTest"];
 
 //Uncamelcase test
-.unittest.assert[`.str.ucc;enlist "addSpaceBetweenCamelCase";"add space between camel case" ];
+.unittest.assert[`.str.ucc;enlist "addSpaceBetweenCamelCase";"add Space Between Camel Case" ];
 
 //underscore
 .unittest.assert[`.str.us;enlist "underscoreSeperatedText";"underscore_seperated_text"];
@@ -36,19 +36,12 @@ import `str`unittest;
 .unittest.assert[`.str.zfl;(4;72);"0072"];
 .unittest.assert[`.str.zfr;(4;72);"7200"];
 
-.unittest.assert[`.str.tu;enlist "To Upper Case";"TO UPPER CASE"];
-.unittest.assert[`.str.tu;enlist `Upper;`UPPER];
 
-
-.unittest.assert[`.str.tl;enlist "To Lower Case"; "to lower case"];
-.unittest.assert[`.str.tl;enlist `Lower;`lower];
-
-
-.unittest.assert[`.str.tstr;enlist`$"String";"String"];
-.unittest.assert[`.str.tstr;enlist`$"c";enlist["c"]];
-.unittest.assert[`.str.tstr;enlist`s;enlist["s"]];
-.unittest.assert[`.str.tstr;enlist 10;"10"];
-.unittest.assert[`.str.tstr;enlist(0b;1i;2j;3f;`4;"5");"(0b;1i;2;3f;`4;\"5\")"];
-.unittest.assert[`.str.tstr;enlist ([] i: 1 2 3 4);"+(,`i)!,1 2 3 4"];
+.unittest.assert[`.str.strif;enlist`$"String";"String"];
+.unittest.assert[`.str.strif;enlist`$"c";enlist["c"]];
+.unittest.assert[`.str.strif;enlist`s;enlist["s"]];
+.unittest.assert[`.str.strif;enlist 10;"10"];
+.unittest.assert[`.str.strif;enlist(0b;1i;2j;3f;`4;"5");"(0b;1i;2;3f;`4;\"5\")"];
+.unittest.assert[`.str.strif;enlist ([] i: 1 2 3 4);"+(,`i)!,1 2 3 4"];
 
 .unittest.results[]
