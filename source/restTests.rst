@@ -13,12 +13,6 @@ rest helper functions tests.
 .. todo::
 
     add more tests around functions (symbol, symbol list , string, list of strings etc.)
-.. todo::
-
-    csvth
-.. todo::
-
-    csvtr
 
 * Text Style test
 * Italics test

@@ -6,6 +6,7 @@
   rest
   sphinx
   str
+  unittest
   restTests
   sample
   sphinxTests
