@@ -62,9 +62,9 @@ Applying the formatting of multiple tags over the same content. Tags can be chai
 ## Rules
 * Search for all the lines containing `/#` (which also includes `/#.` for multiline comments)
 * Except for the first delimiter `/#` appearance, all subsequent `/#` will be treated as `@desc` or paragraph.
-* Search the lines which contain tags prefixed by `@` (e.g. `@function` , `@param`)
+* Search the lines which contain tags prefixed by `@` (e.g. `@function`, `@param`)
 * For few tags (`package`, `function`, `schema` etc.), the immediate word after the tag will be treated as the tag name and rest will be treated as a description.
-* In case `@package` or `@name` is defined multiple times, the first entry will be used for meta uses (labeling the links, rst naming, document title etc.)
+* In case `@package` or `@name` is defined multiple times, the first entry will be used for meta uses (labelling the links, rst naming, document title etc.)
 * Now process each tag along with the content using the `ReST` helper functions.
 
 ## TODO
