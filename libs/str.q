@@ -23,7 +23,7 @@ tc:{ ssr[x;" ";"-"] }
 /# @function us @desc Camel case to lower case underscore separated 
 /#   @param x string in camel case form
 /# @return underscore separated text
-us:{lower sc ucc x}
+us:{lower sc ucc sv["";vs[" ";x] except enlist ""]}
 
 /# @function cc @desc To camel case
 /#   @param String containing underscores, hyphens or spaces
