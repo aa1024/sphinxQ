@@ -177,6 +177,5 @@ init:{[base;fl;ext]
 
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sample.q"]
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\code\\sphinxTests.q"]
-
 /.sphinx.process[.settings.baseFolder;file:`$.settings.baseFolder,"\\libs\\sphinx.q"];
 
