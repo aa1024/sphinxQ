@@ -5,10 +5,13 @@ import `str`unittest;
 
 .unittest.init[];
 
-/# @bullet Snakecase test
+/# @bullet Snake case test
 .unittest.assert[`.str.sc; enlist "An example of Snake case" ; "An_example_of_Snake_case"];
 
 /# @bullet Train case test
+.unittest.assert[`.str.stc; enlist "an example string" ; "An Example String"];
+
+/# @bullet Start case test
 .unittest.assert[`.str.tc; enlist "An example of Train case" ; "An-example-of-Train-case"];
 
 /# @bullet Camelcase test
@@ -16,10 +19,10 @@ import `str`unittest;
 .unittest.assert[`.str.cc;enlist "Another Test";"anotherTest"];
 
 /# @bullet Uncamelcase test
-.unittest.assert[`.str.ucc;enlist "addSpaceBetweenCamelCase";"add Space Between Camel Case" ];
+.unittest.assert[`.str.ucc;enlist "addSpaceInCamelCase";"add Space In Camel Case" ];
 
 /# @bullet To underscore separated string test
-.unittest.assert[`.str.us;enlist "underscoreseparatedText";"underscore_separated_text"];
+.unittest.assert[`.str.us;enlist "underscoreSeparatedText";"underscore_separated_text"];
 .unittest.assert[`.str.us;enlist "space separated text";"space_separated_text"];
 
 /# @bullet swapcase test
@@ -30,9 +33,9 @@ import `str`unittest;
 /# @bullet Space right fill test
 .unittest.assert[`.str.sfr; (3;12);"12 "];
 
-/# @bullet Space *block* left fill test
+/# @bullet Space **block** left fill test
 .unittest.assert[`.str.sflb; enlist (`a`bbb`cc);("  a";"bbb";" cc")];
-/# @bullet Space *block* right fill test
+/# @bullet Space **block** right fill test
 .unittest.assert[`.str.sfrb; enlist (`a`bbb`cc);("a  ";"bbb";"cc ")];
 
 /# @bullet Zero fill left test
