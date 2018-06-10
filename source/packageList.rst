@@ -9,3 +9,4 @@
   restTests
   sample
   sphinxTests
+  strtests

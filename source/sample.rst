@@ -5,7 +5,7 @@
 sample
 ======
 
-Sample functions to demostrate the usage of tags for document generation
+Sample functions to demonstrate the usage of tags for document generation
 
 .. index:: example;sample
 
@@ -56,11 +56,11 @@ A sample function to display a KDB table in various ways
        :widths: auto
        :header: d,p
     
-       2018.06.06,10.3
-       2018.06.01,10.8
-       2018.05.31,10.1
-       2018.06.07,10.6
-       2018.06.04,10.3
+       2018.06.06,10.9
+       2018.06.10,10.8
+       2018.06.06,10.9
+       2018.06.07,10.9
+       2018.06.02,10.5
 .. container:: toggle
 
     .. container:: header
@@ -74,11 +74,11 @@ A sample function to display a KDB table in various ways
     
         d          p   
         ---------------
-        2018.06.06 10.5
-        2018.06.04 10.1
-        2018.06.02 10.2
-        2018.06.08 10.4
-        2018.06.04 10.1
+        2018.06.01 10  
+        2018.06.07 10.7
+        2018.06.01 10.9
+        2018.06.06 10.7
+        2018.06.01 10.8
         
     
 
@@ -88,11 +88,11 @@ A sample function to display a KDB table in various ways
 
     d          p   
     ---------------
-    2018.06.05 10.5
-    2018.06.04 10.2
-    2018.06.04 10.7
     2018.06.03 10.7
-    2018.05.31 10.2
+    2018.06.04 10.1
+    2018.06.09 10.9
+    2018.06.10 10.6
+    2018.06.07 10.8
     
 
 
