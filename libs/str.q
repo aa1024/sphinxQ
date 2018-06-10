@@ -23,7 +23,7 @@ tc:{ ssr[x;" ";"-"] }
 /# @function us @desc Camel case to lower case underscore separated 
 /#   @param x string in camel case form
 /# @return underscore separated text
-us:{lower sc[x]}
+us:{lower sc ucc x}
 
 /# @function cc @desc To camel case
 /#   @param String containing underscores, hyphens or spaces
@@ -34,10 +34,10 @@ cc:{
     x where not[s]
  }
 
-/# @function ucc @desc Uncamelcase - Camel case to space separated text
+/# @function ucc @desc Uncamelcase - Camel case to space separated text , case is preserved
 /#   @param String Camel case string
 /# @return Space separated string
-ucc:{ lower trim raze cut[0,where[x=upper[x]] ; x],\:" " }
+ucc:{ trim raze cut[0,where[x=upper[x]] ; x],\:" " }
 
 /# @function fc @desc Swap case
 /#    @param String
