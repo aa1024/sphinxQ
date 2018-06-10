@@ -2,8 +2,6 @@
 /# @name rest-tests rest helper functions tests.
 
 /# @todo add more tests around functions (symbol, symbol list , string, list of strings etc.)
-/# @todo csvth
-/# @todo csvtr
 
 import `str`unittest`rest;
 
@@ -39,13 +37,13 @@ import `str`unittest`rest;
 .unittest.assert[`.rest.dtb; enlist"{x*y}[3;2]" ;"6\r\n"];
 
 /# @bullet underline test
-.unittest.assert[`.rest.ul;( "SubTitle";"-");("SubTitle";"--------")];
+.unittest.assert[`.rest.ul;( "SubTitle";"-");("";"SubTitle";"--------")];
 /# @bullet Title test
-.unittest.assert[`.rest.t; enlist "Title"; ("Title";"=====")];
+.unittest.assert[`.rest.t; enlist "Title"; ("";"Title";"=====")];
 /# @bullet Section Title test
-.unittest.assert[`.rest.st;enlist "SubTitle";("SubTitle";"--------")];
+.unittest.assert[`.rest.st;enlist "SubTitle";("";"SubTitle";"--------")];
 /# @bullet Subsection Title test
-.unittest.assert[`.rest.sst;enlist "Subsection Title";("Subsection Title";"~~~~~~~~~~~~~~~~")];
+.unittest.assert[`.rest.sst;enlist "Subsection Title";("";"Subsection Title";"~~~~~~~~~~~~~~~~")];
 
 /# @bullet overline-underline test
 .unittest.assert[`.rest.olul;("Overline-Underline";"-");("------------------";"Overline-Underline";"------------------")];
@@ -56,18 +54,13 @@ import `str`unittest`rest;
 
 
 /# @function strif test
-.unittest.assert[`.rest.strif;enlist `test;"test"];
-.unittest.assert[`.rest.strif;enlist 2#`test;("test";"test")];
-.unittest.assert[`.rest.strif;enlist string `test;"test"];
-.unittest.assert[`.rest.strif;enlist string 2#`test;"(\"test\";\"test\")"];
-
 .unittest.assert[`.rest.lbl;enlist `trade`schema ; ".. _trade-schema-label:"];
 .unittest.assert[`.rest.ref;enlist `trade`schema; " :ref:`trade-schema-label`"];
 
 .unittest.assert[`.rest.fn; (`param`sym;"Instrument Id");"    :param sym: Instrument Id"];
 .unittest.assert[`.rest.fn; (`returns;"Price");"    :returns: Price"];
-.unittest.assert[`.rest.prm; (`sym;"Instrument Id");"    :param sym: Instrument Id"];
-.unittest.assert[`.rest.ret; (`;"Price");"    :returns: Price"];
+.unittest.assert[`.rest.prm; (`sym;"Instrument Id");":param sym: Instrument Id"];
+.unittest.assert[`.rest.ret; enlist "Price";":returns: Price"];
 
 .unittest.assert[`.rest.inc;enlist "resources/inclusion.txt";".. include:: resources/inclusion.txt"];
 
@@ -79,8 +72,6 @@ import `str`unittest`rest;
 .unittest.assert[`.rest.code;(`R;"";`sample.q;("show avg[2 3 4]";"count til 5"));(".. code-block:: R";"";"    :caption: sample.q";"";"    show avg[2 3 4]";"    count til 5")];
 
 .unittest.assert[`.rest.code2;enlist ("show avg[2 3 4]";"count til 5");(".. code-block:: R";"";"";"";"    show avg[2 3 4]";"    count til 5")];
-
-
 .unittest.assert[`.rest.split; ("-";"test-string");("test";"string")];
 
 
