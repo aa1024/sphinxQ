@@ -97,7 +97,7 @@
             
   <div class="section" id="str">
 <span id="lib-str-label"></span><span id="index-0"></span><h1>str<a class="headerlink" href="#str" title="Permalink to this headline">¶</a></h1>
-<p>String helper functions - fc,sfl,zfl,tu,tl,cc,ucc,us (snakecase, startcase, traincase )</p>
+<p>String helper functions - flip case, space fill, zero fill, camelcase, uncamelcase, underscore separated, snakecase, startcase, traincase</p>
 <div class="section" id="stc">
 <span id="lib-str-stc-label"></span><h2>stc<a class="headerlink" href="#stc" title="Permalink to this headline">¶</a></h2>
 <p>startcase “an example string” -&gt; “An Example String”</p>
@@ -105,11 +105,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param string:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">String</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>stc<span class="s">&quot;startcase test&quot;</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.stc<span class="s">&quot;start-case string&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -120,12 +120,15 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param string:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-even field"><th class="field-name">returns:</th><td class="field-body">underscore separated text without any case changes.</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.sc <span class="s">&quot;An example of Snake case&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="tc">
 <span id="lib-str-tc-label"></span><h2>tc<a class="headerlink" href="#tc" title="Permalink to this headline">¶</a></h2>
@@ -134,12 +137,15 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param string:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-even field"><th class="field-name">returns:</th><td class="field-body">hyphen separated text without any case changes.</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.tc<span class="s">&quot;An example of Train case&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="us">
 <span id="lib-str-us-label"></span><h2>us<a class="headerlink" href="#us" title="Permalink to this headline">¶</a></h2>
@@ -148,12 +154,15 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">string in camel case form</td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">String in camel case form or space separated</td>
 </tr>
 <tr class="field-even field"><th class="field-name">returns:</th><td class="field-body">underscore separated text</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.us<span class="s">&quot;spaceSeparated text&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="cc">
 <span id="lib-str-cc-label"></span><h2>cc<a class="headerlink" href="#cc" title="Permalink to this headline">¶</a></h2>
@@ -162,40 +171,49 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param String:</th><td class="field-body">containing underscores, hyphens or spaces</td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">String containing underscores, hyphens or spaces</td>
 </tr>
 <tr class="field-even field"><th class="field-name">returns:</th><td class="field-body">Camel case string</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.cc<span class="s">&quot;underscore_separated_text&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ucc">
 <span id="lib-str-ucc-label"></span><h2>ucc<a class="headerlink" href="#ucc" title="Permalink to this headline">¶</a></h2>
-<p>Uncamelcase - Camel case to space separated text</p>
+<p>Uncamelcase - Camel case to space separated text , case is preserved</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param String:</th><td class="field-body">Camel case string</td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">Camel case string</td>
 </tr>
 <tr class="field-even field"><th class="field-name">returns:</th><td class="field-body">Space separated string</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.ucc<span class="s">&quot;addSpaceInCamelCase&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="fc">
 <span id="lib-str-fc-label"></span><h2>fc<a class="headerlink" href="#fc" title="Permalink to this headline">¶</a></h2>
-<p>Swap case</p>
+<p>Swap/Flip case</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param String:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-even field"><th class="field-name">returns:</th><td class="field-body">String with case swapped</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.fc<span class="s">&quot;FlipCase&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sfl">
 <span id="lib-str-sfl-label"></span><h2>sfl<a class="headerlink" href="#sfl" title="Permalink to this headline">¶</a></h2>
@@ -204,14 +222,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param int:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">int</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param String:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">param y:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">String left padded with space</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.sfl <span class="p">(</span><span class="m">3</span><span class="p">;</span><span class="m">12</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sfr">
 <span id="lib-str-sfr-label"></span><h2>sfr<a class="headerlink" href="#sfr" title="Permalink to this headline">¶</a></h2>
@@ -220,14 +241,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param int:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">int</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param String:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">param y:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">String right padded with space</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.sfr <span class="p">(</span><span class="m">3</span><span class="p">;</span><span class="m">12</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sflb">
 <span id="lib-str-sflb-label"></span><h2>sflb<a class="headerlink" href="#sflb" title="Permalink to this headline">¶</a></h2>
@@ -236,14 +260,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param int:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">int</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param String:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">param y:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">String left padded with space</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.sflb <span class="p">(</span><span class="sb">`a`</span>bbb`cc<span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sfrb">
 <span id="lib-str-sfrb-label"></span><h2>sfrb<a class="headerlink" href="#sfrb" title="Permalink to this headline">¶</a></h2>
@@ -252,14 +279,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param int:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">int</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param String:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">param y:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">String right padded with space</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.sfrb <span class="p">(</span><span class="sb">`a`</span>bbb`cc<span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="zfl">
 <span id="lib-str-zfl-label"></span><h2>zfl<a class="headerlink" href="#zfl" title="Permalink to this headline">¶</a></h2>
@@ -268,14 +298,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param int:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">int</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param String:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">param y:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">String left padded with zero</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.zfl <span class="p">(</span><span class="m">4</span><span class="p">;</span><span class="m">72</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="zfr">
 <span id="lib-str-zfr-label"></span><h2>zfr<a class="headerlink" href="#zfr" title="Permalink to this headline">¶</a></h2>
@@ -284,28 +317,41 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param int:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">int</td>
 </tr>
-<tr class="field-even field"><th class="field-name">param String:</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">param y:</th><td class="field-body">String</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">String right padded with zero</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.zfr <span class="p">(</span><span class="m">4</span><span class="p">;</span><span class="m">72</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="strif">
 <span id="lib-str-strif-label"></span><h2>strif<a class="headerlink" href="#strif" title="Permalink to this headline">¶</a></h2>
 <p>handle the simple case otherwise flaten it to string</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span>`test<span class="p">]</span>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">String</td>
+</tr>
+<tr class="field-even field"><th class="field-name">returns:</th><td class="field-body">Converts the kdb objects to plain string</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.strif<span class="p">[</span>`test<span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span><span class="m">2</span><span class="c1">#`test]</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.strif<span class="p">[</span><span class="m">2</span><span class="c1">#`test]</span>
 </pre></div>
 </div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span>string `test<span class="p">]</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.strif<span class="p">[</span>string `test<span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>strif<span class="p">[</span>string <span class="m">2</span><span class="c1">#`test]</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="kp">q</span><span class="p">)</span><span class="m">.</span>str.strif<span class="p">[</span>string <span class="m">2</span><span class="c1">#`test]</span>
 </pre></div>
 </div>
 </div>

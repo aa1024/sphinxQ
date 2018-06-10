@@ -44,7 +44,8 @@ Following are the tags currently supported by this library
     desc    
     toggle  
     bullet  
-    ..
+    eval    
+    table   
     
 
 
