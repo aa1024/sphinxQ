@@ -17,7 +17,7 @@ import:{ x:(),x; r:0N!x!.sys.importLib each x;:r};
 import `sphinx;
 
 / Process the files
-.sphinx.init[base:.settings.baseFolder;fl:.settings.folders;ext:.settings.fileExt];
+.sphinx.init[.settings.baseFolder;.settings.folders;.settings.fileExt];
 
 / Run Sphinx build
 show system "sphinx-build  ",.settings.baseFolder,"/source ",.settings.baseFolder,"/docs"
