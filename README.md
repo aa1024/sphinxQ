@@ -71,9 +71,9 @@ Applying the formatting of multiple tags over the same content. Tags can be chai
 ## TODO
 * Multiline comments support (`/#.`)
 * Enable `@bullet` tag
-* show/hide code/content feature.
+* ~~show/hide(toggle) code/content feature.~~
 * Handle scenarios when a file with same name present in different folders/package.
-* library cyclic dependency
+* Library cyclic dependency
 * Handle multiline code scenario
 
 ## Resources
