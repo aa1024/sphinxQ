@@ -1,13 +1,6 @@
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
   :caption: Contents
 
-  file
-  rest
-  sphinx
-  str
-  unittest
-  restTests
-  sample
-  sphinxTests
-  strtests
+  dt
+  dtf

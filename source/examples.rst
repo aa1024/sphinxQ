@@ -1,13 +1,9 @@
-.. _docq-sample-label:
 
 ====================
 Sphinx-ReST Examples
 ====================
------------------
-Document Subtitle
------------------
 
-.. index:: example;Sphinx-ReST
+
 
 .. include:: resources/inclusion.txt
 
