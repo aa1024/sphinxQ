@@ -52,7 +52,7 @@ Here are some tags that can be used in the code as comments and it will be autom
 * [@error](https://github.com/aa1024/sphinxQ/wiki/Tags#error)
 * [@see](https://github.com/aa1024/sphinxQ/wiki/Tags#see)
 * [@tags](https://github.com/aa1024/sphinxQ/wiki/Tags#tags)
-* @version
+* ~~@version~~
 
 ## Tag chaining
 
