@@ -15,7 +15,6 @@ A tool powered by `Sphinx` for documenting the q code with some predefined tags 
 
 For more information and examples please visit the [sphinx[Q] wiki](https://github.com/aa1024/sphinxQ/wiki).
 
-
 ![](https://github.com/aa1024/sphinxQ/blob/master/source/resources/images/wiki/sample.png)
 
 ## Installation
